@@ -1,0 +1,181 @@
+<!--Marija Stefanovic 2019/0068-->
+<html lang="en">
+<head>
+    <style>
+        .seat {
+            background-color:rgb(80, 79, 79);
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            height:24px;
+            width: 30px;
+            margin: 12px;
+            border-spacing: 10px;
+        }
+        .seatSelected{
+        background-color: rgb(170, 169, 169);
+        border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            height:24px;
+            width: 30px;
+            margin: 12px;
+            border-spacing: 10px;
+        }
+       
+    </style>
+    <script>
+      
+       document.addEventListener('click',(e)=>{
+            if(e.target.classList=="seat"){
+               
+                e.target.classList="seatSelected";
+            }else if(e.target.classList=="seatSelected"){
+                e.target.classList="seat";
+            }
+        });
+        function rezervisi(){
+            window.location.href="pregled_rezervacijeu.html";
+        }
+       
+    </script>
+</head>
+<body>
+    <div>
+        <table width = 100%>
+            <tr>
+                <td><img src="slike/logo.jpg" alt="logo" height = 150 ></td>
+                <td></td>
+                <td align = right><a href="login.html">log in</a>/<a href="registracija.html">registracija</a></td>
+            </tr>
+        </table>
+        <hr>
+   </div>
+   <div style="display: block;">
+   <div>
+       <table width="87%" align="left">
+            <tr>
+                <td rowspan="2" ><img src="slike/uncharted.jpeg" alt="" ></td>
+                <td>
+                <div >
+                    <table  align="center" >
+                        <tr  style="font-size: xx-large; text-align: center;" >
+                            
+                            <td style="width: 33%;">Uncharted</td>
+                            <td>Utorak 20:20h</td>
+                            <td style="width: 33%;">Velika sala</td>
+                        </tr>
+                    </table>
+                    <br>
+                    <br><br><br>
+                </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <div id="seats" >
+                    <table cellspacing="8" align="center" >
+                        <tr>
+                            <td class="seat" onclick="changeClass"></td>
+                            <td class="seat" onclick="changeClass"></td>
+                            <td></td> <td></td>
+                            <td class="seat" onclick="changeClass"></td>
+                            <td class="seat" onclick="changeClass"></td>
+                            <td class="seat" onclick="changeClass"></td>
+                            <td class="seat" onclick="changeClass"></td>
+                            <td></td> <td></td>
+                            <td class="seat" onclick="changeClass"></td>
+                            <td class="seat" onclick="changeClass"></td>
+                            
+                        </tr>
+                        <tr>
+                            <td class="seat" onclick="changeClass"></td>
+                            <td class="seat" onclick="changeClass"></td>
+                            <td></td> <td></td>
+                            <td class="seat" onclick="changeClass"></td>
+                            <td class="seat" onclick="changeClass"></td>
+                            <td class="seat" onclick="changeClass"></td>
+                            <td class="seat" onclick="changeClass"></td>
+                            <td></td> <td></td>
+                            <td class="seat" onclick="changeClass"></td>
+                            <td class="seat" onclick="changeClass"></td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="seat" onclick="changeClass"></td>
+                            <td class="seat" onclick="changeClass"></td>
+                            <td></td> <td></td>
+                            <td class="seat" onclick="changeClass"></td>
+                            <td class="seat" onclick="changeClass"></td>
+                            <td class="seat" onclick="changeClass"></td>
+                            <td class="seat" onclick="changeClass"></td>
+                            <td></td> <td></td>
+                            <td class="seat" onclick="changeClass"></td>
+                            <td class="seat" onclick="changeClass"></td>
+                        </tr>
+                        <tr>
+                            <td class="seat" onclick="changeClass"></td>
+                            <td class="seat" onclick="changeClass"></td>
+                            <td></td> <td></td>
+                            <td class="seat" onclick="changeClass"></td>
+                            <td class="seat" onclick="changeClass"></td>
+                            <td class="seat" onclick="changeClass"></td>
+                            <td class="seat" onclick="changeClass"></td>
+                            <td></td> <td></td>
+                            <td class="seat" onclick="changeClass"></td>
+                            <td class="seat" onclick="changeClass"></td>
+                        </tr>
+                    
+                        <tr>
+                            <td class="seat" onclick="changeClass"></td>
+                            <td class="seat" onclick="changeClass"></td>
+                            <td></td> <td></td>
+                            <td class="seat" onclick="changeClass"></td>
+                            <td class="seat" onclick="changeClass"></td>
+                            <td class="seat" onclick="changeClass"></td>
+                            <td class="seat" onclick="changeClass"></td>
+                            <td></td> <td></td>
+                            <td class="seat" onclick="changeClass"></td>
+                            <td class="seat" onclick="changeClass"></td>
+                        </tr>
+                        <tr>
+                            <td class="seat" onclick="changeClass"></td>
+                            <td class="seat" onclick="changeClass"></td>
+                            <td></td> <td></td>
+                            <td class="seat" onclick="changeClass"></td>
+                            <td class="seat" onclick="changeClass"></td>
+                            <td class="seat" onclick="changeClass"></td>
+                            <td class="seat" onclick="changeClass"></td>
+                            <td></td> <td></td>
+                            <td class="seat" onclick="changeClass"></td>
+                            <td class="seat" onclick="changeClass"></td>
+                        </tr>
+                    </table>
+                </div>
+                </td>
+            </tr>
+            
+                
+                   
+                   
+               
+           
+        </table>
+    </div>
+    <br>
+    <div  >
+        <table width="100%" align="center" style="text-align: center;">
+            <tr>
+                <td>
+                    <input type="checkbox" name="Bilo koje mesto" id="mesto" > 
+                    <label for="" style="font-size: large;">Bilo koje mesto</label>
+                 </td>
+            </tr>       
+            <tr>
+                <td>
+                    <button onclick="rezervisi()">Rezervisi</button>
+                </td>
+            </tr>
+    </table>
+    </div>
+    </div>
+</body>
+</html>
