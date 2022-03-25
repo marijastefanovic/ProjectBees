@@ -11,7 +11,22 @@
             line-height: 18px;
             color: #000;
             background-color: #fff;
+        
         }
+
+        tr{border-top: 5px rgb(0, 0, 0)  solid;}  
+          td{width: 30%;}
+          table.film {width: 100%;  margin-left: auto; border-spacing: 20px;}
+          table.film td.opis{width: 40%;}
+          table.film td {width:25%}
+          table.film td.poster {width:10%}
+          a:link{
+              text-decoration: none;
+              color: blue;
+            }
+          a:visited{
+            text-decoration: none;
+          }
         button {
             margin: 20px;
         }
@@ -48,15 +63,13 @@
     </head>
     <body>
         
-        <div style="width: 20%; float:left">
-            <img src="slike/logo.jpeg" alt="slika LOGO" height="25%">
-        </div>
-        
-
-        <div style="width: 80%;height: 25%; float:right; display: flex; align-items: center; justify-content: center;">
-            <button> Registracija </button>
-            <button> Prijava </button>
-        </div>
+        <table width = 100%>
+            <tr>
+                <td><img src="slike/logo.jpg" alt="logo" height = 150 ></td>
+                <td></td>
+                <td align = right><a href="login.html">log in</a>/<a href="registracija.html">registracija</a></td>
+            </tr>
+        </table>
         <hr>
         <div style="display: flex;align-items: center;justify-content: center;" >
             <a href="pocetna.html">
