@@ -1,0 +1,100 @@
+<html>
+    <head>
+        <title> Bioskop </title>
+        <script>
+            function selectedElem(){
+                if(document.getElementById("akcija").selected==true){
+                    window.location.assign("pocetna.html");
+                }else{
+                    window.location.assign("greska.html");
+                }
+            }
+        </script>
+        <style> 
+        
+        tr{border-top: 5px rgb(0, 0, 0)  solid;}  
+          td{width: 30%;}
+          table.film {width: 100%;  margin-left: auto; border-spacing: 20px;}
+          table.film td.opis{width: 40%;}
+          table.film td {width:25%}
+          table.film td.poster {width:10%}
+          a:link{
+              text-decoration: none;
+              color: blue;
+            }
+          a:visited{
+            text-decoration: none;
+          }
+        
+        body {
+            margin: 0;
+            font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+            font-size: 16px;
+            line-height: 18px;
+            color: #000;
+            background-color: #fff;
+        }
+        </style>
+    </head>
+    <body>
+        
+        <table width = 100%>
+            <tr>
+                <td><img src="slike/logo.jpg" alt="logo" height = 150 ></td>
+                <td></td>
+                <td align = right><a href="login.html">log in</a>/<a href="registracija.html">registracija</a></td>
+            </tr>
+        </table>
+        <hr>
+        <div style="display: flex;align-items: center;justify-content: center;" >
+            <a href="pocetna.html">
+                <button>PROJEKCIJE</button>
+            </a>
+            <a href="premijere.html">
+                <button>PREMIJERE</button>
+            </a>
+           
+        </div>
+        <hr>
+        <div>
+        <label for="zanr">Zanr:</label>
+        <select name="Zanr" id="zanr" size="2" multiple>
+            <option id="akcija"> akcija</option>
+            <option id="dokumentarni">dokumentarni</option>
+            <option id="drama">drama</option>
+            <option id="horor">horor</option>
+            <option id="komedija">komedija</option>
+            <option id="romaticni">romanticni</option>
+            <option id="triler">triler</option>
+            <option id="fantazija">fantazija</option>
+        </select>
+            <input type="text" placeholder="Search..">
+            <select name="Datum" id="datum" size="1" >
+                <option>Ponedeljak</option>
+                <option>Utorak</option>
+                <option>Sreda</option>
+                <option>Cetvrtak</option>
+                <option>Petak</option>
+                <option>Subota</option>
+                <option>Nedelja</option>
+            </select>
+            <!--<input type="radio" name="dani" value="Ponedeljak">Ponedeljak<br>
+            <input type="radio" name="dani" value="Utorak">Utorak<br>
+            <input type="radio" name="dani" value="Sreda">Sreda<br>
+            <input type="radio" name="dani" value="Cetvrtak">Cetvrtak<br>
+            <input type="radio" name="dani" value="Petak">Petak<br>
+            <input type="radio" name="dani" value="Subota">Subota<br>
+            <input type="radio" name="dani" value="Nedelja">Nedelja<br>
+            -->
+            
+            <input type="submit" onclick="selectedElem()" value="Pretrazi">
+            <br>
+        </div>
+        <hr>
+
+        <div>
+            Nazalost nema takvih filmova.
+        </div>
+
+    </body>
+</html>
