@@ -2,7 +2,7 @@
 <html>
     
     <head>
-        <title> Registracija korisnika </title>  
+        <title> Registracija korisnika </title>        
         <script>
             function registrujMe(){
                 
@@ -16,10 +16,11 @@
         </script>     
     </head>
 
-    <body>     
+    <body>   
+
 
         <div style=" float:left">
-            <img src="slike_projekat/psi logo.jpeg" alt="Logo Bioskopa" height="25%">           
+            <img src="slike/logo.jpeg" alt="Logo Bioskopa" height="21%">           
         </div>  
 
         <hr style = "display:block;
@@ -59,20 +60,23 @@
             <input type="text" id="Molimo potvrdite lozinku">
 
         </div>
-        <div><p><button onclick="registrujMe(); type=button">Registruj me kao korisnika!</button></div>
+        <div><p>
+            <a href = "pocetna.html"> <button onclick="registrujMe(); type=button">Registruj me kao korisnika!</button> </a>
+            
+            
+        </p></div>
         <div> 
             <p>
-                <h style = "font-size: 150%;" >*Ukoliko zelite da se registrujete kao predstavnik filma: </h>          
+                <h style = "font-size: 150%;" >*Ukoliko zelite da se registrujete kao predstavnik filma: </h>         
              </p> 
              <label> Naziv Vase kompanije:</label><br>
             <input type="text" id="Naziv Vase kompanije">
 
         </div>
-        <div><p><button onclick="registrujMe()" type= button">Registruj me kao predstavnika filma!</button></div>
+        <div><p><a href = "login.html">  <button onclick="registrujMe()" type= button">Registruj me kao predstavnika filma!</button></a></div>
            
            
-         
-
+    
     </body>  
     
     

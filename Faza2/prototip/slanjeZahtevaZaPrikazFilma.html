@@ -6,13 +6,12 @@
     <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-
     <div style=" float:left">
-        <img src="slike_projekat/psi logo.jpeg" alt="Logo Bioskopa" height="25%">           
+        <img src="slike/logo.jpeg" alt="Logo Bioskopa" height="21%">           
     </div>  
 
-    <div style="float:right"><p><button type="button">Registracija</button></div> 
-    <div style="float:right"><p><button type="button">Logovanje</button></div> 
+    <a href="registracija.html">  <div style="float:right"><p><button type="button">Registracija</button></div> </a>
+    <a href = "login.html"> <div style="float:right"><p><button type="button">Logovanje</button></div> </a>
    
 
     <hr style = "display:block;
@@ -28,26 +27,41 @@
     <label> Naziv filma:</label><br>
     <input type="text">
 </div>
+<br>
 <div class = "center" >
     <label> Kratak opis filma:</label><br>
     <input type="text">
 </div>
+<br>
 <div class = "center">
-    <label> Zanr filma:</label><br>
-    <input type="text">
+    <label for="zanr">Zanr:</label>
+            <select name="Zanr" id="zanr" size="2" multiple="true">
+                <option id="akcija"> akcija</option>
+                <option id="dokumentarni">dokumentarni</option>
+                <option id="drama">drama</option>
+                <option id="horor">horor</option>
+                <option id="komedija">komedija</option>
+                <option id="romaticni">romanticni</option>
+                <option id="triler">triler</option>
+                <option id="fantazija">fantazija</option>
+            </select>
 </div>
+<br>
 <div class = "center">
     <label> Trajanje filma:</label><br>
     <input type="text">
 </div>
+<br>
 <div class = "center">
     <label>Glumci:</label><br>
     <input type="text">
 </div>
+<br>
 <div class = "center">
     <label>Reziseri:</label><br>
     <input type="text">
 </div>
+<br>
 <div class = "center" >
     <label>Jezik:</label><br>
     <input type="text">
@@ -58,14 +72,14 @@
      <input type="file">
     
 </div>
+<br>
 <div class="novidiv">
     <label>Trejler filma:</label><br>
     <input class = "center" type="file">
 </div>
 
 <br>
-
-<div class = "center" ><p><button type="button">Posalji zahtev!</button></div>
-
+<br>
+<a href = "pregledPoslatihZahteva.html"><div class = "center" ><p><button type="button">Posalji zahtev!</button></div></a>
 </body>
 </html>
