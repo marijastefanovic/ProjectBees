@@ -4,6 +4,15 @@
 <html>
     <head>
         <title> Bioskop </title>
+        <script>
+            function selectedElem(){
+                if(document.getElementById("akcija").selected==true){
+                    window.location.assign("premijere.html");
+                }else{
+                    window.location.assign("greska_premijere.html");
+                }
+            }
+        </script>
         <style> body {
             margin: 0;
             font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -48,14 +57,14 @@
         </div>
         <hr>
         <div>
-        <label for="zanr">Zanr:</label>
+        <label for="zanr">Žanr:</label>
             <select name="Zanr" id="zanr" size="2" multiple>
-                <option>akcija</option>
+                <option id="akcija" >akcija</option>
                 <option>dokumentarni</option>
                 <option>drama</option>
                 <option>horor</option>
                 <option>komedija</option>
-                <option>romanticni</option>
+                <option>romantični</option>
                 <option>triler</option>
             </select>
             <input type="text" placeholder="Search..">
@@ -63,7 +72,7 @@
                 <option>Ponedeljak</option>
                 <option>Utorak</option>
                 <option>Sreda</option>
-                <option>Cetvrtak</option>
+                <option>Četvrtak</option>
                 <option>Petak</option>
                 <option>Subota</option>
                 <option>Nedelja</option>
@@ -77,7 +86,7 @@
             <input type="radio" name="dani" value="Nedelja">Nedelja<br>
             -->
             
-            <input type="submit" value="Pretrazi">
+            <input type="submit" value="Pretrazi" onclick="selectedElem()">
             <br>
         </div>
         <hr>
@@ -89,7 +98,7 @@
                         <span style="margin-left:2ch"> <h2>BATMAN</h2> </br>
                             <table>
                                 <tr>
-                                    <td><h3>Premijera:</h3></br><a href="film1.html"><Button>Ponedeljak 12:00</Button></a></td>
+                                    <td><h3>Premijera:</h3></br> 25.04.2022. </br><a href="film1.html"><Button>Ponedeljak 12:00</Button></a></td>
                                     <!--<td>Sala 2 </br><Button>Utorak 12:00</Button></td>
                                     <td>Sala 3 </br><Button>Sreda 12:00</Button></td>-->
                                 </tr>
@@ -114,7 +123,7 @@
                         <span style="margin:2ch"> <h2>UNCHARTED</h2> </br>
                             <table>
                                 <tr>
-                                    <td><h3>Premijera:</h3></br><a href="film2.html"><Button>Utorak 12:00</Button></a></td>
+                                    <td><h3>Premijera:</h3></br> 25.04.2022. </br><a href="film2.html"><Button>Utorak 12:00</Button></a></td>
                                     <!--<td>Sala 2 </br><Button>Utorak 12:00</Button></td>
                                     <td>Sala 3 </br><Button>Sreda 12:00</Button></td>-->
                                 </tr>

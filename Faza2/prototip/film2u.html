@@ -4,15 +4,17 @@
 <html>
     <head>
         <title> Bioskop </title>
+        
         <style> body {
-            
             margin: 0;
             font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
             font-size: 14px;
             line-height: 18px;
             color: #000;
             background-color: #fff;
+        
         }
+
         tr{border-top: 5px rgb(0, 0, 0)  solid;}  
           td{width: 30%;}
           table.film {width: 100%;  margin-left: auto; border-spacing: 20px;}
@@ -26,8 +28,10 @@
           a:visited{
             text-decoration: none;
           }
+        button {
+            margin: 20px;
+        }
         .custom-btn {
-            margin-left: 2ch;
             width: 130px;
             height: 40px;
             color: #fff;
@@ -64,7 +68,7 @@
             <tr>
                 <td><img src="slike/logo.jpg" alt="logo" height = 150 ></td>
                 <td></td>
-                <td align = right><a href="login.html">log out</a><!--<a href="registracija.html">registracija</a>--></td>
+                <td align = right><a href="login.html">log in</a>/<a href="registracija.html">registracija</a></td>
             </tr>
         </table>
         <hr>
@@ -78,16 +82,15 @@
            
         </div>
         <hr>
-        <h1 style="margin-left:60px"> BATMAN</h1>
+        <h1 style="margin-left:30px">UNCHARTED</h1>
         <div style="align-items:center; display: flex;">
             
-            <img src="slike/batman.jpeg" style="margin-left:10px;">
+            <img src="slike/uncharted.jpeg" style="margin-left:10px;">
             <span style=" margin: 20px">
                 <table>
                     <tr>
                         <td colspan="2">
-                            U režiji velikog Meta Rivsa, novi film donosi brojne poznate negativce koji dobijaju mračni novi izgled. </br>
-                            Paul Dano glumi Ridlera, Zoe Kravic je Žena mačka, a neprepoznatljivi Kolin Farrel pojavljuje se u ulozi zloglasnog Pingvina.
+                            Zasnovan na jednom od najprodavanijih i najhvaljenijih serijala video igara svih vremena.
                         </td>
                     </tr>
                     <tr>
@@ -99,33 +102,33 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>Originalni naslov:</td>
-                        <td>The Batman</td>
-                    </tr>
+				        <td>Originalni naslov:</td>
+				        <td>Uncharted</td>
+				    </tr>
+										<tr>
+						<td>Početak prikazivanja filma:</td>
+						<td>17.02.2022</td>
+					</tr>
+										<tr>
+						<td>Dužina trajanja filma:</td>
+						<td>116 min</td>
+					</tr>
+										<tr>
+						<td>Država/Godina:</td>
+						<td>USA/2022</td>
+					</tr>
                     <tr>
-                        <td>Početak prikazivanja filma:</td>
-                        <td>03.03.2022</td>
-                    </tr>
-                    <tr>
-                        <td>Dužina trajanja filma:</td>
-                        <td>176 min</td>
-                    </tr>
-                    <tr>
-                        <td>Država/Godina:</td>
-                        <td>USA/2022</td>
-                    </tr>
-                    <tr>
-                        <td>Žanr:</td>
-                        <td>akcija</td>
-                    </tr>
-                                        <tr>
-                        <td>Glumci:</td>
-                        <td>Robert Pattinson, Zoë Kravitz, Paul Dano, Jeffrey Wright, Peter Sarsgaard</td>
-                    </tr>
-                    <tr>
-                        <td>Režiser:</td>
-                        <td>Matt Reeves</td>
-                    </tr>
+						<td>Žanr:</td>
+						<td>akcija</td>
+					</tr>
+										<tr>
+						<td>Glumci:</td>
+						<td>Tom Holland, Mark Wahlberg, Tati Gabrielle, Antonio Banderas, Sophia Ali, Patricia Meeden, Sarah Petrick</td>
+					</tr>
+					<tr>
+						<td>Režiser:</td>
+						<td>Ruben Fleischer</td>
+					</tr>
                 </table>
                 </br> 
             </span>
@@ -135,7 +138,7 @@
                 Sala 3
             </span>
             <span>
-                    <a data-filter="not-filtered"  href="rezervacijab.html" > <!--MAJIN LINK--> <button style="margin-left: 2ch;" class="btn" class="custom-btn">REZERVISI</button> </a> 
+                <a data-filter="not-filtered"  href="greske_neregistrovan.html" > <!--MAJIN LINK--> <button style="margin-left: 2ch;" id="nijerezervisan" class="btn" class="custom-btn" >REZERVISI</button> </a> 
             </span>
         </div>
         
