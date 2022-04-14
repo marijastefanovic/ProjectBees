@@ -1,0 +1,70 @@
+<!--Natalija Tosic-->
+<html>
+    <head>
+        <title>Brisanje Projekcije</title>  
+        <style>
+          tr{border-top: 5px rgb(0, 0, 0)  solid;}  
+          td{width: 30%;}
+          table.film {width: 100%;  margin-left: auto; border-spacing: 20px;}
+          table.film td {width:18%}
+          table.film td.poster {width:10%}
+          a:link{
+              text-decoration: none;
+              color: blue;
+            }
+          a:visited{
+            text-decoration: none;
+          }
+          table.film td.poster img{
+              height: 100%;
+          }
+        </style>
+        <script>
+            function myFunction() {
+              confirm("Da li ste sigurni da želite da obrišete projekciju?");
+            }
+            </script>
+    </head>
+    <body>
+        <header>
+            <table width = 100% cellspacing=0> 
+            <tr>
+                <td> <img src="slike/logo.jpg" alt="logo" height = 150 ></td>
+                <td></td>
+                <td align = right><a href="pocetna.html">odjavi se</a></td>
+            </tr> 
+            <tr>
+                <td colspan="3"> <hr></td>
+            </tr>
+            <tr>
+                <td align = center><a href="prihvatanje_odbijanje_zahteva.html">Zahtevi</a></td>
+                <td align = center>  <a href="pravljenje_projekcije.html">Pravljenje projekcija</a></td>
+                <td align = center> <a href="brisanje_projekcije.html">Brisanje projekcija</a></td>
+            </tr>
+            <tr>
+                <td colspan="3"> <hr></td>
+            </tr>
+            </table>
+        </header>
+        <table class="film">
+            <tr>
+                <td class="poster"><img src="slike/betmen_poster.jpg"></td>
+                <td align = "center">Betmen</td>
+                <td> Sala 1</td>
+                <td>Ponedeljak</td>
+                <td>20:00</td>
+                <td ><button onclick="myFunction()">Obrisi projekciju</button></td>
+            </tr>
+        </table>
+        <table class="film">
+            <tr>
+                <td class="poster" rowspan=3><img src="slike/smrt_poster.png"></td>
+                <td align = "center">Smrt na Nilu</td>
+                <td> Sala 3</td>
+                <td>Sreda</td>
+                <td>19:30</td>
+                <td ><button onclick="myFunction()">Obrisi projekciju</button></td>
+            </tr>
+        </table>
+    </body>
+</html>

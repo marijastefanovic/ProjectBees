@@ -1,0 +1,107 @@
+<!--Natalija Tosic-->
+<html>
+    <head>
+        <title>Pravljenje projekcije</title>
+        <style>
+          aside{
+              width: 40%;
+              display:inline;
+              float: left;
+          }
+          table.filmovi{
+            width:60%;
+            display: inline;
+            float: left;
+            border-spacing: 20px;
+          }
+          a:link{
+              text-decoration: none;
+              color:blue;
+          }
+          a:visited{
+              text-decoration: none;
+          }
+          
+          table.film img{
+              height: 100%;
+          }
+          header table td{
+              width: 33%;
+          }
+          </style>
+    </head>
+    <header>
+        <table  width="100%">
+            <tr>
+                <td> <img src="slike/logo.jpg" alt="logo" height = 150></td>
+                <td></td>
+                <td align = right><a href="pocetna.html">odjavi se</a></td>
+            </tr> 
+            <tr>
+                <td colspan="3"> <hr></td>
+            </tr>
+            <tr>
+                <td align = center><a href="prihvatanje_odbijanje_zahteva.html">Zahtevi</a></td>
+                <td align = center>  <a href="pravljenje_projekcije.html">Pravljenje projekcija</a></td>
+                <td align = center> <a href="brisanje_projekcije.html">Brisanje projekcija</a></td>
+            </tr>
+            <tr>
+                <td colspan="3"> <hr></td>
+            </tr>
+        </table>
+    </header>
+    <form>
+        <table class="filmovi" >
+            <tr>
+                <td><img src="slike/betmen_poster.jpg" alt="Batman"></td>
+                <td>Betmen</td>
+                <td><input type="radio" id="izabran1" name="izabran" required></td>
+            </tr>
+            <tr>
+                <td><img src="slike/smrt_poster.png" alt="Smrt na Nilu"></td>
+                <td>Smrt na Nilu</td>
+                <td><input type="radio" id="izabran1"name="izabran"></td>
+            </tr>
+        </table>
+        <aside >
+            <fieldset>
+                <legend>Izaberite kada zelite da se film prikazuje</legend>
+                <table align="center">
+                    <tr>
+                        <td>
+                            <select name="sale" id="sale" required>
+                                <option value="" disabled selected>Izaberite salu</option>
+                                <option value="Sala1">Sala 1</option>
+                                <option value="Sala2">Sala 2</option>
+                                <option value="Sala3">Sala 3</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="dani" id="dani" required>
+                                <option value="" disabled selected>Izaberite dan</option>
+                                <option value="ponedeljak">Ponedeljak</option>
+                                <option value="utorak">Utorak</option>
+                                <option value="sreda">Sreda</option>
+                                <option value="cetvrtak">Cetvrtak</option>
+                                <option value="petak">Petak</option>
+                                <option value="subota">Subota</option>
+                                <option value="nedelja">Nedelja</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="sati" id="sati" required>
+                                <option value="" disabled selected>Izaberite vreme</option>
+                                <option value="8:30">8:30</option>
+                                <option value="10:15">10:15</option>
+                                <option value="14:30">14:30</option>
+                                <option value="15:45">15:45</option>
+                                <option value="18:00">18:00</option>
+                            </select>
+                        </td>
+                        <td> <input type="submit" name="Posalji" value="Napravi"></td>
+                    </tr>
+                </table>
+        </fieldset>
+     </aside>
+    </form>
+</html>
