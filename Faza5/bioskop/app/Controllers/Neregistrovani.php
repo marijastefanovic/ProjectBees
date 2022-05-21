@@ -1,6 +1,13 @@
 <?php namespace App\Controllers;
+
+
+#Marija Stefanovic 2019/0068
 use App\Models\ProjekcijeModel;
 use App\Models\PremijereModel;
+use App\Models\KorisnikModel;
+use App\Models\AdminModel;
+use App\Models\GledalacModel;
+use App\Models\PredstavnikModel;
 class Neregistrovani extends BaseController
 {
     protected function prikaz($page, $data){
@@ -12,8 +19,8 @@ class Neregistrovani extends BaseController
 
     public function index(){
         //$this->load->library('image_lib');
-        $projekcijeModel = new ProjekcijeModel();
-        $premijereModel = new PremijereModel();
+        //$projekcijeModel = new ProjekcijeModel();
+        //$premijereModel = new PremijereModel();
         $this->prikaz('pocetna', []);
     }
 
@@ -31,5 +38,53 @@ class Neregistrovani extends BaseController
 
     public function registracija(){
         $this->prikaz('registracija', []);
+    }
+
+    
+    #Prijavljivanje korisnika na sistem koristi mejl i lozinku
+    #Preusmeravanje na odgovarajuce stranice za odgovarajuce korisnike
+    public function loginSubmit()
+    {
+        session_start();
+        $mejl=$this->request->getVar('mejl');
+        
+        $lozinka= $this->request->getVar('lozinka');
+        
+        $kor=new KorisnikModel();
+        $gl=new GledalacModel();
+        $ad= new AdminModel();
+        $pr=new PredstavnikModel();
+        
+        $korisnik=$kor->like('Mejl', $mejl)->find();
+        
+        
+        if($korisnik==null){
+            echo "Korisnik sa ovom mejl adresom ne postoji";
+        }else{
+            if($korisnik[0]->Lozinka!=$lozinka){
+                echo "Pogresna lozinka";
+            }else{
+                if($gl->find($korisnik[0]->IdK)){
+                    $_SESSION["Ulogovan"]=true;
+                    $_SESSION["Korisnik"]=$korisnik[0]->IdK;
+                    return redirect()->to(site_url('Neregistrovani/index'));
+                }else if($ad->find($korisnik[0]->IdK)){
+                    $_SESSION["Ulogovan"]=true;
+                    $_SESSION["Korisnik"]=$korisnik[0]->IdK;
+                    return redirect()->to(site_url('Admin/index'));
+                }else if($pr->find($korisnik[0]->IdK)){
+                    $_SESSION["Ulogovan"]=true;
+                    $_SESSION["Korisnik"]=$korisnik[0]->IdK;
+                    return redirect()->to(site_url('PredstavnikFilma/index'));
+    
+                }
+               
+            }
+
+        }
+    
+        
+        
+        
     }
 } // SESIJE -> 1:46

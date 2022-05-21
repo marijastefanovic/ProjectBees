@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 class PredstavnikModel extends Model
 {
         protected $table      = 'Predstavnik';
-        protected $primaryKey = 'IdK';
+        protected $primaryKey = 'IdPF';
         protected $returnType = 'object';
        
     

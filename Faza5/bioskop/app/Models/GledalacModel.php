@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 class GledalacModel extends Model
 {
         protected $table      = 'Gledalac';
-        protected $primaryKey = 'IdK';
+        protected $primaryKey = 'IdG';
         protected $returnType = 'object';
      
     
