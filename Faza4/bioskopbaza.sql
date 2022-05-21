@@ -181,7 +181,7 @@ CREATE TABLE `ucesnik_u_filmu` (
 --
 -- Indexes for table `administrastor`
 --
-ALTER TABLE `administrastor`
+ALTER TABLE `administrator`
   ADD PRIMARY KEY (`IdA`);
 
 --
