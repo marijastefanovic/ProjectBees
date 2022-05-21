@@ -6,7 +6,7 @@
 <body>
     
     <div style="text-align:center" >
-    <form name="loginform" action="<?= site_url("Gost/loginSubmit") ?>" method="post">
+    <form name="loginform" action="<?= site_url("Neregistrovani/loginSubmit") ?>" method="post">
         <input type="text" name="mejl" id="mejl" value=""> <br>
         <label for="mejl">Mejl adresa</label><br> <br><br>
         <input type="password" name="lozinka" id="lozinka"> <br>
