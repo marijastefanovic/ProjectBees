@@ -9,7 +9,7 @@ else{
     <td> $projekcija->Sala</td>
     <td>$projekcija->Datum</td>
     <td>$projekcija->Vreme</td>
-    <td ><button onclick="myFunction()">Obrisi projekciju</button></td>
+    <td ><button onclick="myFunction($projekcija->id)">Obrisi projekciju</button></td>
 </tr>
 </table>
 }

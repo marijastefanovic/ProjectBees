@@ -29,8 +29,10 @@
           }
         </style>
         <script>
-            function myFunction() {
-              confirm("Da li ste sigurni da želite da obrišete projekciju?");
+            function myFunction($id) {
+              if(confirm("Da li ste sigurni da želite da obrišete projekciju?")=true){
+                  obrisi_projekciju($id);
+              }
             }
         </script>
     </head>
