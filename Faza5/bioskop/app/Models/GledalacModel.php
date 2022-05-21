@@ -1,6 +1,5 @@
-<!-- Marija Stefanovic 2019/0068>
 <?php namespace App\Models;
-
+#Marija Stefanovic 2019/0068
 use CodeIgniter\Model;
 
 class GledalacModel extends Model
