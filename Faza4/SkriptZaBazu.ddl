@@ -1,11 +1,11 @@
 
-CREATE TABLE Administrastor
+CREATE TABLE Administrator
 (
 	IdA                  INTEGER NOT NULL
 );
 
-ALTER TABLE Administrastor
-ADD CONSTRAINT XPKAdministrastor PRIMARY KEY (IdA);
+ALTER TABLE Administrator
+ADD CONSTRAINT XPKAdministrator PRIMARY KEY (IdA);
 
 CREATE TABLE Film
 (
@@ -17,8 +17,8 @@ CREATE TABLE Film
 	Pocetak_prikazivanja DATE NULL,
 	Zanr                 VARCHAR(20) NULL,
 	Status               VARCHAR(20) NULL,
-	Poster               VARBINARY NULL,
-	Trejler              VARBINARY NULL,
+	Poster 		     mediumblob DEFAULT NULL,
+  	Trejler 	     longblob DEFAULT NULL,
 	IdUG                 INTEGER NOT NULL,
 	IdUR                 INTEGER NOT NULL,
 	IdPF                 INTEGER NULL
@@ -69,8 +69,9 @@ ADD CONSTRAINT XPKMesto PRIMARY KEY (IdM);
 
 CREATE TABLE Predstavnik_filma
 (
-	Kompanija            VARCHAR(50) NULL,
-	IdPF                 INTEGER NOT NULL
+	IdPF                 INTEGER NOT NULL,
+	Kompanija            VARCHAR(50) NULL
+	
 );
 
 ALTER TABLE Predstavnik_filma
@@ -128,7 +129,20 @@ CREATE TABLE Ucesnik_u_filmu
 ALTER TABLE Ucesnik_u_filmu
 ADD CONSTRAINT XPKUcesnik_u_filmu PRIMARY KEY (IdU);
 
-ALTER TABLE Administrastor
+ALTER TABLE `administrator` CHANGE `IdA` `IdA` INT(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `film` CHANGE `IdF` `IdF` INT(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `gledalac` CHANGE `IdG` `IdG` INT(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `glumac` CHANGE `IdUG` `IdUG` INT(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `korisnik` CHANGE `IdK` `IdK` INT(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `mesto` CHANGE `IdM` `IdM` INT(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `predstavnik_filma` CHANGE `IdPF` `IdPF` INT(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `projekcija` CHANGE `IdP` `IdP` INT(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `rezervacija` CHANGE `IdR` `IdR` INT(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `reziser` CHANGE `IdUR` `IdUR` INT(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `sala` CHANGE `IdS` `IdS` INT(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `ucesnik_u_filmu` CHANGE `IdU` `IdU` INT(11) NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE Administrator
 ADD CONSTRAINT R_3 FOREIGN KEY (IdA) REFERENCES Korisnik (IdK)
 		ON DELETE CASCADE;
 
