@@ -26,6 +26,7 @@
     </head>
 
     <body>   
+        <form name="registracijaForma" action="<?= site_url("Neregistrovani/registruj") ?>" method="post">
         <div height = "30%">
             <p><strong>
                 <h style = "font-size: 180%;">Registracija</h>
@@ -36,45 +37,46 @@
         </div>
         <div>
             <label> Ime: </label><br>
-            <input type="text" id="Ime" >
+            <input type="text" id="Ime" name="Ime" >
 
         </div>
         <div>
             <label> Prezime: </label><br>
-            <input type="text" id="Prezime">
+            <input type="text" id="Prezime" name="Prezime">
 
         </div>
         <div>
             <label> Mejl Adresa: </label><br>
-            <input type="text" id="Mejl Adresa">
+            <input type="text" id="Mejl Adresa" name="MejlAdresa">
 
         </div>
         <div>
             <label> Lozinka: </label><br>
-            <input type="text" id="Lozinka">
+            <input type="text" id="Lozinka" name="Lozinka">
 
         </div>
         <div>
             <label> Molimo potvrdite lozinku: </label><br>
-            <input type="text" id="Molimo potvrdite lozinku">
+            <input type="text" id="Molimo potvrdite lozinku" name="Molimo potvrdite lozinku">
 
         </div>
         <div><p>
-            <a href = "pocetna.html"> <button onclick="registrujMe(); type=button">Registruj me kao korisnika!</button> </a>
+           <input type="submit" name="Registracija" value="Registracija"/>
             
             
         </p></div>
         <div> 
             <p>
-                <h style = "font-size: 150%;" >*Ukoliko zelite da se registrujete kao predstavnik filma: </h>         
-             </p> 
+            <h style = "font-size: 150%;" >*Ukoliko zelite da se registrujete kao predstavnik filma: </h>         
+            </p> 
              <label> Naziv Vase kompanije:</label><br>
-            <input type="text" id="Naziv Vase kompanije">
+             <input type="text" id="Kompanija" name="Kompanija">
+            
 
         </div>
-        <div><p><a href = "login.html">  <button onclick="registrujMe()" type= button">Registruj me kao predstavnika filma!</button></a></div>
+        <div>  <input type="submit" name="Registracija2" value="Registracija2"/></div>
            
-           
+        </form>
     
     </body>  
     
