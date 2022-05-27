@@ -35,45 +35,28 @@ foreach($zahtevi as $zahtev){
 
     echo  "<h style = 'font-size: 110%; color:grey; text-decoration: underline;'>Naziv filma</h>";
     echo "<h style = 'font-size: 110%;'> {$zahtev->naziv} </h>";
- 
+
+    echo  "<h style = 'font-size: 110%; color:grey; text-decoration: underline;'>Opis filma</h>";
+    echo "<h style = 'font-size: 110%;'> {$zahtev->opis} </h>";
+
+    echo  "<h style = 'font-size: 110%; color:grey; text-decoration: underline;'>Zanr</h>";
+    echo "<h style = 'font-size: 110%;'> {$zahtev->zanr} </h>";
+
+    echo   "<h style = 'font-size: 110%; color:grey; text-decoration: underline;'>Trajanje filma</h>";
+    echo "<h style = 'font-size: 110%;'> {$zahtev->Trajanje} </h>";
+
+    echo   "<h style = 'font-size: 110%; color:grey; text-decoration: underline;'>Imena glumaca</h>";
+    echo "<h style = 'font-size: 110%;'> {$zahtev->Glumci} </h>";
+
+    echo   "<h style = 'font-size: 110%; color:grey; text-decoration: underline;'>Imena rezisera</h>";
+    echo "<h style = 'font-size: 110%;'> {$zahtev->Reziseri} </h>";
+
+    echo   "<h style = 'font-size: 110%; color:grey; text-decoration: underline;'>Jezik</h>";
+    echo "<h style = 'font-size: 110%;'> {$zahtev->jezik} </h>";
+
        
-/*<div>
-    <p> 
-    <h style = "font-size: 110%; color:grey; text-decoration: underline;">Opis filma</h>
-    <h style = "font-size: 110%;">: Film donosi brojne poznate negativce koji dobijaju novi mračni izgled.</h>
-</p>
-</div>   
-<div>
-    <p> 
-    <h style = "font-size: 110%; color:grey; text-decoration: underline;">Zanr</h>
-    <h style = "font-size: 110%;">: Akcija</h>
-</p>
-</div> 
-<div>
-<p>
-    <h style = "font-size: 110%; color:grey; text-decoration: underline;">Trajanje filma</h>
-    <h style = "font-size: 110%;">: 176 min</h>
-</p>
-</div> 
-<div>
-<p>
-    <h style = "font-size: 110%; color:grey; text-decoration: underline;">Imena glumaca</h>
-    <h style = "font-size: 110%;">:  Robert Pattinson, Zoë Kravitz, Paul Dano, Jeffrey Wright, Peter Sarsgaard</h>
-</p>
-</div> 
-<div>
-<p>
-    <h style = "font-size: 110%; color:grey; text-decoration: underline;">Imena rezisera</h>
-    <h style = "font-size: 110%;">: Matt Reeves</h>
-</p>
-</div> 
-<div>
-<p>
-    <h style = "font-size: 110%; color:grey; text-decoration: underline;">Jezik</h>
-    <h style = "font-size: 110%;">: Engleski sa prevodom na srpski jezik</h>
-</p>
-</div> 
-<div> 
+/*
+
     <h style = "font-size: 110%; color:grey; text-decoration: underline;">Poster filma</h>
     <h style = "font-size: 110%;">: </h>
   

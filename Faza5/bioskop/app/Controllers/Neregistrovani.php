@@ -39,49 +39,6 @@ class Neregistrovani extends BaseController
     public function registracija(){
         $this->prikaz('registracija', []);
     }
-    
-    public function registruj(){
-        $ime= $this->request->getVar("Ime");
-        $prezime= $this->request->getVar("Prezime");
-        $mejlAdresa=$this->request->getVar("MejlAdresa");
-        $lozinka= $this->request->getVar("Lozinka");
-        $potvrdaLozinke=$this->request->getVar("Molimo potvrdite lozinku");
-        $kompanija=$this->request->getVar("Naziv Vase kompanije");
-        
-        $data=[
-            'Ime'=>"$ime",
-            'Prezime'=>"$prezime",
-            'Mejl'=>"$mejlAdresa",
-            'Lozinka'=>"$lozinka",
-
-        ];
-        
-        //echo $mejlAdresa;
-        //echo "nije dobar mejl";
-        var_dump($data);
-        $korisnici=new KorisnikModel();
-        $korisnici->insert($data);
-        $ubacen=$korisnici->like("Mejl", $mejlAdresa)->find();
-        $id=$ubacen[0]->IdK;
-        if(isset($_POST['Registracija'])){
-            $gledalac=[
-                "IdG"=>"$id",
-            ];
-            $gledaoci=new GledalacModel();
-            $gledaoci->insert($gledalac);
-            echo 'nesto';
-        }else if(isset($_POST['Registracija2'])){
-            $predstavnikFilma=[
-                "IdPF"=>"$id",
-                "Kompanija"=>"$kompanija",
-            ];
-            $predstavnici=new PredstavnikModel();
-            $predstavnici->insert($predstavnikFilma);
-        }
-        echo $id;
-
-        echo "radiii";
-    }
 
     
     #Prijavljivanje korisnika na sistem koristi mejl i lozinku
