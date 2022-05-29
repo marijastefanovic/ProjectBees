@@ -8,7 +8,7 @@ class FilmModel extends Model
         protected $table      = 'Film';
         protected $primaryKey = 'IdF';
         protected $returnType = 'object';
-        protected $allowedFields = ['status']
+        protected $allowedFields = ['Naziv','Opis','Duzina', 'Drzava_Godina','Pocetak_prikazivanja','Zanr','Status','Poster','Trejler','IdUG','IdUR','IdPF'];
 
         public function dohvatiSveZahteve(){
             return $this->where('status','cekanje')->findAll();

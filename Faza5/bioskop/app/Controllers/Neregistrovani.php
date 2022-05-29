@@ -40,7 +40,7 @@ class Neregistrovani extends BaseController
         $this->prikaz('registracija', []);
     }
 
-    
+
     #Prijavljivanje korisnika na sistem koristi mejl i lozinku
     #Preusmeravanje na odgovarajuce stranice za odgovarajuce korisnike
     public function loginSubmit()
@@ -86,5 +86,11 @@ class Neregistrovani extends BaseController
         
         
         
+    }
+    #Odjavljivanje korisnika sa sistema i vracanje na pocetnu stranicu
+    public function logout(){
+        $_SESSION['Ulogovan']=false;
+        $_SESSION['Korisnik']=-1;
+        return redirect()->to(site_url("Neregistrovani/index"));
     }
 } // SESIJE -> 1:46
