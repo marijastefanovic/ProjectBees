@@ -18,6 +18,10 @@ class Neregistrovani extends BaseController
     }
 
     public function index(){
+        if(session_status()==PHP_SESSION_NONE){
+            session_start();
+            $_SESSION['Ulogovan']=false;
+        }
         //$this->load->library('image_lib');
         //$projekcijeModel = new ProjekcijeModel();
         //$premijereModel = new PremijereModel();
@@ -45,7 +49,7 @@ class Neregistrovani extends BaseController
     #Preusmeravanje na odgovarajuce stranice za odgovarajuce korisnike
     public function loginSubmit()
     {
-        session_start();
+        
         $mejl=$this->request->getVar('mejl');
         
         $lozinka= $this->request->getVar('lozinka');
