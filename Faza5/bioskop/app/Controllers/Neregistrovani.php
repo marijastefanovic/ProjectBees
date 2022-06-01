@@ -80,18 +80,19 @@ class Neregistrovani extends BaseController
                 
             }else{
                 if($gl->find($korisnik[0]->IdK)){
-                    $_SESSION['IdK']=$korisnik[0]->IdK;
-                    $_SESSION["Ulogovan"]=true;
+                    $this->session->set('IdK', $korisnik[0]->IdK);
+                    $this->session->set('ulogovan',true);
+                   
                     return redirect()->to(site_url('Neregistrovani/index'));
                     
                 }else if($ad->find($korisnik[0]->IdK)){
-                    $_SESSION['IdK']=$korisnik[0]->IdK;
-                    $_SESSION["Ulogovan"]=true;
+                    $this->session->set('IdK', $korisnik[0]->IdK);
+                    $this->session->set('ulogovan',true);
                     return redirect()->to(site_url('Admin/index'));
                     
                 }else if($pr->find($korisnik[0]->IdK)){
-                    $_SESSION['IdK']=$korisnik[0]->IdK;
-                    $_SESSION["Ulogovan"]=true;
+                    $this->session->set('IdK', $korisnik[0]->IdK);
+                    $this->session->set('ulogovan',true);
                     return redirect()->to(site_url('PredstavnikFilma/index'));
                     
                 }else{
@@ -110,8 +111,8 @@ class Neregistrovani extends BaseController
     }
     #Odjavljivanje korisnika sa sistema i vracanje na pocetnu stranicu
     public function logout(){
-        $_SESSION['Ulogovan']=false;
-        $_SESSION['Korisnik']=-1;
+        $this->session->set('IdK', -1);
+        $this->session->set('ulogovan',false);
         return redirect()->to(site_url("Neregistrovani/index"));
     }
 } // SESIJE -> 1:46

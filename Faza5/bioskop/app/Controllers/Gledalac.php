@@ -21,7 +21,7 @@ class Gledalac extends BaseController
 
     #funkcija poziva funkciju prikaz za odgovarajuci film 
     public function index(){
-        $id=$_SESSION['IdP'];
+        $id=$this->session->get('IdP');
 
         $projekcije=new ProjekcijaModel();
         $filmovi=new FilmModel();
@@ -73,8 +73,8 @@ class Gledalac extends BaseController
        
         
 
-        $idp=$_SESSION['Projekcija'];
-        $idk=$_SESSION["IdK"];
+        $idp=$this->session->get('IdP');
+        $idk=$this->session->get('IdK');
         //$idk=11;
         //$idp=1;
 
