@@ -2,6 +2,7 @@
 
 
 #Marija Stefanovic 2019/0068
+#Ana Stanic 2019/0703
 use App\Models\ProjekcijeModel;
 use App\Models\PremijereModel;
 use App\Models\KorisnikModel;
@@ -44,21 +45,49 @@ class Neregistrovani extends BaseController
         $this->prikaz('registracija', []);
     }
 
+    #Funkcija za registraciju korisnika popunjavanjem odgovarajucih polja
+    #Dodatak:provera validnosti podataka
     public function registruj(){
-        $korisnikModel=new KorisnikModel();
-        $korisnik=$korisnikModel->find($this->request->getVar('MejlAdresa'));
-        if($korisnik==null && $this->request->getVar('Lozinka')==$this->request->getVar('PotvrdiLoz')){ 
-            $korisnikModel->save([
-                'Ime'=>$this->request->getVar('Ime'),
-                'Prezime'=>$this->request->getVar('Prezime'),
-                'MejlAdresa'=>$this->request->getVar('MejlAdresa'),
-                'Lozinka'=>$this->request->getVar('Lozinka'),
-            
-            ]);
-        }else{
-            $this->prikaz('registracija', ['poruka'=>'Greska!']);
-        }
+        $ime= $this->request->getVar("Ime");
+        $prezime= $this->request->getVar("Prezime");
+        $mejlAdresa=$this->request->getVar("MejlAdresa");
+        $lozinka= $this->request->getVar("Lozinka");
+        $potvrdaLozinke=$this->request->getVar("Molimo potvrdite lozinku");
+        $kompanija=$this->request->getVar("Naziv Vase kompanije");
+        
+        $data=[
+            'Ime'=>"$ime",
+            'Prezime'=>"$prezime",
+            'Mejl'=>"$mejlAdresa",
+            'Lozinka'=>"$lozinka",
 
+        ];
+        
+        //echo $mejlAdresa;
+        //echo "nije dobar mejl";
+        var_dump($data);
+        $korisnici=new KorisnikModel();
+        $korisnici->insert($data);
+        $ubacen=$korisnici->like("Mejl", $mejlAdresa)->find();
+        $id=$ubacen[0]->IdK;
+        if(isset($_POST['Registracija'])){
+            $gledalac=[
+                "IdG"=>"$id",
+            ];
+            $gledaoci=new GledalacModel();
+            $gledaoci->insert($gledalac);
+            echo 'nesto';
+        }else if(isset($_POST['Registracija2'])){
+            $predstavnikFilma=[
+                "IdPF"=>"$id",
+                "Kompanija"=>"$kompanija",
+            ];
+            $predstavnici=new PredstavnikModel();
+            $predstavnici->insert($predstavnikFilma);
+        }
+      //  echo $id;
+
+      //  echo "radiii";
     }
 
     #Prijavljivanje korisnika na sistem koristi mejl i lozinku

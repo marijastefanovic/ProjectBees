@@ -8,6 +8,6 @@ class PredstavnikModel extends Model
         protected $table      = 'Predstavnik';
         protected $primaryKey = 'IdPF';
         protected $returnType = 'object';
-       
+        protected $allowedFields = ['IdPF','Kompanija'];
     
 }

@@ -57,7 +57,7 @@
         </div>
         <div>
             <label> Molimo potvrdite lozinku: </label><br>
-            <input type="text" id="PotvrdiLoz" name="PotvrdiLoz">
+            <input type="text" id="Molimo potvrdite lozinku" name="Molimo potvrdite lozinku">
 
         </div>
         <div><p>
@@ -70,11 +70,10 @@
             <h style = "font-size: 150%;" >*Ukoliko zelite da se registrujete kao predstavnik filma: </h>         
             </p> 
              <label> Naziv Vase kompanije:</label><br>
-             <input type="text" id="Kompanija" name="Kompanija">
-            
+            <input type="text" id="Naziv Vase kompanije" name="Naziv Vase kompanije">
 
         </div>
-        <div>  <input type="submit" name="Registracija2" value="Registracija2"/></div>
+        <div><p><a href = "login.html">  <input type="submit" name="Registracija2" value="Registracija2"/></a></div>
            
         </form>
     
