@@ -225,9 +225,9 @@ INSERT INTO `glumac`(`IdUG`) VALUES ('1');
 INSERT INTO `glumac`(`IdUG`) VALUES ('2');
 INSERT INTO `glumac`(`IdUG`) VALUES ('3');
 
-INSERT INTO `film`(`IdF`, `Naziv`, `Opis`, `Duzina`, `Drzava_Godina`, `Pocetak_prikazivanja`, `Zanr`, `Status`, `Poster`, `Trejler`, `IdUG`, `IdUR`, `IdPF`) VALUES ('','Pirates of the Caribbean: The Curse of the Black Pearl','Blacksmith Will Turner teams up with eccentric pirate "Captain" Jack Sparrow to save his love, the governor's daughter, from Jack's former pirate allies, who are now undead.','143','USA 2003','','akcija','prihvacen','','','1','6','7');
+INSERT INTO `film`(`IdF`, `Naziv`, `Opis`, `Duzina`, `Drzava_Godina`, `Pocetak_prikazivanja`, `Zanr`, `Status`, `Poster`, `Trejler`, `IdUG`, `IdUR`, `IdPF`) VALUES ('','Pirates of the Caribbean: The Curse of the Black Pearl','Blacksmith Will Turner teams up with eccentric pirate "Captain" Jack Sparrow to save his love, the governors daughter, from Jacks former pirate allies, who are now undead.','143','USA 2003','','akcija','prihvacen','','','1','6','7');
 
-INSERT INTO `film`(`IdF`, `Naziv`, `Opis`, `Duzina`, `Drzava_Godina`, `Pocetak_prikazivanja`, `Zanr`, `Status`, `Poster`, `Trejler`, `IdUG`, `IdUR`, `IdPF`) VALUES ('','The Batman','When a sadistic serial killer begins murdering key political figures in Gotham, Batman is forced to investigate the city's hidden corruption and question his family's involvement.','176','USA 2022','','avantura','prihvacen','','','2','4','8');
+INSERT INTO `film`(`IdF`, `Naziv`, `Opis`, `Duzina`, `Drzava_Godina`, `Pocetak_prikazivanja`, `Zanr`, `Status`, `Poster`, `Trejler`, `IdUG`, `IdUR`, `IdPF`) VALUES ('','The Batman','When a sadistic serial killer begins murdering key political figures in Gotham, Batman is forced to investigate the citys hidden corruption and question his familys involvement.','176','USA 2022','','avantura','prihvacen','','','2','4','8');
 
 INSERT INTO `film`(`IdF`, `Naziv`, `Opis`, `Duzina`, `Drzava_Godina`, `Pocetak_prikazivanja`, `Zanr`, `Status`, `Poster`, `Trejler`, `IdUG`, `IdUR`, `IdPF`) VALUES ('','Uncharted','Street-smart Nathan Drake is recruited by seasoned treasure hunter Victor "Sully" Sullivan to recover a fortune amassed by Ferdinand Magellan, and lost 500 years ago by the House of Moncada.','116','USA 2022','','avantura','neresen','','','3','5','8');
 
@@ -235,10 +235,10 @@ INSERT INTO `sala`(`IdS`, `Naziv`, `Broj_Mesta`) VALUES ('','Sala 1','48');
 INSERT INTO `sala`(`IdS`, `Naziv`, `Broj_Mesta`) VALUES ('','Sala 2','48');
 INSERT INTO `sala`(`IdS`, `Naziv`, `Broj_Mesta`) VALUES ('','Sala 3','48');
 
-INSERT INTO `projekcija`(`IdP`, `Datum`, `Vreme`, `Premijera`, `IdF`, `IdS`) VALUES ('','15.6.2022.','18:00:00','0','1','1');
-INSERT INTO `projekcija`(`IdP`, `Datum`, `Vreme`, `Premijera`, `IdF`, `IdS`) VALUES ('','17.6.2022.','18:00:00','0','2','2');
-INSERT INTO `projekcija`(`IdP`, `Datum`, `Vreme`, `Premijera`, `IdF`, `IdS`) VALUES ('','15.6.2022.','12:00:00','0','1','1');
-INSERT INTO `projekcija`(`IdP`, `Datum`, `Vreme`, `Premijera`, `IdF`, `IdS`) VALUES ('','17.6.2022.','10:00:00','0','2','2');
+INSERT INTO `projekcija`(`IdP`, `Datum`, `Vreme`, `Premijera`, `IdF`, `IdS`) VALUES ('','2022-06-15','18:00:00','0','1','1');
+INSERT INTO `projekcija`(`IdP`, `Datum`, `Vreme`, `Premijera`, `IdF`, `IdS`) VALUES ('','2022-06-17','18:00:00','0','2','2');
+INSERT INTO `projekcija`(`IdP`, `Datum`, `Vreme`, `Premijera`, `IdF`, `IdS`) VALUES ('','2022-06-15','12:00:00','0','1','1');
+INSERT INTO `projekcija`(`IdP`, `Datum`, `Vreme`, `Premijera`, `IdF`, `IdS`) VALUES ('','2022-06-17','10:00:00','0','2','2');
 
 INSERT INTO `rezervacija`(`IdR`, `Broj_Karata`, `IdP`, `IdG`) VALUES ('','2','1','1');
 INSERT INTO `rezervacija`(`IdR`, `Broj_Karata`, `IdP`, `IdG`) VALUES ('','3','1','3');
