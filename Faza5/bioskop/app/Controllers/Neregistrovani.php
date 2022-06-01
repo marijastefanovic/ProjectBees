@@ -44,6 +44,22 @@ class Neregistrovani extends BaseController
         $this->prikaz('registracija', []);
     }
 
+    public function registruj(){
+        $korisnikModel=new KorisnikModel();
+        $korisnik=$korisnikModel->find($this->request->getVar('MejlAdresa'));
+        if($korisnik==null && $this->request->getVar('Lozinka')==$this->request->getVar('PotvrdiLoz')){ 
+            $korisnikModel->save([
+                'Ime'=>$this->request->getVar('Ime'),
+                'Prezime'=>$this->request->getVar('Prezime'),
+                'MejlAdresa'=>$this->request->getVar('MejlAdresa'),
+                'Lozinka'=>$this->request->getVar('Lozinka'),
+            
+            ]);
+        }else{
+            $this->prikaz('registracija', ['poruka'=>'Greska!']);
+        }
+
+    }
 
     #Prijavljivanje korisnika na sistem koristi mejl i lozinku
     #Preusmeravanje na odgovarajuce stranice za odgovarajuce korisnike
@@ -115,4 +131,9 @@ class Neregistrovani extends BaseController
         $this->session->set('ulogovan',false);
         return redirect()->to(site_url("Neregistrovani/index"));
     }
+
+
+
+
+
 } // SESIJE -> 1:46
