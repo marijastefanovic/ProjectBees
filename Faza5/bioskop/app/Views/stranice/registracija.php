@@ -57,7 +57,7 @@
         </div>
         <div>
             <label> Molimo potvrdite lozinku: </label><br>
-            <input type="text" id="Molimo potvrdite lozinku" name="Molimo potvrdite lozinku">
+            <input type="text" id="PotvrdiLoz" name="PotvrdiLoz">
 
         </div>
         <div><p>

@@ -107,14 +107,11 @@ class Predstavnik extends BaseController
        ];
        $filmovi->insert($dataFilm);
        echo base64_encode($poster);
-       var_dump($dataFilm);
-
-
-            
-        
+       var_dump($dataFilm);           
     }
+
     public function pregledZahteva(){
-        
+        echo view('stranice/pregled_poslatih_zahteva.php');
     }
     /*'IdUG' =>"$idg",
            'IdUR' =>"$idr",
