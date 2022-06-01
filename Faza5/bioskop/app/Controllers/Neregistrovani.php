@@ -20,7 +20,7 @@ class Neregistrovani extends BaseController
     public function index(){
         if(session_status()==PHP_SESSION_NONE){
             session_start();
-            $_SESSION['Ulogovan']=false;
+            $id=$this->session->set('ulogovan',false);
         }
         //$this->load->library('image_lib');
         //$projekcijeModel = new ProjekcijeModel();
