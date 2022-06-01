@@ -225,20 +225,28 @@ INSERT INTO `glumac`(`IdUG`) VALUES ('1');
 INSERT INTO `glumac`(`IdUG`) VALUES ('2');
 INSERT INTO `glumac`(`IdUG`) VALUES ('3');
 
-INSERT INTO `film`(`IdF`, `Naziv`, `Opis`, `Duzina`, `Drzava_Godina`, `Pocetak_prikazivanja`, `Zanr`, `Status`, `Poster`, `Trejler`, `IdUG`, `IdUR`, `IdPF`) VALUES ('','Pirates of the Caribbean: The Curse of the Black Pearl','Blacksmith Will Turner teams up with eccentric pirate "Captain" Jack Sparrow to save his love, the governors daughter, from Jacks former pirate allies, who are now undead.','143','USA 2003','','akcija','prihvacen','','','1','6','7');
+INSERT INTO `film`(`IdF`, `Naziv`, `Opis`, `Duzina`, `Drzava_Godina`, `Pocetak_prikazivanja`, `Zanr`, `Status`, `Poster`, `Trejler`, `IdUG`, `IdUR`, `IdPF`) VALUES ('','Skriveni Grad','Pogrešna želja mladog oposuma zamrzava ceo njen rodni grad Sanktuari Siti i preti svima koji tamo žive.','143','AUS 2022','2022-06-05','Komedija','prihvacen','','','1','6','7');
 
-INSERT INTO `film`(`IdF`, `Naziv`, `Opis`, `Duzina`, `Drzava_Godina`, `Pocetak_prikazivanja`, `Zanr`, `Status`, `Poster`, `Trejler`, `IdUG`, `IdUR`, `IdPF`) VALUES ('','The Batman','When a sadistic serial killer begins murdering key political figures in Gotham, Batman is forced to investigate the citys hidden corruption and question his familys involvement.','176','USA 2022','','avantura','prihvacen','','','2','4','8');
+INSERT INTO `film`(`IdF`, `Naziv`, `Opis`, `Duzina`, `Drzava_Godina`, `Pocetak_prikazivanja`, `Zanr`, `Status`, `Poster`, `Trejler`, `IdUG`, `IdUR`, `IdPF`) VALUES ('','Betmen','When a sadistic serial killer begins murdering key political figures in Gotham, Batman is forced to investigate the citys hidden corruption and question his familys involvement.','176','USA 2022','2022-06-04','Avantura','prihvacen','','','2','4','8');
 
-INSERT INTO `film`(`IdF`, `Naziv`, `Opis`, `Duzina`, `Drzava_Godina`, `Pocetak_prikazivanja`, `Zanr`, `Status`, `Poster`, `Trejler`, `IdUG`, `IdUR`, `IdPF`) VALUES ('','Uncharted','Street-smart Nathan Drake is recruited by seasoned treasure hunter Victor "Sully" Sullivan to recover a fortune amassed by Ferdinand Magellan, and lost 500 years ago by the House of Moncada.','116','USA 2022','','avantura','neresen','','','3','5','8');
+INSERT INTO `film`(`IdF`, `Naziv`, `Opis`, `Duzina`, `Drzava_Godina`, `Pocetak_prikazivanja`, `Zanr`, `Status`, `Poster`, `Trejler`, `IdUG`, `IdUR`, `IdPF`) VALUES ('','Doktor Strejndž','U Marvel studiju „Doktor Strejndž u multiverzumu ludila“, MCU otklju?ava Multiverzum i pomera svoje granice dalje nego ikada ranije.','126','USA 2022','2022-06-03','Akcija, Fantastika','prihvacen','','','2','4','8');
+
+
+INSERT INTO `film`(`IdF`, `Naziv`, `Opis`, `Duzina`, `Drzava_Godina`, `Pocetak_prikazivanja`, `Zanr`, `Status`, `Poster`, `Trejler`, `IdUG`, `IdUR`, `IdPF`) VALUES ('','Uncharted','Street-smart Nathan Drake is recruited by seasoned treasure hunter Victor "Sully" Sullivan to recover a fortune amassed by Ferdinand Magellan, and lost 500 years ago by the House of Moncada.','116','USA 2022','','Avantura','neresen','','','3','5','8');
 
 INSERT INTO `sala`(`IdS`, `Naziv`, `Broj_Mesta`) VALUES ('','Sala 1','48');
 INSERT INTO `sala`(`IdS`, `Naziv`, `Broj_Mesta`) VALUES ('','Sala 2','48');
 INSERT INTO `sala`(`IdS`, `Naziv`, `Broj_Mesta`) VALUES ('','Sala 3','48');
 
-INSERT INTO `projekcija`(`IdP`, `Datum`, `Vreme`, `Premijera`, `IdF`, `IdS`) VALUES ('','2022-06-15','18:00:00','0','1','1');
-INSERT INTO `projekcija`(`IdP`, `Datum`, `Vreme`, `Premijera`, `IdF`, `IdS`) VALUES ('','2022-06-17','18:00:00','0','2','2');
-INSERT INTO `projekcija`(`IdP`, `Datum`, `Vreme`, `Premijera`, `IdF`, `IdS`) VALUES ('','2022-06-15','12:00:00','0','1','1');
-INSERT INTO `projekcija`(`IdP`, `Datum`, `Vreme`, `Premijera`, `IdF`, `IdS`) VALUES ('','2022-06-17','10:00:00','0','2','2');
+INSERT INTO `projekcija`(`IdP`, `Datum`, `Vreme`, `Premijera`, `IdF`, `IdS`) VALUES ('','2022-06-05','18:00:00','1','1','1');
+INSERT INTO `projekcija`(`IdP`, `Datum`, `Vreme`, `Premijera`, `IdF`, `IdS`) VALUES ('','2022-06-04','18:00:00','1','2','2');
+INSERT INTO `projekcija`(`IdP`, `Datum`, `Vreme`, `Premijera`, `IdF`, `IdS`) VALUES ('','2022-06-06','18:00:00','0','1','1');
+INSERT INTO `projekcija`(`IdP`, `Datum`, `Vreme`, `Premijera`, `IdF`, `IdS`) VALUES ('','2022-06-05','18:00:00','0','2','2');
+INSERT INTO `projekcija`(`IdP`, `Datum`, `Vreme`, `Premijera`, `IdF`, `IdS`) VALUES ('','2022-06-06','12:00:00','0','1','1');
+INSERT INTO `projekcija`(`IdP`, `Datum`, `Vreme`, `Premijera`, `IdF`, `IdS`) VALUES ('','2022-06-05','10:00:00','0','2','2');
+INSERT INTO `projekcija`(`IdP`, `Datum`, `Vreme`, `Premijera`, `IdF`, `IdS`) VALUES ('','2022-06-03','20:00:00','1','3','1');
+INSERT INTO `projekcija`(`IdP`, `Datum`, `Vreme`, `Premijera`, `IdF`, `IdS`) VALUES ('','2022-06-04','15:00:00','0','3','1');
+INSERT INTO `projekcija`(`IdP`, `Datum`, `Vreme`, `Premijera`, `IdF`, `IdS`) VALUES ('','2022-06-04','18:00:00','0','3','1');
 
 INSERT INTO `rezervacija`(`IdR`, `Broj_Karata`, `IdP`, `IdG`) VALUES ('','2','1','1');
 INSERT INTO `rezervacija`(`IdR`, `Broj_Karata`, `IdP`, `IdG`) VALUES ('','3','1','3');
@@ -248,7 +256,7 @@ INSERT INTO `rezervacija`(`IdR`, `Broj_Karata`, `IdP`, `IdG`) VALUES ('','3','2'
 
 INSERT INTO `mesto`(`IdM`, `Red`, `Mesto`, `IdS`, `IdR`) VALUES ('','2','3','1','1');
 INSERT INTO `mesto`(`IdM`, `Red`, `Mesto`, `IdS`, `IdR`) VALUES ('','2','4','1','1');
-INSERT INTO `mesto`(`IdM`, `Red`, `Mesto`, `IdS`, `IdR`) VALUES ('','6','3','1','2');
-INSERT INTO `mesto`(`IdM`, `Red`, `Mesto`, `IdS`, `IdR`) VALUES ('','6','4','1','2');
-INSERT INTO `mesto`(`IdM`, `Red`, `Mesto`, `IdS`, `IdR`) VALUES ('','6','5','1','2');
+INSERT INTO `mesto`(`IdM`, `Red`, `Mesto`, `IdS`, `IdR`) VALUES ('','6','3','2','2');
+INSERT INTO `mesto`(`IdM`, `Red`, `Mesto`, `IdS`, `IdR`) VALUES ('','6','4','2','2');
+INSERT INTO `mesto`(`IdM`, `Red`, `Mesto`, `IdS`, `IdR`) VALUES ('','6','5','2','2');
 
