@@ -91,7 +91,7 @@ class Gledalac extends BaseController
         $rezervacija=$rezervacije->like("IdP",$idp)->findAll();
         $broj=0;
 
-        if($_SESSION['IdK']==-1){
+        if($_SESSION['ulogovan']==false){
             $poruka="Ulogujte se";
             $data=[
                 'naziv'=>"$film->Naziv",
