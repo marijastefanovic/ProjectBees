@@ -116,8 +116,8 @@ class Admin extends BaseController
         //return $termini;
     }
     public function logout(){
-        unset($_SESSION["Korisnik"]);
-        unset($_SESSION["Ulogovan"]);
+        $this->session->set('ulogovan',false);
+        $this->session->set('IdK',-1);
         return redirect()->to(site_url("Neregistrovani"));
     }
 }

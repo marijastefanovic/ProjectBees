@@ -23,6 +23,7 @@ class Filters extends BaseConfig
         'honeypot'      => Honeypot::class,
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
+        'admin' => \App\Filters\AdminFilter::class
     ];
 
     /**
@@ -64,5 +65,6 @@ class Filters extends BaseConfig
      *
      * @var array
      */
-    public $filters = [];
+    //'admin' => ['before' => ['Admin/*', 'Admin']]
+    public $filters = ['admin' => ['before' => ['Admin/*', 'Admin']]];
 }
