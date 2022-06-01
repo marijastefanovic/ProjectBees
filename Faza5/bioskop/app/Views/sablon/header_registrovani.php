@@ -38,10 +38,12 @@
             <tr>
             
                 <td>
-                <img src='slike/logo.jpeg' width="90" height="40"> 
+                <img src='logo.jpeg' width="90" height="40"> 
+
+               
                 </td> 
                 <td></td>
-                <td id="logreg"><?= anchor("$controller/login", "log in")?>/<?=anchor("$controller/registracija", "registracija")?></td>
+                <td style="text-align: center;"><?= anchor("neregistrovani/login", "log out")?></td>
             </tr>
         </table>
         <hr>

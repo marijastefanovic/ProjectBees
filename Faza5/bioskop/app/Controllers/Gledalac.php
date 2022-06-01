@@ -29,25 +29,26 @@ class Gledalac extends BaseController
 
         $projekcija=$projekcije->find($id);
 
-        $idF=$projekcija[0]->IdF;
-        $idS=$projekcija[0]->IdS;
+        $idF=$projekcija->IdF;
+        $idS=$projekcija->IdS;
 
         $sala=$sale->find($idS);
         $film=$filmovi->find($idF);
 
-        $data["poster"]=$film[0]->Poster;
-        $data["naziv"]=$film[0]->Naziv;
-        $data["datum"]=$projekcija[0]->Datum;
-        $data["sala"]=$sala[0]->Naziv;
+        $data["3"]=$film->Poster;
+        $data["naziv"]=$film->Naziv;
+        $data["datum"]=$projekcija->Datum;
+        $data["sala"]=$sala->Naziv;
     
         return $this->prikaz("rezervacija",$data);
 
     }
 
     #funkcija prikazuje koja karta je rezervisana
-    public function pregledKarte(){
+    public function pregledKarte($idp){
+
         $projekcije=new ProjekcijaModel();
-        $projekcija = $projekcije->find(1);
+        $projekcija = $projekcije->find($idp);
         $filmovi=new FilmModel();
         $film=$filmovi->find($projekcija->IdF);
         $sale=new SalaModel();
@@ -55,10 +56,11 @@ class Gledalac extends BaseController
         $slika=$film->Poster;
         $data=[
             '0'=>"$film->Naziv",
-            '1'=>"$projekcija->Datum.' '.$projekcija->Vreme",
+            '1'=>"$projekcija->Datum",
             '2'=>"$sala->Naziv",
             '3'=>"$slika"
         ];
+        
         echo view ("sablon/header_registrovani.php");
         echo view("stranice/pregled_rezervacije.php",["projekcija"=>$data]);
 
@@ -67,47 +69,89 @@ class Gledalac extends BaseController
     
     #funkcija omogucava rezervaciju karte ili mesta
     public function rezervisi(){
+      
+       
         
-        $obelezenaMesta=$this->request->getVar("obelezenaMesta");
-        $biloKojeMesto=$this->request->getVar("mesto");
-        $brojTrazenih=$this->request->getVar("brojKarata");
-        if($obelezenaMesta!=NULL){
-            $brojTrazenih=strlen($obelezenaMesta)/3;
-        }
-        $sedista=explode(";",$obelezenaMesta);
-        //var_dump($sedista);
-        //echo $sedista[1][0];
-        //var_dump($sedista);
 
-        //$idp=$_SESSION['Projekcija'];
-        //$idk=$_SESSION["IdK"];
-        $idk=11;
-        $idp=1;
+        $idp=$_SESSION['Projekcija'];
+        $idk=$_SESSION["IdK"];
+        //$idk=11;
+        //$idp=1;
 
         $projekcije=new  ProjekcijaModel();
         $rezervacije= new RezervacijaModel();
         $sale=new SalaModel();
         $mesta=new MestaModel();
         $projekcija=$projekcije->find($idp);
-        //var_dump($projekcija);
+        $filmovi=new FilmModel();
+        $film=$filmovi->find($projekcija->IdF);
+        $slika=$film->Poster;
         $ids=$projekcija->IdS;
         $sala=$sale->find($ids);
         $rezervacija=$rezervacije->like("IdP",$idp)->findAll();
         $broj=0;
-        foreach($rezervacija as $rez ){
-            //echo $rez->IdR;
-            //echo "ovde";
 
-            if($sedista[0]!=''){
+        if($_SESSION['IdK']==-1){
+            $poruka="Ulogujte se";
+            $data=[
+                'naziv'=>"$film->Naziv",
+                'datum'=>"$projekcija->Datum",
+                'sala'=>"$sala->Naziv",
+                '3'=>"$slika",
+                
+            ];
+           
+            echo view("stranice/rezervacija",["projekcija"=>$data,"poruka"=>$poruka]);
+        }
+
+        $obelezenaMesta=$this->request->getVar("obelezenaMesta");
+        $biloKojeMesto=$this->request->getVar("mesto");
+        $brojTrazenih=$this->request->getVar("brojKarata");
+        if($obelezenaMesta!=NULL){
+            $brojTrazenih=strlen($obelezenaMesta)/3;
+        }
+        
+        $sedista=explode(";",$obelezenaMesta);
+
+        if($biloKojeMesto=='on' && sizeof($sedista)<=1){
+            $poruka="Molimo izaberite mesto u sali ili čekirajte 'Bilo koje mesto'";
+            $data=[
+                'naziv'=>"$film->Naziv",
+                'datum'=>"$projekcija->Datum",
+                'sala'=>"$sala->Naziv",
+                '3'=>"$slika",
+                
+            ];
+           
+            echo view("stranice/rezervacija",["projekcija"=>$data,"poruka"=>$poruka]);
+        }
+        
+        foreach($rezervacija as $rez ){
+          
+         
+            if(sizeof($sedista)>1){
+                
                 $mesto = $mesta->like("IdR", $rez->IdR)->findAll();
                 if($mesto!=null){
                     foreach($mesto as $m){
-                        for($i=1;$i<=sizeof($sedista);$i++){
+                        
+                        for($i=1;$i<sizeof($sedista);$i++){
                             
                             $red=$sedista[$i][0];
                             $kolona=$sedista[$i][1];
+                            
                             if($m->Red==$red && $m->Mesto==$kolona){
-                                echo "Trazeno mesto nije slobodno";
+                                
+                                $poruka="Izabrano mesto nije slobodno. Molimo izaberite drugo mesto.";
+                                $data=[
+                                    'naziv'=>"$film->Naziv",
+                                    'datum'=>"$projekcija->Datum",
+                                    'sala'=>"$sala->Naziv",
+                                    '3'=>"$slika",
+                                    
+                                ];
+                               
+                                echo view("stranice/rezervacija",["projekcija"=>$data,"poruka"=>$poruka]);
                                 return;
                             }
                         }
@@ -118,10 +162,19 @@ class Gledalac extends BaseController
            
             $broj+=$rez->Broj_Karata;
         }
-        //var_dump($sala);
+        
         
         if($sala->Broj_Mesta<=$broj+$brojTrazenih){
-            echo "nema dovoljno slobodnih karata";
+            $poruka="Nema dovoljno slobodnih karata za projekciju";
+            $data=[
+                'naziv'=>"$film->Naziv",
+                'datum'=>"$projekcija->Datum",
+                'sala'=>"$sala->Naziv",
+                '3'=>"$slika",
+                                    
+            ];
+                               
+            echo view("stranice/rezervacija",["projekcija"=>$data,"poruka"=>$poruka]);
             return;
         }
 
@@ -135,7 +188,7 @@ class Gledalac extends BaseController
         $idrezerv=$rezervacije->insert($data);
     
         if($biloKojeMesto!='on'){
-            var_dump($sedista);
+            
             for($i=1;$i<sizeof($sedista);$i++){
                           echo $i;  
                 $red=$sedista[$i][0];

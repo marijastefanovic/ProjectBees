@@ -54,6 +54,7 @@ class Neregistrovani extends BaseController
         
         $lozinka= $this->request->getVar('lozinka');
         
+        $temp=-1;
         $kor=new KorisnikModel();
         $gl=new GledalacModel();
         $ad= new AdminModel();
@@ -63,33 +64,43 @@ class Neregistrovani extends BaseController
         
         
         if($korisnik==null){
-            echo "Korisnik sa ovom mejl adresom ne postoji";
+            $poruka="Korisnik sa ovom mejl adresom ne postoji";
+            $data['controller']='Neregistrovani';
+            echo view('sablon/header_neregistrovan', $data);
+            echo view("stranice/login",["poruka"=>$poruka]);
+            return;
+
         }else{
             if($korisnik[0]->Lozinka!=$lozinka){
-                echo "Pogresna lozinka";
+            $poruka="Pogresna lozinka";
+            $data['controller']='Neregistrovani';
+            echo view('sablon/header_neregistrovan', $data);
+            echo view("stranice/login",["poruka"=>$poruka]);
+            return;
+                
             }else{
                 if($gl->find($korisnik[0]->IdK)){
-                    $_SESSION["Ulogovan"]=true;
-                    $_SESSION["Korisnik"]=$korisnik[0]->IdK;
                     return redirect()->to(site_url('Neregistrovani/index'));
+                    $_SESSION["Ulogovan"]=true;
                 }else if($ad->find($korisnik[0]->IdK)){
-                    $_SESSION["Ulogovan"]=true;
-                    $_SESSION["Korisnik"]=$korisnik[0]->IdK;
                     return redirect()->to(site_url('Admin/index'));
-                }else if($pr->find($korisnik[0]->IdK)){
                     $_SESSION["Ulogovan"]=true;
-                    $_SESSION["Korisnik"]=$korisnik[0]->IdK;
+                }else if($pr->find($korisnik[0]->IdK)){
                     return redirect()->to(site_url('PredstavnikFilma/index'));
-    
+                    $_SESSION["Ulogovan"]=true;
+                }else{
+                    $poruka="Doslo je do greske. Molimo pokusajte ponovo";
+                    $data['controller']='Neregistrovani';
+                    echo view('sablon/header_neregistrovan', $data);
+                    echo view("stranice/login",["poruka"=>$poruka]);
+                    return;
+                   
                 }
+
                
             }
 
         }
-    
-        
-        
-        
     }
     #Odjavljivanje korisnika sa sistema i vracanje na pocetnu stranicu
     public function logout(){

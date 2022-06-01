@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
     <style>
+        #slika1{
+            height: 250px;
+            width: 150px;
+        }
         .seat {
             background-color:rgb(80, 79, 79);
             border-top-left-radius: 20px;
@@ -23,7 +27,7 @@
        
     </style>
     <script>
-        temp='';
+            temp='';
        document.addEventListener('click',(e)=>{
             if(e.target.classList=="seat"){
                
@@ -56,24 +60,44 @@
         }
         
        
+       
     </script>
 </head>
 <body>
-    
+    <div>
+        <table width = 100%>
+            <tr>
+                <td><img src="slike/logo.jpg" alt="logo" height = 150 ></td>
+                <td></td>
+                <td style="text-align: center;"><?= anchor("neregistrovani/logout", "log out")?></td>
+            </tr>
+        </table>
+        <hr>
+   </div>
+   <div style="text-align:center; color:red" >
+        <?php
+        if(isset($poruka)){echo $poruka;}
+           
+        ?>
+    </div>
    <div style="display: block;">
    <div>
        <table width="87%" align="left">
             <tr>
-                <td rowspan="2" ><img src="<?php echo $projekcija["poster"]; ?>" alt="" style="height: 250px; width: 150px;"></td>
+                <td rowspan="2"  style="text-align: left;">
+                    <?php echo "<img id='slika1' src='data:image/jpeg;base64,".base64_encode($projekcija[3])."'>"; ?>
+                        
+                </td>
                 <td>
                 <div >
                     <table align="center" >
-                        <tr style="font-size: xx-large; text-align: center;" >
-                            <td style='width: 33%;'><?php echo $projekcija["naziv"]; ?></td>;
-                            <td style='width: 300px;'><?php echo $projekcija["datum"]; ?> </td>;
-                            <td style='width: 33%;'><?php echo $projekcija["sala"]; ?> </td>;
-                            
-                            
+                        <tr style="font-size: x-large; text-align:center;">
+                            <?php
+                    
+                            echo "<td width='33%'>{$projekcija['naziv']} </td>";
+                            echo "<td width='300px'>{$projekcija['datum']}</td>";
+                            echo "<td width='33%'>{$projekcija['sala']}</td>";
+                            ?>
                         </tr>
                     </table>
                     <br>
@@ -84,7 +108,7 @@
             <tr>
                 <td>
                 <div id="seats" >
-                    <table cellspacing="8" align="center" >
+                <table cellspacing="8" align="center"  >
                         <tr>
                             <td class="seat" id="11" onclick="changeClass"></td>
                             <td class="seat" id="12" onclick="changeClass"></td>
@@ -164,17 +188,11 @@
                 </div>
                 </td>
             </tr>
-            
-                
-                   
-                   
-               
-           
         </table>
     </div>
     <br>
     <div style="padding-left: 70px;" >
-    <form name="rezervisiform" action="<?= site_url("Home/rezervisi") ?>" method="post">
+    <form name="rezervisiform" action="<?= site_url("Gledalac/rezervisi") ?>" method="post">
         <table width="100%" align="center" style="text-align: center;">
             <tr>
                 <td>
