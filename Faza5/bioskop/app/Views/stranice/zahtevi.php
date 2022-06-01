@@ -1,12 +1,12 @@
 <!-- Natalija Tosic 19/0346-->
 <?php
-<body>
+echo "<body>";
 if(empty($zahtevi)){
    echo "Ne postoji nijedan nerešen zahtev trenutno.";
 } else{
     foreach ($zahtevi as $zahtev) {
-        echo view("stranice/zahtev", $zahtev);
+        echo view("stranice/zahtev",['zahtev'=> $zahtev]);
     }
 }
-</body>
-</html>
+echo "</body>";
+echo "</html>";

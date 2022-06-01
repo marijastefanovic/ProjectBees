@@ -9,5 +9,8 @@ class AdminModel extends Model
         protected $primaryKey = 'IdA';
         protected $returnType = 'object';
         
-    
+        //Natalija Tosic 19/0346
+        public function dohvatiAdmine(){
+                return $this->select('IdA')->findAll();
+        }
 }

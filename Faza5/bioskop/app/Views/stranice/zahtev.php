@@ -3,18 +3,25 @@
 if(empty($zahtev)) {
 }
 else {
-    <table class="film">
-    <tr>
-        <td class="poster" rowspan=3><img src="slike/betmen_poster.jpg" height = 170 width = 120></td>
-        <td align = "center">echo $zahtev->Naziv</td>
-        <td class="opis" align="left" rowspan=3> echo $zahtev->Opis</td>
-        <td rowspan=3 align = right><button>Prihvati</button>&emsp;&emsp;<button>Odbij</button></td>
-    </tr>
-    <tr>
-       <td align="center">echo $zahtev->Zanr |$zahtev->Duzina min</td>
-    </tr>
-    <tr>
-        <td>Glumci:echo $zahtev->glumac</td>
-    </tr>
-</table>
+ echo'   <table class="film">';
+ echo'   <tr>';
+ $image = imagecreatefromstring($zahtev->Poster); 
+ ob_start();
+ imagejpeg($image, null, 80);
+ $data = ob_get_contents();
+ ob_end_clean();
+ echo'       <td class="poster" rowspan=4><img src="data:image/png;base64,' .  base64_encode($data)  . '" height = 170 width = 120></td>';
+ echo"       <td align = 'center'>$zahtev->Naziv</td>";
+ echo"       <td class='opis' align='left' rowspan=4>$zahtev->Opis</td>";
+ echo"       <td rowspan=4 align = right><button onclick='prihvati($zahtev->IdF)'>Prihvati</button>&emsp;&emsp;<button onclick='odbij($zahtev->IdF)'>Odbij</button></td>";
+ echo'   </tr>';
+ echo'   <tr>';
+ echo"      <td align='center'>$zahtev->Zanr |$zahtev->Duzina min</td>";
+ echo'   </tr>';
+ echo'   <tr>';
+ echo"       <td align='center'>Glumci:$zahtev->imeG $zahtev->prezimeG</td>";
+ echo'   </tr>';
+ echo "<tr> <td align='center'>Reziser:$zahtev->Ime $zahtev->Prezime</td>
+ </tr>";
+echo'</table>';
 }

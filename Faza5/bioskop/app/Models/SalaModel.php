@@ -9,6 +9,10 @@ class SalaModel extends Model
         protected $table      = 'Sala';
         protected $primaryKey = 'IdS';
         protected $returnType = 'object';
-       
+        
+       //Natalija Tosic 19/0346
+       public function dohvatiSveSale(){
+        return $this->select('Sala.IdS')->select('Sala.Naziv')->findAll();
+    }
     
 }
