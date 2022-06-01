@@ -57,11 +57,15 @@ class Admin extends BaseController
         $sala = $_REQUEST['sale'];
         $dan = $_REQUEST['dani'];
         $vreme = $_REQUEST['sati'];
+        $premijera = false;
+        if(isset($_REQUEST['premijera'])){
+            $premijera=true;
+        }
         $projekcijaModel = new ProjekcijaModel();
         $danasnji = $dan - (date('w',strtotime(date("Y/m/d")))-1)%7;
         //$datum = date("Y-m-d");
         $datum = date("Y-m-d", strtotime( date("Y/m/d") ."+".$danasnji." days"));
-        $projekcijaModel->insert(['Datum'=>$datum,'Vreme'=>$vreme,'IdF'=>$idF,'IdS'=>$sala]);
+        $projekcijaModel->insert(['Datum'=>$datum,'Vreme'=>$vreme,'IdF'=>$idF,'IdS'=>$sala, 'Premijera'=>$premijera]);
         return redirect()->to(site_url("Admin/pravljenje_projekcija"));
     }
 

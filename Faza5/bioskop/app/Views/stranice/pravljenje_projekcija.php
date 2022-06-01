@@ -31,7 +31,13 @@ if(empty($filmovi)){
                         <option value="" disabled selected>Izaberite vreme</option>
                     </select>
                 </td>
-                <td> <input type="submit" name="Posalji" value="Napravi"></td>
+                <td > <input type="submit" name="Posalji" value="Napravi"></td>
+            </tr>
+            <tr>
+            <td colspan="4">
+                <input type="checkbox" id="premijera" name="premijera" value="premijera">
+                <label for="premijera">Projekcija je premijera.</label>
+                </td>
             </tr>
         </table>
 </fieldset>

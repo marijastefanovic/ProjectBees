@@ -9,6 +9,7 @@
           table.film td.opis{width: 40%;}
           table.film td {width:25%}
           table.film td.poster {width:10%}
+          
           a:link{
               text-decoration: none;
               color: blue;
@@ -17,7 +18,6 @@
             text-decoration: none;
           }
           aside{
-              width: 40%;
               display:inline;
               float: left;
           }
