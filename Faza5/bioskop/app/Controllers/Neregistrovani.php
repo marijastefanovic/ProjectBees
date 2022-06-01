@@ -80,14 +80,20 @@ class Neregistrovani extends BaseController
                 
             }else{
                 if($gl->find($korisnik[0]->IdK)){
+                    $_SESSION['IdK']=$korisnik[0]->IdK;
+                    $_SESSION["Ulogovan"]=true;
                     return redirect()->to(site_url('Neregistrovani/index'));
-                    $_SESSION["Ulogovan"]=true;
+                    
                 }else if($ad->find($korisnik[0]->IdK)){
+                    $_SESSION['IdK']=$korisnik[0]->IdK;
+                    $_SESSION["Ulogovan"]=true;
                     return redirect()->to(site_url('Admin/index'));
-                    $_SESSION["Ulogovan"]=true;
+                    
                 }else if($pr->find($korisnik[0]->IdK)){
-                    return redirect()->to(site_url('PredstavnikFilma/index'));
+                    $_SESSION['IdK']=$korisnik[0]->IdK;
                     $_SESSION["Ulogovan"]=true;
+                    return redirect()->to(site_url('PredstavnikFilma/index'));
+                    
                 }else{
                     $poruka="Doslo je do greske. Molimo pokusajte ponovo";
                     $data['controller']='Neregistrovani';
