@@ -148,7 +148,7 @@
     <body>
         <table width = 100% cellspacing=0> 
         <tr>
-          <td> <img src="<?php echo 'C:\xampp\htdocs\bioskop\slike\logo.jpg'; ?> " width="90" height="40" alt='logo'></td>
+          <td> <img src="<?php echo base_url('Slike/logo.jpeg'); ?> " width="90" height="40" alt='logo'></td>
           <td></td>
             <td align = right><?= anchor("$controller/logout", "log out")?></td>
             
