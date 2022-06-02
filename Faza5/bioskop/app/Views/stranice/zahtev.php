@@ -5,9 +5,9 @@ if(empty($zahtev)) {
 else {
  echo'   <table class="film">';
  echo '<tr>';
- echo '<td class="poster">';
- if(!empty($film->Poster)){
- $image = imagecreatefromstring($film->Poster); 
+ echo '<td class="poster" rowspan=4>';
+ if(!is_null($zahtev->Poster)){
+ $image = imagecreatefromstring($zahtev->Poster); 
   ob_start();
   imagejpeg($image, null, 80);
   $data = ob_get_contents();
@@ -16,7 +16,7 @@ else {
  } else{
  echo "<img src=";
   echo base_url('Slike/NoImage.png');
-  echo " width='170' height='120'>";
+  echo " width='120' height='170'>";
  }
   echo '</td>';
  echo"       <td align = 'center'>$zahtev->Naziv</td>";

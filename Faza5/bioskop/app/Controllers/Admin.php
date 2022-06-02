@@ -36,20 +36,16 @@ class Admin extends BaseController
         $projekcijaModel = new ProjekcijaModel();
         $id=$_REQUEST['id'];
         $projekcijaModel->where('IdP', $id)->delete();
-        return redirect(site_url('Admin/brisanje_projekcija'), 'refresh');
-        //return redirect()->to(base_url('Admin/brisanje_projekcija'));
     }
     public function prihvati_zahtev(){
         $filmModel=new FilmModel();
         $id=$_REQUEST['id'];
         $filmModel->update($id, ['Status'=>'prihvacen']);
-        return redirect()->to(site_url("Admin/zahtevi"));
     }
     public function odbij_zahtev(){
         $filmModel=new FilmModel();
         $id=$_REQUEST['id'];
         $filmModel->update($id, ['Status'=>'odbijen']);
-        return redirect()->to(site_url("Admin/zahtevi"));
     }
 
     public function napravi_projekciju(){
@@ -117,7 +113,6 @@ class Admin extends BaseController
             }
         }
         echo json_encode($termini);
-        //return $termini;
     }
     public function logout(){
         $this->session->set('ulogovan',false);

@@ -4,11 +4,11 @@
         <title>Bioskop</title>  
         <style>
           tr{border-top: 5px rgb(0, 0, 0)  solid;}  
-          td{width: 30%;}
           table.film {width: 100%;  margin-left: auto; border-spacing: 20px;}
           table.film td.opis{width: 40%;}
-          table.film td {width:25%}
           table.film td.poster {width:10%}
+          table.film td {width:25%}
+          td{width: 30%;}
           
           a:link{
               text-decoration: none;
@@ -35,8 +35,10 @@
                 $.ajax({
                   type: 'POST',
                   url: "obrisi_projekciju/",
-                  data: {id: $id}
-                  //url: "${createLink(action:'obrisi_projekciju', controller:'Admin')}/" + $id
+                  data: {id: $id},
+                  success: function(response){
+                    location.reload();
+                }
                 });
               }
             }
@@ -44,14 +46,20 @@
               $.ajax({
                   type: 'POST',
                   url: "prihvati_zahtev/",
-                  data: {id: $id}
+                  data: {id: $id},
+                  success: function(response){
+                    location.reload();
+                }
                 });
             }
             function odbij($id){
               $.ajax({
                   type: 'POST',
                   url: "odbij_zahtev/",
-                  data: {id: $id}
+                  data: {id: $id},
+                  success: function(response){
+                    location.reload();
+                }
                 });
             }
             var termini;
