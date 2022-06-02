@@ -32,6 +32,7 @@ class Gledalac extends BaseController
     }
 
     #funkcija poziva funkciju prikaz za odgovarajuci film 
+    # @param $id int
     public function index($id){ 
 
         $projekcije=new ProjekcijaModel();
@@ -62,6 +63,7 @@ class Gledalac extends BaseController
     }
 
     #funkcija prikazuje koja karta je rezervisana
+    # @param $idp  int
     public function pregledKarte($idp){
 
         $projekcije=new ProjekcijaModel();
@@ -86,10 +88,6 @@ class Gledalac extends BaseController
     
     #funkcija omogucava rezervaciju karte ili mesta
     public function rezervisi(){
-      
-       
-        
-
         $idp=$this->session->get('IdP');
         $idk=$this->session->get('IdK');
     
