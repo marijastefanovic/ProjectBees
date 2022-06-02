@@ -32,22 +32,25 @@ class Admin extends BaseController
         $projekcije = $projekcijeModel->dohvatiSveProjekcije();
         $this->prikaz('brisanje_projekcija',['projekcije'=>$projekcije]);
     }
+    //brise projekciju iz baze
     public function obrisi_projekciju(){
         $projekcijaModel = new ProjekcijaModel();
         $id=$_REQUEST['id'];
         $projekcijaModel->where('IdP', $id)->delete();
     }
+    //prihvata zahtev za prikazivanje filma
     public function prihvati_zahtev(){
         $filmModel=new FilmModel();
         $id=$_REQUEST['id'];
         $filmModel->update($id, ['Status'=>'prihvacen']);
     }
+    //odbija zahtev za prikazivanje filma
     public function odbij_zahtev(){
         $filmModel=new FilmModel();
         $id=$_REQUEST['id'];
         $filmModel->update($id, ['Status'=>'odbijen']);
     }
-
+    //pravi novu projekciju u bazi
     public function napravi_projekciju(){
         $idF= $_REQUEST['izabran'];
         $sala = $_REQUEST['sale'];
@@ -64,7 +67,7 @@ class Admin extends BaseController
         $projekcijaModel->insert(['Datum'=>$datum,'Vreme'=>$vreme,'IdF'=>$idF,'IdS'=>$sala, 'Premijera'=>$premijera]);
         return redirect()->to(site_url("Admin/pravljenje_projekcija"));
     }
-
+    //pornalazi sve slobodne termine za prikazivanje odredjenog filma
     public function pronadji_slobodne_termine(){
         $id = $_REQUEST['id'];
         $projekcijaModel = new ProjekcijaModel();
@@ -114,6 +117,7 @@ class Admin extends BaseController
         }
         echo json_encode($termini);
     }
+    
     public function logout(){
         $this->session->set('ulogovan',false);
         $this->session->set('IdK',-1);
