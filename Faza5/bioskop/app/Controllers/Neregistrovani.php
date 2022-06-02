@@ -1,50 +1,100 @@
 <?php namespace App\Controllers;
 
-
+#Anja Negic 676/19
 #Marija Stefanovic 2019/0068
 #Ana Stanic 2019/0703
-use App\Models\ProjekcijeModel;
 use App\Models\PremijereModel;
 use App\Models\KorisnikModel;
 use App\Models\AdminModel;
 use App\Models\GledalacModel;
 use App\Models\PredstavnikModel;
+
+use App\Models\ProjekcijaModel;
+use App\Models\FilmModel;
+use App\Models\UcesnikUFilmuModel;
+use App\Models\ReziserModel;
+use App\Models\GlumacModel;
+use App\Models\SalaModel;
 class Neregistrovani extends BaseController
 {
+	#Anja Negic 2019/676
     protected function prikaz($page, $data){
-        $data['controller']='Neregistrovani';
+         $data['controller']='Neregistrovani';
+        if ($page=="index")
+             $data['stranica']='pocetna';
+        else $data['stranica']=$page;
         echo view('sablon/header_neregistrovan', $data);
         echo view('sablon/header_pretraga', $data);
         echo view("stranice/$page", $data);
     }
 
-    public function index(){
-        if(session_status()==PHP_SESSION_NONE){
+
+    #Anja Negic 2019/676
+    protected function filmPrikaz($page, $data){
+        $data['controller']='Neregistrovani';
+        $data['stranica']=$page;
+        echo view('sablon/header_neregistrovan', $data);
+        echo view("stranice/$page", $data);
+    }
+
+    #Anja Negic 2019/676
+    public function pocetna(){
+	  if(session_status()==PHP_SESSION_NONE){
             session_start();
             $id=$this->session->set('ulogovan',false);
         }
-        //$this->load->library('image_lib');
-        //$projekcijeModel = new ProjekcijeModel();
-        //$premijereModel = new PremijereModel();
-        $this->prikaz('pocetna', []);
+        $projekcijaModel=new ProjekcijaModel();
+        $filmModel = new FilmModel();
+        $projekcije = $projekcijaModel;
+        $filmovi= $filmModel->findAll();
+        $this->prikaz('index', ['filmovi'=>$filmovi, 'projekcije'=>$projekcije]);
     }
-
+    #Anja Negic 2019/676
     public function premijere(){
-       $this->prikaz('premijere',[]);
+        $projekcijaModel=new ProjekcijaModel();
+        $filmModel = new FilmModel();
+        $projekcije = $projekcijaModel;
+        $filmovi= $filmModel->findAll();
+        $this->prikaz('premijere',['filmovi'=>$filmovi, 'projekcije'=>$projekcije]);
     }
-
+    #Anja Negic 2019/676
     public function pretraga(){
+        $pretraga=null;
+        $this->session->set('pretraga', $pretraga);
         $this->prikaz('pocetna',[]);
     }
-
+    #Anja Negic 2019/676
     public function login(){
         $this->prikaz('login', []);
     }
-
+    #Anja Negic 2019/676
     public function registracija(){
         $this->prikaz('registracija', []);
     }
+    #Anja Negic 2019/676
+    public function film($idP){
+        $projekcijaModel=new ProjekcijaModel();
+        $projekcija = $projekcijaModel->find($idP);
+        $ucesnikUFilmuModel = new UcesnikUFilmuModel();
+        $glumacModel = new GlumacModel();
+        $reziserModel = new ReziserModel();
+        $salaModel = new SalaModel();
 
+       
+        $filmModel = new FilmModel();
+        $film = $filmModel->find($projekcija->IdF);
+        $glumac = $film->IdUG;
+        $reziser = $film->IdUR;
+        $idG = $film->IdUG;
+        $idR = $film->IdUR;
+        $sala = $salaModel->find($projekcija->IdS);
+        $ucesnikG = $ucesnikUFilmuModel->find($idG);
+        $ucesnikR = $ucesnikUFilmuModel->find($idR);
+        $this->filmPrikaz('filmPrikaz', ['film'=>$film, 'projekcija'=>$projekcija, 'ucesnikG'=>$ucesnikG, 'ucesnikR'=>$ucesnikR, 'sala'=>$sala]);
+
+    }
+
+    
     #Funkcija za registraciju korisnika popunjavanjem odgovarajucih polja
     #Dodatak:provera validnosti podataka
     public function registruj(){

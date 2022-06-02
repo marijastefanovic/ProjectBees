@@ -1,12 +1,21 @@
 <?php
 
 namespace App\Controllers;
+#Anja Negic 676/19
 #Marija Stefanovic 2019/0068
 use App\Models\FilmModel;
 use App\Models\ProjekcijaModel;
 use App\Models\SalaModel;
 use App\Models\RezervacijaModel;
 use App\Models\MestaModel;
+use App\Models\PremijereModel;
+use App\Models\KorisnikModel;
+use App\Models\AdminModel;
+use App\Models\GledalacModel;
+use App\Models\PredstavnikModel;
+use App\Models\UcesnikUFilmuModel;
+use App\Models\ReziserModel;
+use App\Models\GlumacModel;
 
 #kontroler koji opisuje ponasanje gledaoca 
 class Gledalac extends BaseController
@@ -20,8 +29,8 @@ class Gledalac extends BaseController
     }
 
     #funkcija poziva funkciju prikaz za odgovarajuci film 
-    public function index(){
-        $id=$this->session->get('IdP');
+    public function index($id){ // Prvo sam probala sa sesijom ali nije htelo pa sam kao parametar prosledila projekciju
+        //$id=$this->session->get('IdP');
 
         $projekcije=new ProjekcijaModel();
         $filmovi=new FilmModel();
@@ -205,11 +214,79 @@ class Gledalac extends BaseController
         }
         
         Gledalac::pregledKarte($idp);
+    }#Anja Negic 2019/676
+    protected function prikazProjekcija($page, $data){
+        $data['controller']='Gledalac';
+        if ($page=="index")
+        $data['stranica']='pocetna';
+        else $data['stranica']=$page;
+        echo view('sablon/header_registrovani');
+        echo view('sablon/header_pretraga', $data);
+        echo view("stranice/$page", $data);
     }
-    
-    
+    #Anja Negic 2019/676
+    protected function filmPrikaz($page, $data){
+        $data['controller']='Gledalac';
+        $data['stranica']=$page;
+        echo view('sablon/header_registrovani', $data);
+        echo view("stranice/$page", $data);
+    }
 
-    
+    #Anja Negic 2019/676
+    public function pocetna(){
+        $projekcijaModel=new ProjekcijaModel();
+        $filmModel = new FilmModel();
+        $projekcije = $projekcijaModel;
+        $filmovi= $filmModel->findAll();
+        $this->prikazProjekcija('index', ['filmovi'=>$filmovi, 'projekcije'=>$projekcije]);
+    }
+    #Anja Negic 2019/676
+    public function premijere(){
+        $projekcijaModel=new ProjekcijaModel();
+        $filmModel = new FilmModel();
+        $projekcije = $projekcijaModel;
+        $filmovi= $filmModel->findAll();
+        $this->prikazProjekcija('premijere',['filmovi'=>$filmovi, 'projekcije'=>$projekcije]);
+    }
+    #Anja Negic 2019/676
+    public function pretraga(){
+        $pretraga=null;
+        $this->session->set('pretraga', $pretraga);
+        $this->prikazProjekcija('index',[]);
+    }
+    #Anja Negic 2019/676
+    public function login(){
+        $this->prikazProjekcija('login', []);
+    }
+    #Anja Negic 2019/676
+    public function registracija(){
+        $this->prikazProjekcija('registracija', []);
+    }
+    #Anja Negic 2019/676
+    public function film($idP){
+        $projekcijaModel=new ProjekcijaModel();
+        $projekcija = $projekcijaModel->find($idP);
+        $ucesnikUFilmuModel = new UcesnikUFilmuModel();
+        $glumacModel = new GlumacModel();
+        $reziserModel = new ReziserModel();
+        $salaModel = new SalaModel();
+
+       
+        $filmModel = new FilmModel();
+        $film = $filmModel->find($projekcija->IdF);
+        $glumac = $film->IdUG;
+        $reziser = $film->IdUR;
+        $idG = $film->IdUG;
+        $idR = $film->IdUR;
+        $sala = $salaModel->find($projekcija->IdS);
+        $ucesnikG = $ucesnikUFilmuModel->find($idG);
+        $ucesnikR = $ucesnikUFilmuModel->find($idR);
+
+
+        $this->session->set('idP');
+        $this->filmPrikaz('filmPrikaz', ['film'=>$film, 'projekcija'=>$projekcija, 'ucesnikG'=>$ucesnikG, 'ucesnikR'=>$ucesnikR, 'sala'=>$sala]);
+
+    }
     
 
     
