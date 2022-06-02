@@ -38,31 +38,45 @@
         <div>
             <label> Ime: </label><br>
             <input type="text" id="Ime" name="Ime" >
-
+            <?php if(!empty($errors['Ime'])) 
+                echo $errors['Ime'];
+            ?>
         </div>
         <div>
             <label> Prezime: </label><br>
             <input type="text" id="Prezime" name="Prezime">
+            <?php if(!empty($errors['Prezime'])) 
+                echo $errors['Prezime'];
+            ?>
 
         </div>
         <div>
             <label> Mejl Adresa: </label><br>
-            <input type="text" id="Mejl Adresa" name="MejlAdresa">
-
+            <input type="email" id="Mejl Adresa" name="MejlAdresa">
+            <?php if(!empty($errors['MejlAdresa'])) 
+                echo $errors['MejlAdresa'];
+                if (!empty($errorsMejl))
+                    echo "Već postojeća mejl adresa!";
+            ?>
         </div>
         <div>
             <label> Lozinka: </label><br>
-            <input type="text" id="Lozinka" name="Lozinka">
-
+            <input type="password" id="Lozinka" name="Lozinka">
+            <?php if(!empty($errors['Lozinka'])) 
+                echo $errors['Lozinka'];
+            ?>
         </div>
         <div>
             <label> Molimo potvrdite lozinku: </label><br>
-            <input type="text" id="Molimo potvrdite lozinku" name="Molimo potvrdite lozinku">
-
+            <input type="password" id="LozinkaPotvrda" name="LozinkaPotvrda">
+            <?php if(!empty($errors['LozinkaPotvrda'])) 
+                    echo $errors['LozinkaPotvrda'];
+                if (!empty($errorsLozinka))
+                    echo "Lozinke se ne podudaraju!";
+            ?>
         </div>
         <div><p>
            <input type="submit" name="Registracija" value="Registracija"/>
-            
             
         </p></div>
         <div> 
@@ -70,7 +84,7 @@
             <h style = "font-size: 150%;" >*Ukoliko zelite da se registrujete kao predstavnik filma: </h>         
             </p> 
              <label> Naziv Vase kompanije:</label><br>
-            <input type="text" id="Naziv Vase kompanije" name="Naziv Vase kompanije">
+            <input type="text" id="kompanija" name="kompanija">
 
         </div>
         <div><p><a href = "login.html">  <input type="submit" name="Registracija2" value="Registracija2"/></a></div>

@@ -1,26 +1,7 @@
 <!--Ana Stanic 0703/19-->
-<html>
-<head>
-
-    <title>Slanje zahteva za prikaz filma</title>
-    <link href="style.css" rel="stylesheet" type="text/css">
-</head>
-<body>
-    <div style=" float:left">
-        <img src="slike/logo.jpeg" alt="Logo Bioskopa" height="21%">           
-    </div>  
 
     
-    
-     <a href = "pocetna.html"> <div style="float:right"><p>log out</div> </a>
-   
-
-    <hr style = "display:block;
-    width:100%;
-    visibility: visible ">  
-
-    
-    <form name="slanjeZahteva" style="text-align:center" action="<?= site_url("Predstavnik/posaljiZahtev") ?>" method="post">
+<form name="slanjeZahteva" style="text-align:center" action="<?= site_url("Predstavnik/posaljiZahtev") ?>" method="post">
         <div class = "center" height = "30%" >
             <p><strong>
                 <h style = "font-size: 180%;">ZAHTEV:</h>
@@ -39,7 +20,7 @@
         <br>
         <div class = "center">
             <label for="zanr">Zanr:</label>
-                    <select name="Zanr" id="zanr" size="1" multiple="true">
+                    <select name="Zanr" id="zanr" size="1" >
                         <option id="akcija" name="akcija"> akcija</option>
                         <option id="dokumentarni" name="dokumentarni">dokumentarni</option>
                         <option id="drama" name="drama">drama</option>
@@ -64,11 +45,6 @@
         <div class = "center">
             <label>Reziseri:</label><br>
             <input type="text" name="Reziseri">
-        </div>
-        <br>
-        <div class = "center" >
-            <label>Jezik:</label><br>
-            <input type="text" name="Jezik">
         </div>
         <br>
         <div class = "novidiv">

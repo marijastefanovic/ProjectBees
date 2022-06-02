@@ -31,29 +31,38 @@
 
 
 <?php
-foreach($zahtevi as $zahtev){
 
-    echo  "<h style = 'font-size: 110%; color:grey; text-decoration: underline;'>Naziv filma</h>";
-    echo "<h style = 'font-size: 110%;'> {$zahtev->naziv} </h>";
 
-    echo  "<h style = 'font-size: 110%; color:grey; text-decoration: underline;'>Opis filma</h>";
-    echo "<h style = 'font-size: 110%;'> {$zahtev->opis} </h>";
 
-    echo  "<h style = 'font-size: 110%; color:grey; text-decoration: underline;'>Zanr</h>";
-    echo "<h style = 'font-size: 110%;'> {$zahtev->zanr} </h>";
 
-    echo   "<h style = 'font-size: 110%; color:grey; text-decoration: underline;'>Trajanje filma</h>";
-    echo "<h style = 'font-size: 110%;'> {$zahtev->Trajanje} </h>";
+foreach($filmovi as $film){
 
-    echo   "<h style = 'font-size: 110%; color:grey; text-decoration: underline;'>Imena glumaca</h>";
-    echo "<h style = 'font-size: 110%;'> {$zahtev->Glumci} </h>";
+ echo"
+    <div class = 'col-md-3 poster'>
+                                        <img poster src='data:image/jpeg;base64," . base64_encode( $film->Poster ) . "' />
+                                    </div>";
+    echo  "<h style = 'font-size: 110%; color:grey; text-decoration: underline;'>Naziv filma</h><br>";
+    echo "<h style = 'font-size: 110%;'> {$film->Naziv} </h><br>";
+
+    echo  "<h style = 'font-size: 110%; color:grey; text-decoration: underline;'>Opis filma</h><br>";
+    echo "<h style = 'font-size: 110%;'> {$film->Opis} </h><br>";
+
+    echo  "<h style = 'font-size: 110%; color:grey; text-decoration: underline;'>Zanr</h><br>";
+    echo "<h style = 'font-size: 110%;'> {$film->Zanr} </h><br>";
+
+    echo   "<h style = 'font-size: 110%; color:grey; text-decoration: underline;'>Trajanje filma</h><br>";
+    echo "<h style = 'font-size: 110%;'> {$film->Duzina} </h><br>";
+
+    /*echo   "<h style = 'font-size: 110%; color:grey; text-decoration: underline;'>Imena glumaca</h>";
+    echo "<h style = 'font-size: 110%;'> {$film->Glumci} </h>";
 
     echo   "<h style = 'font-size: 110%; color:grey; text-decoration: underline;'>Imena rezisera</h>";
-    echo "<h style = 'font-size: 110%;'> {$zahtev->Reziseri} </h>";
+    echo "<h style = 'font-size: 110%;'> {$film->Reziseri} </h>";*/
 
-    echo   "<h style = 'font-size: 110%; color:grey; text-decoration: underline;'>Jezik</h>";
-    echo "<h style = 'font-size: 110%;'> {$zahtev->jezik} </h>";
+    echo   "<h style = 'font-size: 110%; color:grey; text-decoration: underline;'>Jezik</h><br>";
+    echo "<h style = 'font-size: 110%;'> {$film->Status} </h><br>";
 
+    
        
 /*
 
