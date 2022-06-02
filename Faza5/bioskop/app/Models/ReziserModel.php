@@ -14,7 +14,7 @@ class ReziserModel extends Model
     protected $returnType     = 'object';
     protected $useSoftDeletes = true;
 
-    protected $allowedFields = [];
+    protected $allowedFields = ['IdUR'];
 
     
 }

@@ -1,5 +1,6 @@
 <?php
 #Anja Negic 676/19
+#Ana Stanic 0703/2019
 namespace App\Models;
 
 use CodeIgniter\Model;

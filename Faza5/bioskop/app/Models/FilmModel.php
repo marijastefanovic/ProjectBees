@@ -1,5 +1,6 @@
 <?php namespace App\Models;
 // Natalija Tosic 19/0346>
+//Ana Stanic 2019/0703
 use CodeIgniter\Model;
 
 class FilmModel extends Model
@@ -19,6 +20,13 @@ class FilmModel extends Model
         
         public function dohvatiFilmPoId($id){
             return $this->where('IdF',$id)->findAll();
+        }
+
+        /**
+         * Funkcija koja vraća sve filmove sa odgovarajućim IdPF
+        */
+        public function dohvatiFilmPoIdPF($id){
+            return $this->where('IdPF',$id)->findAll();
         }
     
 }

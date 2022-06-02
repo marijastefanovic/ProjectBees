@@ -7,8 +7,14 @@ use CodeIgniter\Model;
 class KorisnikModel extends Model
 {
         protected $table      = 'Korisnik';
-        protected $primaryKey = 'IdK';
+        protected $primaryKey = 'IdPF';
         protected $returnType = 'object';
         protected $allowedFields = ['Ime','Prezime','Mejl', 'Lozinka'];
-    
+        
+        
+        public function dohvatiSaIstimMailom($mejl){
+                return $this->where('Mejl', $mejl)->find();
+        }
 }
+
+        
