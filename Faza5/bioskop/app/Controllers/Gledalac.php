@@ -226,7 +226,7 @@ class Gledalac extends BaseController
         if($biloKojeMesto!='on'){
             
             for($i=1;$i<sizeof($sedista);$i++){
-                          echo $i;  
+                         
                 $red=$sedista[$i][0];
                 $kolona=$sedista[$i][1];
                 $datam=[
