@@ -98,7 +98,7 @@ class Predstavnik extends BaseController
            'Drzava_Godina' =>"$trajanje",
            'Pocetak_prikazivanja' =>"$pocetak",
            'Zanr' =>"$zanrovi",
-           'Status' =>"0",
+           'Status' =>"neresen",
            'Poster' =>"$poster",
            'Trejler' =>"$trejler",
            'IdUG' =>"$idg",

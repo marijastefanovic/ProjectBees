@@ -5,8 +5,8 @@ else{
 echo '<table class="film">';
 echo '<tr>';
 echo '<td class="poster">';
-if(!empty($film->Poster)){
-$image = imagecreatefromstring($film->Poster); 
+if(!empty($projekcija->Poster)){
+$image = imagecreatefromstring($projekcija->Poster); 
  ob_start();
  imagejpeg($image, null, 80);
  $data = ob_get_contents();
@@ -15,7 +15,7 @@ $image = imagecreatefromstring($film->Poster);
 } else{
 echo "<img src=";
  echo base_url('Slike/NoImage.png');
- echo " width='170' height='120'>";
+ echo " width='120' height='170'>";
 }
  echo '</td>';
 echo"    <td align = 'center'>$projekcija->Naziv</td>";

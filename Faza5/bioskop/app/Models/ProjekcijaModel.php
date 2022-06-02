@@ -10,13 +10,15 @@ class ProjekcijaModel extends Model
         protected $returnType = 'object';
         protected $allowedFields = ['Datum','Vreme','IdS','IdF','Premijera'];
 
+        //vraca sve projekcije zajedno sa imenom filma, posterom i imenom sale
         public function dohvatiSveProjekcije(){
             return $this->join('film','projekcija.IdF=film.IdF')->join('sala','projekcija.IdS=sala.IdS')->select('film.Naziv')->select('film.Poster')->select('sala.Naziv nazivSale')->select('Projekcija.*')->findAll();
         }
+        //vraca sve projekcije za odredjenu salu i dan
         public function dohvatiZauzeteTermine($sala, $dan){
             return $this->join('film','projekcija.IdF=film.IdF')->join('sala','projekcija.IdS=sala.IdS')->select('Projekcija.Vreme')->select('Film.Duzina')->where('Projekcija.Datum',$dan)->where('Sala.IdS',$sala)->orderBy('Projekcija.Vreme','asc')->findAll();
         }
-	  public function dohvatiProjekcijeFilma($IdF){
+	    public function dohvatiProjekcijeFilma($IdF){
             return $this->where('IdF', $IdF)->orderBy('Datum')->groupBy('Datum')->find();
         }
         public function dohvatiProjekcijeFilmaZaDatum($Datum, $IdF){

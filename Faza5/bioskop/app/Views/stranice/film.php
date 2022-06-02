@@ -14,7 +14,7 @@ $image = imagecreatefromstring($film->Poster);
 } else{
 echo "<img src=";
  echo base_url('Slike/NoImage.png');
- echo " width='170' height='120'>";
+ echo " width='120' height='170'>";
 }
  echo '</td>';
 echo"<td>$film->Naziv</td>
