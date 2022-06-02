@@ -31,7 +31,7 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::pocetna');
+$routes->get('/', 'Neregistrovani::pocetna');
 $routes->match(['get', 'post'], 'Slike/(:segment)', 'Image::index/$1');
 
 /*

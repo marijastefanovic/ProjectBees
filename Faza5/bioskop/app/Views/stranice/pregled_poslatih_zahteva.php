@@ -6,12 +6,7 @@
     <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <div style=" float:left">
-        <img src="slike/psi logo.jpeg" alt="Logo Bioskopa" height="21%">           
-    </div>  
-
-    <a href="registracija.html">  <div style="float:right"><p>registracija</div> </a>
-        <a href = "login.html"> <div style="float:right"><p>log in/</div> </a>
+    
     <br>
     <br>
     <br>

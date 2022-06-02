@@ -205,7 +205,7 @@ class Neregistrovani extends BaseController
                 }else if($pr->find($korisnik[0]->IdK)){
                     $this->session->set('IdK', $korisnik[0]->IdK);
                     $this->session->set('ulogovan',true);
-                    return redirect()->to(site_url('PredstavnikFilma/index'));
+                    return redirect()->to(site_url('Predstavnik/prikazSlanjaZahteva'));
                     
                 }else{
                     $poruka="Doslo je do greske. Molimo pokusajte ponovo";

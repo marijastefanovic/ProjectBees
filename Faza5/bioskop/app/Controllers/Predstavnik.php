@@ -101,7 +101,7 @@ class Predstavnik extends BaseController
         }
         $IdK= $this->session->get('IdK');
         $idPF=$IdK;
-        echo"$IdK";
+       
        $dataFilm=[
            'Naziv'=>"$naziv",
            'Opis' =>"$opis",
@@ -132,7 +132,7 @@ class Predstavnik extends BaseController
         $ucesnikUFilmuModel = new UcesnikUFilmuModel();
         $glumacModel = new GlumacModel();
         $reziserModel = new ReziserModel();
-        echo($IdPF);
+       
         $filmovi =  $filmModel->dohvatiFilmPoIdPF($IdPF);
        
         /*$glumac = $film->IdUG;
