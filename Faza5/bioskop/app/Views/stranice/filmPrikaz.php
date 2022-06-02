@@ -48,16 +48,14 @@ else {
                     </table>
                 </div>
                 <div class='col-1'>
-                    ". date('d.m.Y', strtotime($projekcija->Datum))." <br>
-                    ". date('H:i',strtotime($projekcija->Vreme))."<br>
-                    $sala->Naziv <br>";
-                    if ($controller=='Neregistrovani'){
-                     echo "<button class='btn btn-outline-dark'>".anchor("$controller/registracija", "REZERVISI")."</button>";
-                    }else {
-                        $IdP = $projekcija->IdP;
-                        
-                       echo" <button class='btn btn-outline-dark'>".anchor("$controller/index/{$projekcija->IdP}", "REZERVISI")."</button>";
-                    } echo"
+                ". date('d.m.Y', strtotime($projekcija->Datum))." <br>
+                ". date('H:i',strtotime($projekcija->Vreme))."<br>
+                $sala->Naziv <br>";
+                
+                    $IdP = $projekcija->IdP;
+                    
+                   echo" <button class='btn btn-outline-dark'>".anchor("Gledalac/index/{$projekcija->IdP}", "REZERVISI")."</button>";
+                 echo"
                 </div>
                
             </div>

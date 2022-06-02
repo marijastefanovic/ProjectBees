@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Controllers;
-#Anja Negic 676/19
 #Marija Stefanovic 2019/0068
+#Anja Negic 676/19
+
 use App\Models\FilmModel;
 use App\Models\ProjekcijaModel;
 use App\Models\SalaModel;
@@ -24,13 +25,14 @@ class Gledalac extends BaseController
     protected function prikaz($page, $data){
 
         $data['controller']='Gledalac';
-        echo view('sablon/header_registrovani');
-        echo view("stranice/$page", $data);
+        if($page!='rezervacija'){
+        echo view('sablon/header_registrovani',$data);
+        }
+        echo view("stranice/$page",["projekcija"=>$data]);
     }
 
     #funkcija poziva funkciju prikaz za odgovarajuci film 
-    public function index($id){ // Prvo sam probala sa sesijom ali nije htelo pa sam kao parametar prosledila projekciju
-        //$id=$this->session->get('IdP');
+    public function index($id){ 
 
         $projekcije=new ProjekcijaModel();
         $filmovi=new FilmModel();
@@ -48,8 +50,14 @@ class Gledalac extends BaseController
         $data["naziv"]=$film->Naziv;
         $data["datum"]=$projekcija->Datum;
         $data["sala"]=$sala->Naziv;
-    
-        return $this->prikaz("rezervacija",$data);
+        $this->session->set('IdP',$id);
+        if($this->session->get('ulogovan')==1){
+         echo view("sablon/header_gledalacr");
+        }else{
+            echo view("sablon/header_gledalacn");
+        }
+        
+        echo view("stranice/rezervacija",['projekcija'=>$data]);
 
     }
 
@@ -69,8 +77,8 @@ class Gledalac extends BaseController
             '2'=>"$sala->Naziv",
             '3'=>"$slika"
         ];
-        
-        echo view ("sablon/header_registrovani.php");
+        $data['controller']='Gledalac';
+        echo view ("sablon/header_registrovani.php",$data);
         echo view("stranice/pregled_rezervacije.php",["projekcija"=>$data]);
 
         
@@ -84,8 +92,7 @@ class Gledalac extends BaseController
 
         $idp=$this->session->get('IdP');
         $idk=$this->session->get('IdK');
-        //$idk=11;
-        //$idp=1;
+    
 
         $projekcije=new  ProjekcijaModel();
         $rezervacije= new RezervacijaModel();
@@ -100,8 +107,9 @@ class Gledalac extends BaseController
         $rezervacija=$rezervacije->like("IdP",$idp)->findAll();
         $broj=0;
 
-        if($_SESSION['ulogovan']==false){
-            $poruka="Ulogujte se";
+        if($this->session->get('ulogovan')!=1){
+            
+            $poruka="Molimo ulogujte se.";
             $data=[
                 'naziv'=>"$film->Naziv",
                 'datum'=>"$projekcija->Datum",
@@ -109,8 +117,14 @@ class Gledalac extends BaseController
                 '3'=>"$slika",
                 
             ];
+            if($this->session->get('ulogovan')==1){
+                echo view("sablon/header_gledalacr");
+               }else{
+                   echo view("sablon/header_gledalacn");
+               }
            
             echo view("stranice/rezervacija",["projekcija"=>$data,"poruka"=>$poruka]);
+            return;
         }
 
         $obelezenaMesta=$this->request->getVar("obelezenaMesta");
@@ -131,6 +145,11 @@ class Gledalac extends BaseController
                 '3'=>"$slika",
                 
             ];
+            if($this->session->get('ulogovan')==1){
+                echo view("sablon/header_gledalacr");
+               }else{
+                   echo view("sablon/header_gledalacn");
+               }
            
             echo view("stranice/rezervacija",["projekcija"=>$data,"poruka"=>$poruka]);
         }
@@ -159,7 +178,11 @@ class Gledalac extends BaseController
                                     '3'=>"$slika",
                                     
                                 ];
-                               
+                                if($this->session->get('ulogovan')==1){
+                                    echo view("sablon/header_gledalacr");
+                                   }else{
+                                       echo view("sablon/header_gledalacn");
+                                   }
                                 echo view("stranice/rezervacija",["projekcija"=>$data,"poruka"=>$poruka]);
                                 return;
                             }
@@ -182,7 +205,11 @@ class Gledalac extends BaseController
                 '3'=>"$slika",
                                     
             ];
-                               
+            if($this->session->get('ulogovan')==1){
+                echo view("sablon/header_gledalacr");
+               }else{
+                   echo view("sablon/header_gledalacn");
+               }            
             echo view("stranice/rezervacija",["projekcija"=>$data,"poruka"=>$poruka]);
             return;
         }
@@ -211,16 +238,18 @@ class Gledalac extends BaseController
                 $mesta->insert($datam);
             }
             
+            
         }
         
         Gledalac::pregledKarte($idp);
-    }#Anja Negic 2019/676
+    }
+    #Anja Negic 2019/676
     protected function prikazProjekcija($page, $data){
         $data['controller']='Gledalac';
         if ($page=="index")
         $data['stranica']='pocetna';
         else $data['stranica']=$page;
-        echo view('sablon/header_registrovani');
+        echo view('sablon/header_registrovani', $data);
         echo view('sablon/header_pretraga', $data);
         echo view("stranice/$page", $data);
     }

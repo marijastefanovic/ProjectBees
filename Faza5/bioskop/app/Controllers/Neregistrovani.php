@@ -39,9 +39,9 @@ class Neregistrovani extends BaseController
 
     #Anja Negic 2019/676
     public function pocetna(){
-	  if(session_status()==PHP_SESSION_NONE){
-            session_start();
-            $id=$this->session->set('ulogovan',false);
+        if($this->session->get('ulogovan')==null){
+        
+            $this->session->set('ulogovan',false);
         }
         $projekcijaModel=new ProjekcijaModel();
         $filmModel = new FilmModel();
@@ -178,7 +178,7 @@ class Neregistrovani extends BaseController
                     $this->session->set('IdK', $korisnik[0]->IdK);
                     $this->session->set('ulogovan',true);
                    
-                    return redirect()->to(site_url('Neregistrovani/index'));
+                    return redirect()->to(site_url('Gledalac/pocetna'));
                     
                 }else if($ad->find($korisnik[0]->IdK)){
                     $this->session->set('IdK', $korisnik[0]->IdK);
@@ -208,7 +208,7 @@ class Neregistrovani extends BaseController
     public function logout(){
         $this->session->set('IdK', -1);
         $this->session->set('ulogovan',false);
-        return redirect()->to(site_url("Neregistrovani/index"));
+        return redirect()->to(site_url("Neregistrovani/pocetna"));
     }
 
 

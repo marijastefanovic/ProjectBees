@@ -49,7 +49,7 @@
        
     </div>
     <div align="center" style="padding-left: 90px;">
-    <form name="nastavipretragu" action="<?= site_url("Neregistrovani/index") ?>" method="post">
+    <form name="nastavipretragu" action="<?= site_url("Gledalac/pocetna") ?>" method="post">
         <input type="submit" value="Nastavi pretragu">
        
     </form>
