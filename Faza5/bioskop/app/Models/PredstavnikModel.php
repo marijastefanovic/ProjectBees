@@ -5,7 +5,7 @@ use CodeIgniter\Model;
 #model koji se koristi za povezivanje sa tabelom predstavnik u bazi
 class PredstavnikModel extends Model
 {
-        protected $table      = 'Predstavnik';
+        protected $table      = 'predstavnik_filma';
         protected $primaryKey = 'IdPF';
         protected $returnType = 'object';
         protected $allowedFields = ['IdPF','Kompanija'];
