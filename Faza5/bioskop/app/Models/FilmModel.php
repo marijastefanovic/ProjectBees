@@ -10,11 +10,10 @@ class FilmModel extends Model
         protected $returnType = 'object';
         protected $allowedFields = ['Naziv','Opis','Duzina', 'Drzava_Godina','Pocetak_prikazivanja','Zanr','Status','Poster','Trejler','IdUG','IdUR','IdPF'];
 
-        //vraca sve filmove ciji je status neresen
         public function dohvatiSveZahteve(){
             return $this->join('ucesnik_u_filmu glumac','film.IdUG=glumac.IdU')->join('ucesnik_u_filmu','film.IdUR=ucesnik_u_filmu.IdU')->select('glumac.Ime imeG')->select('glumac.Prezime prezimeG')->select('ucesnik_u_filmu.*')->select('film.*')->where('Status','neresen')->findAll();
         }
-        //vraca sve filmove ciji je status prihvacen
+
         public function dohvatiSveOdobreneFilmove(){
             return $this->where('Status','prihvacen')->findAll();
         }
