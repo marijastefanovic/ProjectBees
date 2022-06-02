@@ -1,7 +1,7 @@
 <!--Anja Negic 676/19-->
-        <div style="display: flex; align-items: center; justify-content: center;" >
-            <button class="btn btn-outline-dark" id="dugme"><?= anchor("Neregistrovani/index", "PROJEKCIJE") ?></button>
-            <button class="btn btn-outline-dark"><?= anchor("Neregistrovani/premijere", "PREMIJERE") ?></button>
+<div style="display: flex; align-items: center; justify-content: center;" >
+            <button class="btn btn-outline-dark" id="dugme"><?= anchor("$controller/pocetna", "PROJEKCIJE") ?></button>
+            <button class="btn btn-outline-dark"><?= anchor("$controller/premijere", "PREMIJERE") ?></button>
             
         </div>
         <hr>

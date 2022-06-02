@@ -1,11 +1,12 @@
 <?php
-
+#Ana Stanic 2019/0703
 namespace App\Controllers;
 
 use App\Models\FilmModel;
 use App\Models\GlumacModel;
 use App\Models\ReziserModel;
-use App\Models\UcesnikModel;
+use App\Models\UcesnikUFilmuModel;
+use App\Models\PredstavnikModel;
 
 class Predstavnik extends BaseController
 {
@@ -14,10 +15,19 @@ class Predstavnik extends BaseController
         
     }
 
+    /*
+    *Funkcija za prikazivanje stranice na kojoj se stvara zahtev za prikazivanje filma
+    */
     public function prikazSlanjaZahteva(){
+        echo view ('sablon/header_registrovani.php');
         echo view('stranice/slanje_zahteva.php');
     }
+    /*
+    *Nakon stvaranja zahteva u ovoj funkciji se zahtev salje i upisuje u bazu podataka
+    */
     public function posaljiZahtev(){
+        $IdPF = 0;
+
         $naziv= $this->request->getVar("Naziv");
         $opis= $this->request->getVar("Opis");
         $trajanje=$this->request->getVar("Trajanje filma");
@@ -30,9 +40,9 @@ class Predstavnik extends BaseController
         
         $glumciModel= new GlumacModel();
         $reziseriModel=new ReziserModel();
-        $ucesnici= new UcesnikModel();
+        $ucesnici= new UcesnikUFilmuModel();
         $filmovi= new FilmModel();
-        echo $naziv;
+       
         $glumac=explode(" ",$glumci);
         $nadjenGlumac=null;
         if($glumac[0]){
@@ -89,8 +99,9 @@ class Predstavnik extends BaseController
         }else{
             $idr=$nadjenReziser[0]->IdU;
         }
-        //$idPF=$_SESSION["Korisnik"];
-        $idPF=3;
+        $IdK= $this->session->get('IdK');
+        $idPF=$IdK;
+        echo"$IdK";
        $dataFilm=[
            'Naziv'=>"$naziv",
            'Opis' =>"$opis",
@@ -106,15 +117,34 @@ class Predstavnik extends BaseController
            'IdPF'=>"$idPF"
        ];
        $filmovi->insert($dataFilm);
-       echo base64_encode($poster);
-       var_dump($dataFilm);           
+       //echo base64_encode($poster);
+       $this->pregledZahteva($idPF);
+
     }
 
-    public function pregledZahteva(){
-        echo view('stranice/pregled_poslatih_zahteva.php');
+
+    /*
+    *Funkcija za izlistavanje poslatih zahteva za konkretnog predstavnika filma
+    */
+    public function pregledZahteva($IdPF){
+        $predstavnikFilma = new PredstavnikModel();
+        $filmModel = new FilmModel();
+        $ucesnikUFilmuModel = new UcesnikUFilmuModel();
+        $glumacModel = new GlumacModel();
+        $reziserModel = new ReziserModel();
+        echo($IdPF);
+        $filmovi =  $filmModel->dohvatiFilmPoIdPF($IdPF);
+       
+        /*$glumac = $film->IdUG;
+        $reziser = $film->IdUR;
+        $idG = $film->IdUG;
+        $idR = $film->IdUR;
+        $ucesnikG = $ucesnikUFilmuModel->find($idG);
+        $ucesnikR = $ucesnikUFilmuModel->find($idR);*/
+
+
+        echo view ('sablon/header_registrovani.php');
+        echo view("stranice/pregled_poslatih_zahteva", ['filmovi' => $filmovi] );;
     }
-    /*'IdUG' =>"$idg",
-           'IdUR' =>"$idr",
-           'IdPF'=>"$idPF"*/
 }
 
