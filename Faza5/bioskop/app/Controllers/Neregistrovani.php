@@ -24,10 +24,10 @@ class Neregistrovani extends BaseController
              $data['stranica']='pocetna';
         else $data['stranica']=$page;
         echo view('sablon/header_neregistrovan', $data);
+        if ($page != 'registracija' && $page != 'login')
         echo view('sablon/header_pretraga', $data);
         echo view("stranice/$page", $data);
     }
-
 
     #Anja Negic 2019/676
     protected function filmPrikaz($page, $data){
@@ -98,13 +98,34 @@ class Neregistrovani extends BaseController
     #Funkcija za registraciju korisnika popunjavanjem odgovarajucih polja
     #Dodatak:provera validnosti podataka
     public function registruj(){
+        $korisnikModel=new KorisnikModel();
+        
         $ime= $this->request->getVar("Ime");
         $prezime= $this->request->getVar("Prezime");
         $mejlAdresa=$this->request->getVar("MejlAdresa");
         $lozinka= $this->request->getVar("Lozinka");
-        $potvrdaLozinke=$this->request->getVar("Molimo potvrdite lozinku");
-        $kompanija=$this->request->getVar("Naziv Vase kompanije");
-        
+        $potvrdaLozinke=$this->request->getVar("LozinkaPotvrda");
+        $kompanija=$this->request->getVar("kompanija");
+         if(!$this->validate(['Ime'=>'required', 'Prezime'=>'required', 'MejlAdresa'=>'required', 'Lozinka'=>'required', 'LozinkaPotvrda'=>'required'])){
+            return $this->prikaz('registracija', 
+                ['errors'=>$this->validator->getErrors()]);
+               
+        }
+        if ($lozinka!==$potvrdaLozinke){
+            $poruka = "Lozinke se ne podudaraju!";
+            return $this->prikaz('registracija', 
+            ['errorsLozinka'=>$poruka]);
+        }
+        $korisnici = $korisnikModel;
+        $korisnik = $korisnici->dohvatiSaIstimMailom($mejlAdresa);
+     
+        foreach($korisnik as $korisnikJedan){
+            if ($korisnikJedan->Mejl==$mejlAdresa){
+                $poruka = "Već postojeći mejl!";
+                return $this->prikaz('registracija', 
+                ['errorsMejl'=>$poruka]);
+            }
+        }
         $data=[
             'Ime'=>"$ime",
             'Prezime'=>"$prezime",
@@ -113,10 +134,6 @@ class Neregistrovani extends BaseController
 
         ];
         
-        //echo $mejlAdresa;
-        //echo "nije dobar mejl";
-        var_dump($data);
-        $korisnici=new KorisnikModel();
         $korisnici->insert($data);
         $ubacen=$korisnici->like("Mejl", $mejlAdresa)->find();
         $id=$ubacen[0]->IdK;
@@ -126,7 +143,8 @@ class Neregistrovani extends BaseController
             ];
             $gledaoci=new GledalacModel();
             $gledaoci->insert($gledalac);
-            echo 'nesto';
+            $this->login();
+          
         }else if(isset($_POST['Registracija2'])){
             $predstavnikFilma=[
                 "IdPF"=>"$id",
@@ -134,10 +152,9 @@ class Neregistrovani extends BaseController
             ];
             $predstavnici=new PredstavnikModel();
             $predstavnici->insert($predstavnikFilma);
+            $this->login();
         }
-      //  echo $id;
 
-      //  echo "radiii";
     }
 
     #Prijavljivanje korisnika na sistem koristi mejl i lozinku
@@ -188,7 +205,7 @@ class Neregistrovani extends BaseController
                 }else if($pr->find($korisnik[0]->IdK)){
                     $this->session->set('IdK', $korisnik[0]->IdK);
                     $this->session->set('ulogovan',true);
-                    return redirect()->to(site_url('Predstavnik/pregledZahteva'));
+                    return redirect()->to(site_url('PredstavnikFilma/index'));
                     
                 }else{
                     $poruka="Doslo je do greske. Molimo pokusajte ponovo";
@@ -211,8 +228,4 @@ class Neregistrovani extends BaseController
         return redirect()->to(site_url("Neregistrovani/pocetna"));
     }
 
-
-
-
-
-} // SESIJE -> 1:46
+} 
