@@ -1,7 +1,9 @@
 <!--Marija Stefanovic 2019/0068-->
 <html lang="en">
 <head>
+
     <style>
+
         #slika1{
             height: 250px;
             width: 150px;
@@ -24,6 +26,11 @@
             margin: 12px;
             border-spacing: 10px;
         }
+        input[type=submit]{
+            height: 25px;
+                font-size:17px;
+        }
+        
        
     </style>
     <script>
@@ -64,16 +71,7 @@
     </script>
 </head>
 <body>
-    <div>
-        <table width = 100%>
-            <tr>
-                <td><img src="slike/logo.jpg" alt="logo" height = 150 ></td>
-                <td></td>
-                <td style="text-align: center;"><?= anchor("neregistrovani/logout", "log out")?></td>
-            </tr>
-        </table>
-        <hr>
-   </div>
+    
    <div style="text-align:center; color:red" >
         <?php
         if(isset($poruka)){echo $poruka;}
@@ -190,12 +188,13 @@
             </tr>
         </table>
     </div>
-    <br>
+    <br> 
     <div style="padding-left: 70px;" >
     <form name="rezervisiform" action="<?= site_url("Gledalac/rezervisi") ?>" method="post">
         <table width="100%" align="center" style="text-align: center;">
             <tr>
                 <td>
+                    <br>
                     <input type="checkbox" name="mesto" id="mesto" > 
                     <label for="" style="font-size: large;">Bilo koje mesto</label>
                     <input type="number" name="brojKarata" min="1" max="48" id="brojKarata">
@@ -207,8 +206,8 @@
             <tr>
                 <td>
                     
-                    
-                    <input type="submit" value="Rezervisi"/>
+                    <br>
+                    <input style="size: 50px;" type="submit" value="Rezervisi"/>
                    
                     
             

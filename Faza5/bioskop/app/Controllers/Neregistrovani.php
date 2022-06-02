@@ -1,64 +1,143 @@
 <?php namespace App\Controllers;
 
-
+#Anja Negic 676/19
 #Marija Stefanovic 2019/0068
-use App\Models\ProjekcijeModel;
+#Ana Stanic 2019/0703
 use App\Models\PremijereModel;
 use App\Models\KorisnikModel;
 use App\Models\AdminModel;
 use App\Models\GledalacModel;
 use App\Models\PredstavnikModel;
+
+use App\Models\ProjekcijaModel;
+use App\Models\FilmModel;
+use App\Models\UcesnikUFilmuModel;
+use App\Models\ReziserModel;
+use App\Models\GlumacModel;
+use App\Models\SalaModel;
 class Neregistrovani extends BaseController
 {
+	#Anja Negic 2019/676
     protected function prikaz($page, $data){
-        $data['controller']='Neregistrovani';
+         $data['controller']='Neregistrovani';
+        if ($page=="index")
+             $data['stranica']='pocetna';
+        else $data['stranica']=$page;
         echo view('sablon/header_neregistrovan', $data);
         echo view('sablon/header_pretraga', $data);
         echo view("stranice/$page", $data);
     }
 
-    public function index(){
-        if(session_status()==PHP_SESSION_NONE){
-            session_start();
-            $id=$this->session->set('ulogovan',false);
+
+    #Anja Negic 2019/676
+    protected function filmPrikaz($page, $data){
+        $data['controller']='Neregistrovani';
+        $data['stranica']=$page;
+        echo view('sablon/header_neregistrovan', $data);
+        echo view("stranice/$page", $data);
+    }
+
+    #Anja Negic 2019/676
+    public function pocetna(){
+        if($this->session->get('ulogovan')==null){
+        
+            $this->session->set('ulogovan',false);
         }
-        //$this->load->library('image_lib');
-        //$projekcijeModel = new ProjekcijeModel();
-        //$premijereModel = new PremijereModel();
-        $this->prikaz('pocetna', []);
+        $projekcijaModel=new ProjekcijaModel();
+        $filmModel = new FilmModel();
+        $projekcije = $projekcijaModel;
+        $filmovi= $filmModel->findAll();
+        $this->prikaz('index', ['filmovi'=>$filmovi, 'projekcije'=>$projekcije]);
     }
-
+    #Anja Negic 2019/676
     public function premijere(){
-       $this->prikaz('premijere',[]);
+        $projekcijaModel=new ProjekcijaModel();
+        $filmModel = new FilmModel();
+        $projekcije = $projekcijaModel;
+        $filmovi= $filmModel->findAll();
+        $this->prikaz('premijere',['filmovi'=>$filmovi, 'projekcije'=>$projekcije]);
     }
-
+    #Anja Negic 2019/676
     public function pretraga(){
+        $pretraga=null;
+        $this->session->set('pretraga', $pretraga);
         $this->prikaz('pocetna',[]);
     }
-
+    #Anja Negic 2019/676
     public function login(){
         $this->prikaz('login', []);
     }
-
+    #Anja Negic 2019/676
     public function registracija(){
         $this->prikaz('registracija', []);
     }
+    #Anja Negic 2019/676
+    public function film($idP){
+        $projekcijaModel=new ProjekcijaModel();
+        $projekcija = $projekcijaModel->find($idP);
+        $ucesnikUFilmuModel = new UcesnikUFilmuModel();
+        $glumacModel = new GlumacModel();
+        $reziserModel = new ReziserModel();
+        $salaModel = new SalaModel();
 
+       
+        $filmModel = new FilmModel();
+        $film = $filmModel->find($projekcija->IdF);
+        $glumac = $film->IdUG;
+        $reziser = $film->IdUR;
+        $idG = $film->IdUG;
+        $idR = $film->IdUR;
+        $sala = $salaModel->find($projekcija->IdS);
+        $ucesnikG = $ucesnikUFilmuModel->find($idG);
+        $ucesnikR = $ucesnikUFilmuModel->find($idR);
+        $this->filmPrikaz('filmPrikaz', ['film'=>$film, 'projekcija'=>$projekcija, 'ucesnikG'=>$ucesnikG, 'ucesnikR'=>$ucesnikR, 'sala'=>$sala]);
+
+    }
+
+    
+    #Funkcija za registraciju korisnika popunjavanjem odgovarajucih polja
+    #Dodatak:provera validnosti podataka
     public function registruj(){
-        $korisnikModel=new KorisnikModel();
-        $korisnik=$korisnikModel->find($this->request->getVar('MejlAdresa'));
-        if($korisnik==null && $this->request->getVar('Lozinka')==$this->request->getVar('PotvrdiLoz')){ 
-            $korisnikModel->save([
-                'Ime'=>$this->request->getVar('Ime'),
-                'Prezime'=>$this->request->getVar('Prezime'),
-                'MejlAdresa'=>$this->request->getVar('MejlAdresa'),
-                'Lozinka'=>$this->request->getVar('Lozinka'),
-            
-            ]);
-        }else{
-            $this->prikaz('registracija', ['poruka'=>'Greska!']);
-        }
+        $ime= $this->request->getVar("Ime");
+        $prezime= $this->request->getVar("Prezime");
+        $mejlAdresa=$this->request->getVar("MejlAdresa");
+        $lozinka= $this->request->getVar("Lozinka");
+        $potvrdaLozinke=$this->request->getVar("Molimo potvrdite lozinku");
+        $kompanija=$this->request->getVar("Naziv Vase kompanije");
+        
+        $data=[
+            'Ime'=>"$ime",
+            'Prezime'=>"$prezime",
+            'Mejl'=>"$mejlAdresa",
+            'Lozinka'=>"$lozinka",
 
+        ];
+        
+        //echo $mejlAdresa;
+        //echo "nije dobar mejl";
+        var_dump($data);
+        $korisnici=new KorisnikModel();
+        $korisnici->insert($data);
+        $ubacen=$korisnici->like("Mejl", $mejlAdresa)->find();
+        $id=$ubacen[0]->IdK;
+        if(isset($_POST['Registracija'])){
+            $gledalac=[
+                "IdG"=>"$id",
+            ];
+            $gledaoci=new GledalacModel();
+            $gledaoci->insert($gledalac);
+            echo 'nesto';
+        }else if(isset($_POST['Registracija2'])){
+            $predstavnikFilma=[
+                "IdPF"=>"$id",
+                "Kompanija"=>"$kompanija",
+            ];
+            $predstavnici=new PredstavnikModel();
+            $predstavnici->insert($predstavnikFilma);
+        }
+      //  echo $id;
+
+      //  echo "radiii";
     }
 
     #Prijavljivanje korisnika na sistem koristi mejl i lozinku
@@ -99,7 +178,7 @@ class Neregistrovani extends BaseController
                     $this->session->set('IdK', $korisnik[0]->IdK);
                     $this->session->set('ulogovan',true);
                    
-                    return redirect()->to(site_url('Neregistrovani/index'));
+                    return redirect()->to(site_url('Gledalac/pocetna'));
                     
                 }else if($ad->find($korisnik[0]->IdK)){
                     $this->session->set('IdK', $korisnik[0]->IdK);
@@ -129,7 +208,7 @@ class Neregistrovani extends BaseController
     public function logout(){
         $this->session->set('IdK', -1);
         $this->session->set('ulogovan',false);
-        return redirect()->to(site_url("Neregistrovani/index"));
+        return redirect()->to(site_url("Neregistrovani/pocetna"));
     }
 
 
