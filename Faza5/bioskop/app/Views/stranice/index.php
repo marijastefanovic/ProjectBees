@@ -8,66 +8,77 @@
         <?php
           
          echo "<div class='container m-3'>";
-                     //  <img src='data:image/jpeg;base64," . base64_encode( $film->Poster ) . "' />
                     $pretraga = 0;
                     foreach ($filmovi as $film){
                         if ($film->Status == "prihvacen"){
                             $imaProjekcije=0;
-                            $forma = isset($_POST['pretraga']) ? $_POST['pretraga'] : NULL;
-                            $zanr =  isset($_POST['zanr']) ? $_POST['zanr'] : NULL;
-                            $datumF =  isset($_POST['datum']) ? $_POST['datum'] : NULL;
-                            $nasao = 0;
-                            if ((strcmp($forma, $film->Naziv)==0) || (strcmp($forma, $film->Naziv)<0 && $forma == NULL)){
+                            $forma = !empty($_POST['pretraga']) ? $_POST['pretraga'] : NULL;
+                            $zanr =  !empty($_POST['zanr']) ? $_POST['zanr'] : 'NULL';
+                            $datumF =  !empty($_POST['datum']) ? $_POST['datum'] : NULL;
+                            
+                            $nasaoZanr = 0;
+                            $nasaoNaziv = 0;
+                            
+                          
+
+                            if ((strcmp($forma, $film->Naziv)==0)){
+                                $nasaoNaziv = 1;
+                            }
+
+                            
+                            if ($nasaoNaziv==1 || $forma == NULL){
+                               
                                 $zanroviFilma = explode(", ",$film->Zanr);
                                 if ($zanr != NULL){
                                     foreach ($zanroviFilma as $zanrF){
                                         if ((strcmp($zanrF, $zanr)==0)){
-                                            $nasao = 1;
+                                            $nasaoZanr = 1;
                                         }
                                     }
-                                }else {$nasao = 1; }
-                            if ($nasao==0 ) continue;
-                            $projekcijeFilma = $projekcije->dohvatiProjekcijeFilma($film->IdF);
-                            
-                            echo "<div class='row'>
-                                    <div class = 'col-md-3 poster'>
-                                        <img poster src='data:image/jpeg;base64," . base64_encode( $film->Poster ) . "' />
-                                    </div>
-                                    <div class='col-md-9 projekcije'>
-                                        <div class='naziv'> {$film->Naziv} </div><table class='table table-sm table-active pocetna'><tbody  class='pocetnaStrana'>"; 
-                                        if ($datumF==NULL)
-                                            $dan = array (strtotime("now"),strtotime("tomorrow"), strtotime("+2 days"), strtotime("+3 days"), strtotime("+4 days"));
-                                        else {$dan = array ($datumF);}
-                                        foreach ($projekcijeFilma as $projekcija){  
-                                            echo "<tr class='pocetnaStrana'> ";
-                                            $ispisan = 0; $pretraga = 1;
-                                            foreach ($dan as $danas){
-                                                
-                                                if ((date('d.m.Y', strtotime($projekcija->Datum))) == (date('d.m.Y', $danas))){
-                                                    
-                                                        $projekcijeZaDatum = $projekcije->dohvatiProjekcijeFilmaZaDatum($projekcija->Datum, $film->IdF);
-                                                    if ($ispisan == 0){
-                                                        echo "<th class='pocetna'><div class='datum'> ".date('d.m.Y',$danas)." </div></th>";$ispisan=1;$imaProjekcije=1;
-                                                    }
-                                                    foreach ($projekcijeZaDatum as $projekcijaZaJedanDatum){
+                                }   
+                                if ($zanr == 'NULL' || $nasaoZanr == 1){
+                                        $projekcijeFilma = $projekcije->dohvatiProjekcijeFilma($film->IdF);
+                                        
+                                        echo "<div class='row'>
+                                                <div class = 'col-md-3 poster'>
+                                                    <img poster src='data:image/jpeg;base64," . base64_encode( $film->Poster ) . "' />
+                                                </div>
+                                                <div class='col-md-9 projekcije'>
+                                                    <div class='naziv'> {$film->Naziv} </div><table class='table table-sm table-active pocetna'><tbody  class='pocetnaStrana'>"; 
+                                                    if ($datumF==NULL)
+                                                        $dan = array (strtotime("now"),strtotime("tomorrow"), strtotime("+2 days"), strtotime("+3 days"), strtotime("+4 days"));
+                                                    else {$dan = array ($datumF);}
+                                               
+                                                    foreach ($projekcijeFilma as $projekcija){  
+                                                        echo "<tr class='pocetnaStrana'> ";
+                                                        $ispisan = 0; $pretraga = 1;
+                                                        foreach ($dan as $danas){
+                                                            
+                                                            if ((date('d.m.Y', strtotime($projekcija->Datum))) == (date('d.m.Y', $danas)) ){
+                                                                
+                                                                    $projekcijeZaDatum = $projekcije->dohvatiProjekcijeFilmaZaDatum($projekcija->Datum, $film->IdF);
+                                                                if ($ispisan == 0){
+                                                                    echo "<th class='pocetna'><div class='datum'> ".date('d.m.Y',$danas)." </div></th>";$ispisan=1;$imaProjekcije=1;
+                                                                }
+                                                                foreach ($projekcijeZaDatum as $projekcijaZaJedanDatum){
+                                                                    
+                                                                    echo" 
+                                                                        <th class='pocetna'><div class='sala'>Sala {$projekcijaZaJedanDatum->IdS} </div></th>
+                                                                        <th class='pocetna'><div class='vreme'> <button class='btn btn-outline-info'>".anchor("$controller/film/{$projekcijaZaJedanDatum->IdP}", date('H:i',strtotime($projekcijaZaJedanDatum->Vreme)))."</button> </div></th>";
+                                                                }
+                                                            }
+                                                        }
+                                                        echo "</tr>";
                                                         
-                                                        echo" 
-                                                            <th class='pocetna'><div class='sala'>Sala {$projekcijaZaJedanDatum->IdS} </div></th>
-                                                            <th class='pocetna'><div class='vreme'> <button class='btn btn-outline-info'>".anchor("$controller/film/{$projekcijaZaJedanDatum->IdP}", date('H:i',strtotime($projekcijaZaJedanDatum->Vreme)))."</button> </div></th>";
-                                                    }
-                                                }
-                                            }
-                                            echo "</tr>";
-                                            
-                                        }if ($imaProjekcije==0){
-                                                echo"<h5 class='ml-2'>Nažalost nema projekcija za ovaj film.</h5>";
-                                            }
-                                    echo "
-                                    <tbody></table>
-                                    </div>
-                                </div>";
-                                    
-                                }
+                                                    }if ($imaProjekcije==0){
+                                                            echo"<h5 class='ml-2'>Nažalost nema projekcija filma za odabrani datum!</h5>";
+                                                        }
+                                                echo "
+                                                <tbody></table>
+                                                </div>
+                                            </div>";
+                                }         
+                            }
                            
                         }
 
@@ -76,7 +87,7 @@
                     } if ($pretraga == 0){
                         echo"<h2> Nažalost nema takvih filmova.</h2></div>";
                     
-                    }
+                      }
                     ?>
         </div>
 
