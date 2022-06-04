@@ -12,7 +12,9 @@
                 
                 <label for="zanr"><b>Žanr:</b></label>
                     <select name="zanr" id="zanr" size="1">
+                        <option id="izaberite" value='NULL'>Izaberite:</option>
                         <option id="akcija" value="Akcija"> Akcija</option>
+                        <option id="avantura" value="Avantura"> Avantura</option>
                         <option id="dokumentarni" value="Dokumentarni">Dokumentarni</option>
                         <option id="drama" value="Drama">Drama</option>
                         <option id="horor" value="Horor">Horor</option>
@@ -25,6 +27,7 @@
                     <?php $dan = array (strtotime("now"),strtotime("tomorrow"), strtotime("+2 days"), strtotime("+3 days"), strtotime("+4 days"));
                 
                         echo "<select name='datum' id='datum' size='1' >
+                            <option value='".NULL."'>Izaberite datum:</option>
                             <option value='".$dan[0]."'>".date('l d.m. ', $dan[0])." </option>
                             <option value='".$dan[1]."'>".date('l d.m. ', $dan[1])." </option>
                             <option value='".$dan[2]."'>".date('l d.m. ', $dan[2])." </option>
@@ -32,7 +35,7 @@
                             <option value='".$dan[4]."'>".date('l d.m. ', $dan[4])." </option>
                         </select>";
                     ?>
-                    <input type="text" name="pretraga" placeholder="Search.." >
+                    <input type="text" id="pretraga" name="pretraga" placeholder="Search.." >
 
                     <input name="trazi" type="submit" value="Pretrazi" >
                 
