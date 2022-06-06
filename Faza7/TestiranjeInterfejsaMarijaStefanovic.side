@@ -1,0 +1,555 @@
+{
+  "id": "bdbb003a-5603-4fbc-a1f6-1bc55c822f3c",
+  "version": "2.0",
+  "name": "TestiranjeBioskopMarijaStefanovic2019/0068",
+  "url": "http://localhost:8080",
+  "tests": [{
+    "id": "ebc6b9eb-22ac-435c-b6b8-78fe47a10689",
+    "name": "Untitled",
+    "commands": []
+  }, {
+    "id": "cfd75ba5-e64d-436e-8617-09f43ed9f2be",
+    "name": "TP1_PregledProjekcija",
+    "commands": [{
+      "id": "30872035-89ee-42b0-8556-eb80efff5887",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "17c21ba0-c5cd-4ec7-a540-81a83e8138cf",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1050x588",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "23abf0aa-92fa-4aed-b302-ddaf80d68243",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=12:00",
+      "targets": [
+        ["linkText=12:00", "linkText"],
+        ["css=.pocetna:nth-child(3) a", "css:finder"],
+        ["xpath=//a[contains(text(),'12:00')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Neregistrovani/film/9']", "xpath:href"],
+        ["xpath=//th[3]/div/button/a", "xpath:position"],
+        ["xpath=//a[contains(.,'12:00')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8493faac-ec40-498c-83e8-c36cbb28e868",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=REZERVISI",
+      "targets": [
+        ["linkText=REZERVISI", "linkText"],
+        ["css=.btn-outline-dark > a", "css:finder"],
+        ["xpath=//a[contains(text(),'REZERVISI')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Gledalac/index/9']", "xpath:href"],
+        ["xpath=//button/a", "xpath:position"],
+        ["xpath=//a[contains(.,'REZERVISI')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "73d0d4c0-ed0d-4bf2-9d2a-0dd4796aa011",
+      "comment": "",
+      "command": "click",
+      "target": "css=td:nth-child(2) td:nth-child(1)",
+      "targets": [
+        ["css=td:nth-child(2) td:nth-child(1)", "css:finder"],
+        ["xpath=//td[2]/div/table/tbody/tr/td", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8c4ef7de-8fdf-4850-8648-2290f61fce76",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=td:nth-child(2) td:nth-child(1)",
+      "targets": [
+        ["css=td:nth-child(2) td:nth-child(1)", "css:finder"],
+        ["xpath=//td[2]/div/table/tbody/tr/td", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "8385d05a-dbdb-461b-87c6-2749486b6809",
+    "name": "TP4_PretragaFilma",
+    "commands": [{
+      "id": "f8cd79ac-62ad-4a02-9cbf-782ca4e7fd1c",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9b7ebc58-f67a-4642-beea-bff9ff2360f3",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1050x588",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "30eeae79-5392-415a-bf18-945878990fe7",
+      "comment": "",
+      "command": "click",
+      "target": "css=input:nth-child(4)",
+      "targets": [
+        ["css=input:nth-child(4)", "css:finder"],
+        ["xpath=//input[@name='pretraga']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9e26cde8-1bfa-464e-9499-80af0db05991",
+      "comment": "",
+      "command": "type",
+      "target": "css=input:nth-child(4)",
+      "targets": [
+        ["css=input:nth-child(4)", "css:finder"],
+        ["xpath=//input[@name='pretraga']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "squid game"
+    }, {
+      "id": "ff753721-b7bc-4065-9150-ffec63a6b4d0",
+      "comment": "",
+      "command": "click",
+      "target": "name=trazi",
+      "targets": [
+        ["name=trazi", "name"],
+        ["css=input:nth-child(5)", "css:finder"],
+        ["xpath=//input[@name='trazi']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "01959f2b-f1aa-43dd-a01d-e39ed8e90c08",
+      "comment": "",
+      "command": "click",
+      "target": "css=.container > h2",
+      "targets": [
+        ["css=.container > h2", "css:finder"],
+        ["xpath=//h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'Nažalost nema takvih filmova.')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4031a189-97e5-4557-b21c-6ac888226ed6",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.container > h2",
+      "targets": [
+        ["css=.container > h2", "css:finder"],
+        ["xpath=//h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'Nažalost nema takvih filmova.')]", "xpath:innerText"]
+      ],
+      "value": "Nažalost nema takvih filmova."
+    }]
+  }, {
+    "id": "3813ff33-39ec-4c0c-974a-08d770bb1043",
+    "name": "TP5_PretragaFilmaPoZanru",
+    "commands": [{
+      "id": "1f853041-cee1-470e-b1fa-7cda6c37cc49",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5eccc840-a8e6-4694-b098-09f1b1018699",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1050x588",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "962739bd-a1bc-4997-be4f-86ea9de37437",
+      "comment": "",
+      "command": "click",
+      "target": "id=zanr",
+      "targets": [
+        ["id=zanr", "id"],
+        ["name=zanr", "name"],
+        ["css=#zanr", "css:finder"],
+        ["xpath=//select[@id='zanr']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "afb1fe06-d874-4207-9937-6d11020d0b45",
+      "comment": "",
+      "command": "click",
+      "target": "name=trazi",
+      "targets": [
+        ["name=trazi", "name"],
+        ["css=input:nth-child(5)", "css:finder"],
+        ["xpath=//input[@name='trazi']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5ee8f664-80a9-46eb-a3fb-be91d096dcfe",
+      "comment": "",
+      "command": "click",
+      "target": "css=.naziv",
+      "targets": [
+        ["css=.naziv", "css:finder"],
+        ["xpath=//div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5b6440cf-4a90-4899-84d2-3f25bf27c639",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.naziv",
+      "targets": [
+        ["css=.naziv", "css:finder"],
+        ["xpath=//div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "f06fee32-5a1d-489b-ba47-1957d9b78337",
+    "name": "TP6_PretragaFilmaPoZanru",
+    "commands": [{
+      "id": "53f6b387-4e64-4fa8-9f3d-2cc6ac9a3873",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "93c1dc5a-2ea8-4e9c-bfbd-832e725f230f",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1050x588",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ecb1de61-f4f3-403a-a643-c7e70738bbd2",
+      "comment": "",
+      "command": "click",
+      "target": "id=zanr",
+      "targets": [
+        ["id=zanr", "id"],
+        ["name=zanr", "name"],
+        ["css=#zanr", "css:finder"],
+        ["xpath=//select[@id='zanr']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "22abb385-1026-4508-bdd1-4408aa0b2b5d",
+      "comment": "",
+      "command": "select",
+      "target": "id=zanr",
+      "targets": [],
+      "value": "label=Drama"
+    }, {
+      "id": "e757c661-b9b9-4b26-bb82-7923fffaefec",
+      "comment": "",
+      "command": "click",
+      "target": "name=trazi",
+      "targets": [
+        ["name=trazi", "name"],
+        ["css=input:nth-child(5)", "css:finder"],
+        ["xpath=//input[@name='trazi']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e545581c-6ea0-480d-afde-7c70aebab8ad",
+      "comment": "",
+      "command": "click",
+      "target": "css=.container > h2",
+      "targets": [
+        ["css=.container > h2", "css:finder"],
+        ["xpath=//h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'Nažalost nema takvih filmova.')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "03746aad-6b56-4037-82d4-05fe4d9360e1",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.container > h2",
+      "targets": [
+        ["css=.container > h2", "css:finder"],
+        ["xpath=//h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'Nažalost nema takvih filmova.')]", "xpath:innerText"]
+      ],
+      "value": "Nažalost nema takvih filmova."
+    }]
+  }, {
+    "id": "9f1332a5-2fcd-4d14-add8-1fcdc2634f2c",
+    "name": "TP2_PretragaPoDanu",
+    "commands": [{
+      "id": "6e90cb7e-f88d-4811-8fa5-d803a3c1c6ee",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bf63ed9f-9c2c-4701-9000-f79d58f27b34",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1050x588",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "95e3bc35-601f-4874-b8be-25e4b7c86afc",
+      "comment": "",
+      "command": "click",
+      "target": "id=datum",
+      "targets": [
+        ["id=datum", "id"],
+        ["name=datum", "name"],
+        ["css=#datum", "css:finder"],
+        ["xpath=//select[@id='datum']", "xpath:attributes"],
+        ["xpath=//select[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8820941c-2893-4744-8a36-4c3ef14c56f7",
+      "comment": "",
+      "command": "click",
+      "target": "name=trazi",
+      "targets": [
+        ["name=trazi", "name"],
+        ["css=input:nth-child(5)", "css:finder"],
+        ["xpath=//input[@name='trazi']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0c7e66fb-51ae-426f-a2ec-e81794fc6fb3",
+      "comment": "",
+      "command": "click",
+      "target": "css=.naziv",
+      "targets": [
+        ["css=.naziv", "css:finder"],
+        ["xpath=//div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f9026f3f-4ea7-4395-8ee0-0cc55ec42884",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.naziv",
+      "targets": [
+        ["css=.naziv", "css:finder"],
+        ["xpath=//div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "60ae2e26-4736-411f-bf24-47a2ae45088b",
+    "name": "TP3_PretragaPoDanu",
+    "commands": [{
+      "id": "62c3c4e9-1af8-4a62-842c-21049b64ed87",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f25cb129-9739-4cad-a459-2822c8b39240",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1050x588",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e8347f81-f697-4d17-8356-2bd7f9432ce0",
+      "comment": "",
+      "command": "click",
+      "target": "id=datum",
+      "targets": [
+        ["id=datum", "id"],
+        ["name=datum", "name"],
+        ["css=#datum", "css:finder"],
+        ["xpath=//select[@id='datum']", "xpath:attributes"],
+        ["xpath=//select[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d5b552d4-01b1-4d9a-9962-b9296525ea93",
+      "comment": "",
+      "command": "select",
+      "target": "id=datum",
+      "targets": [],
+      "value": "label=Thursday 09.06."
+    }, {
+      "id": "4cc53428-7fb9-427e-a91f-3756e987c1cd",
+      "comment": "",
+      "command": "click",
+      "target": "name=trazi",
+      "targets": [
+        ["name=trazi", "name"],
+        ["css=input:nth-child(5)", "css:finder"],
+        ["xpath=//input[@name='trazi']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bead70d3-2c6a-4688-8b8d-ebc485167f5f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ml-2",
+      "targets": [
+        ["css=.ml-2", "css:finder"],
+        ["xpath=//div[2]/h5", "xpath:position"],
+        ["xpath=//h5[contains(.,'Nažalost nema projekcija za ovaj film.')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "87166118-69ba-41c5-8708-954509d3ae68",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.ml-2",
+      "targets": [
+        ["css=.ml-2", "css:finder"],
+        ["xpath=//div[2]/h5", "xpath:position"],
+        ["xpath=//h5[contains(.,'Nažalost nema projekcija za ovaj film.')]", "xpath:innerText"]
+      ],
+      "value": "Nažalost nema projekcija za ovaj film."
+    }]
+  }, {
+    "id": "2d02ee5c-5a79-4f63-a8ec-9003b037374a",
+    "name": "TP7_PretragaFilma",
+    "commands": [{
+      "id": "97a74ec8-6c3f-4c57-bbae-42c8f5ae6a49",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3e983327-5e21-49e1-9b03-63c5f9d23922",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1050x718",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6f49d58f-5e96-4e77-880f-92858463250a",
+      "comment": "",
+      "command": "click",
+      "target": "css=input:nth-child(4)",
+      "targets": [
+        ["css=input:nth-child(4)", "css:finder"],
+        ["xpath=//input[@name='pretraga']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c4f21e72-a252-4bb2-98d9-012c097efb5c",
+      "comment": "",
+      "command": "type",
+      "target": "css=input:nth-child(4)",
+      "targets": [
+        ["css=input:nth-child(4)", "css:finder"],
+        ["xpath=//input[@name='pretraga']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Pirates of the Carib"
+    }, {
+      "id": "15b6397c-efed-43a9-83e0-2d3d8a7b43e0",
+      "comment": "",
+      "command": "click",
+      "target": "name=trazi",
+      "targets": [
+        ["name=trazi", "name"],
+        ["css=input:nth-child(5)", "css:finder"],
+        ["xpath=//input[@name='trazi']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6bc4f2be-9304-474c-8c09-f029b2adeb41",
+      "comment": "",
+      "command": "click",
+      "target": "css=.naziv",
+      "targets": [
+        ["css=.naziv", "css:finder"],
+        ["xpath=//div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bf56ddfe-afc0-4f20-9ae0-d3126b1d7187",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.naziv",
+      "targets": [
+        ["css=.naziv", "css:finder"],
+        ["xpath=//div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "c0864f8d-ed35-4d1f-a3d7-7d780f061c01",
+    "name": "TP8_PregledPremijera",
+    "commands": [{
+      "id": "89a2fe37-98c2-43e9-8601-977d78add8db",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6802102b-cb6a-4bca-8073-a1f89036b032",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1050x718",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "88545ede-fc31-41e2-8680-e08cad378333",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=PREMIJERE",
+      "targets": [
+        ["linkText=PREMIJERE", "linkText"],
+        ["css=.btn:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'PREMIJERE')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Neregistrovani/premijere']", "xpath:href"],
+        ["xpath=//button[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'PREMIJERE')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b428aac6-f068-43e4-a913-581672294e71",
+      "comment": "",
+      "command": "click",
+      "target": "css=.row:nth-child(1) .naziv",
+      "targets": [
+        ["css=.row:nth-child(1) .naziv", "css:finder"],
+        ["xpath=//div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ac3293ee-017f-4311-ae80-23472e2bd672",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.row:nth-child(1) .naziv",
+      "targets": [
+        ["css=.row:nth-child(1) .naziv", "css:finder"],
+        ["xpath=//div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "170611f0-b77f-461a-8133-eb71e99d6c45",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["ebc6b9eb-22ac-435c-b6b8-78fe47a10689"]
+  }],
+  "urls": ["http://localhost:8080/"],
+  "plugins": []
+}
