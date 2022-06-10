@@ -307,3 +307,4 @@ INSERT INTO `mesto`(`IdM`, `Red`, `Mesto`, `IdS`, `IdR`) VALUES ('','6','4','2',
 INSERT INTO `mesto`(`IdM`, `Red`, `Mesto`, `IdS`, `IdR`) VALUES ('','6','5','2','2');
 
 
+
