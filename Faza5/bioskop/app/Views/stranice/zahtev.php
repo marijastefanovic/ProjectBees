@@ -6,7 +6,7 @@ else {
  echo'   <table class="film">';
  echo '<tr>';
  echo '<td class="poster" rowspan=4>';
- if($zahtev->Poster!=""){
+ if(!empty($zahtev->Poster)&&$zahtev->Poster!=""){
  $image = imagecreatefromstring($zahtev->Poster); 
   ob_start();
   imagejpeg($image, null, 80);
