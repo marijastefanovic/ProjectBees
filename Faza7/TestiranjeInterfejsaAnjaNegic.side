@@ -1,0 +1,1696 @@
+{
+  "id": "56a4c853-c90a-4ed8-aed8-58ee1037c612",
+  "version": "2.0",
+  "name": "BioskopTest",
+  "url": "http://localhost:8080/Gledalac/pocetna",
+  "tests": [{
+    "id": "23157469-a274-4e9e-8cbf-6cbd2081775d",
+    "name": "TP_NeuspesnoLogovanjeNeispravnaLozinka",
+    "commands": [{
+      "id": "34210c49-ebf0-44dd-82ce-eb59a3ccc7d4",
+      "comment": "",
+      "command": "open",
+      "target": "/Neregistrovani/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "12abf3d4-7fe1-4138-a15e-3d60f6b1875a",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1296x688",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "26fa979f-05c8-4330-b9da-4280d8ed0160",
+      "comment": "",
+      "command": "click",
+      "target": "id=mejl",
+      "targets": [
+        ["id=mejl", "id"],
+        ["name=mejl", "name"],
+        ["css=#mejl", "css:finder"],
+        ["xpath=//input[@id='mejl']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "92d0ed47-b2a0-40e5-82eb-a72197a9e646",
+      "comment": "",
+      "command": "type",
+      "target": "id=mejl",
+      "targets": [
+        ["id=mejl", "id"],
+        ["name=mejl", "name"],
+        ["css=#mejl", "css:finder"],
+        ["xpath=//input[@id='mejl']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "admin1@gmail.com"
+    }, {
+      "id": "0cc0f068-8682-4add-a8f9-fa5f28235d12",
+      "comment": "",
+      "command": "type",
+      "target": "id=lozinka",
+      "targets": [
+        ["id=lozinka", "id"],
+        ["name=lozinka", "name"],
+        ["css=#lozinka", "css:finder"],
+        ["xpath=//input[@id='lozinka']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "admin123"
+    }, {
+      "id": "32bc0ef3-4b84-4942-a40a-4577fb30b0e0",
+      "comment": "",
+      "command": "click",
+      "target": "css=input:nth-child(13)",
+      "targets": [
+        ["css=input:nth-child(13)", "css:finder"],
+        ["xpath=//input[@value='Log in']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0a4cd26d-61f1-4780-831d-1e86c6603875",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.p-2 > div:nth-child(2)",
+      "targets": [
+        ["css=.p-2 > div:nth-child(2)", "css:finder"],
+        ["xpath=//div[2]", "xpath:position"],
+        ["xpath=//div[contains(.,'Pogresna lozinka')]", "xpath:innerText"]
+      ],
+      "value": "Pogresna lozinka"
+    }]
+  }, {
+    "id": "8dc94898-9345-4d34-9ca8-5f09fd2df59d",
+    "name": "TP_NeuspesnoLogovanjeMejlNepostoji",
+    "commands": [{
+      "id": "edbbd5a7-13d5-49bf-b710-75651c9eaeff",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "97313552-a64f-444f-b566-80557de69dfc",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1296x688",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ce0a76f6-942b-43bb-bdea-9c228ded234f",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=log in",
+      "targets": [
+        ["linkText=log in", "linkText"],
+        ["css=a:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'log in')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Neregistrovani/login']", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'log in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bca31895-b031-4410-8f8d-25f61544b441",
+      "comment": "",
+      "command": "click",
+      "target": "id=mejl",
+      "targets": [
+        ["id=mejl", "id"],
+        ["name=mejl", "name"],
+        ["css=#mejl", "css:finder"],
+        ["xpath=//input[@id='mejl']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "969cf9f9-6ec9-43a0-b351-29ca7d496d84",
+      "comment": "",
+      "command": "type",
+      "target": "id=mejl",
+      "targets": [
+        ["id=mejl", "id"],
+        ["name=mejl", "name"],
+        ["css=#mejl", "css:finder"],
+        ["xpath=//input[@id='mejl']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "admin1234@gmail.com"
+    }, {
+      "id": "bb3b9072-2864-4df7-b3cd-5aca33c61295",
+      "comment": "",
+      "command": "type",
+      "target": "id=lozinka",
+      "targets": [
+        ["id=lozinka", "id"],
+        ["name=lozinka", "name"],
+        ["css=#lozinka", "css:finder"],
+        ["xpath=//input[@id='lozinka']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "admin1"
+    }, {
+      "id": "231f719a-a25e-4d15-94b0-15b66a4998d5",
+      "comment": "",
+      "command": "click",
+      "target": "css=input:nth-child(13)",
+      "targets": [
+        ["css=input:nth-child(13)", "css:finder"],
+        ["xpath=//input[@value='Log in']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8b41e5b3-3672-4978-bcd4-ac775ebc0fbb",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.p-2 > div:nth-child(2)",
+      "targets": [
+        ["css=.p-2 > div:nth-child(2)", "css:finder"],
+        ["xpath=//div[2]", "xpath:position"],
+        ["xpath=//div[contains(.,'Korisnik sa ovom mejl adresom ne postoji')]", "xpath:innerText"]
+      ],
+      "value": "Korisnik sa ovom mejl adresom ne postoji"
+    }]
+  }, {
+    "id": "cf9abaf1-a699-490e-99fe-65a3fdf9d900",
+    "name": "TP_NeuspesnoLogovanjeMejlNijeUnet",
+    "commands": [{
+      "id": "8f86187b-d041-448b-bcdb-ca970f928110",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "297d843c-8719-4bf3-9eb0-74ca88fa5dd4",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1050x652",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "25c14ed0-4085-4cda-b100-60f75b6e03bd",
+      "comment": "",
+      "command": "verifyValue",
+      "target": "id=mejl",
+      "targets": [
+        ["id=mejl", "id"],
+        ["name=mejl", "name"],
+        ["css=#mejl", "css:finder"],
+        ["xpath=//input[@id='mejl']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "edc52511-330e-4f16-be2c-8f7e695a80ea",
+      "comment": "",
+      "command": "click",
+      "target": "css=input:nth-child(13)",
+      "targets": [
+        ["css=input:nth-child(13)", "css:finder"],
+        ["xpath=//input[@value='Log in']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a99f832a-c1f6-47d4-bc98-41d81db7e9c6",
+      "comment": "",
+      "command": "click",
+      "target": "css=input:nth-child(13)",
+      "targets": [
+        ["css=input:nth-child(13)", "css:finder"],
+        ["xpath=//input[@value='Log in']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "Please fill out this field"
+    }]
+  }, {
+    "id": "80314584-1a1d-4a56-8c8a-29b5bafc6c34",
+    "name": "TP_NeuspesnoLogovanjeLozinkaNijeUneta",
+    "commands": [{
+      "id": "7e0d183a-70c6-40db-98ad-932a2fb0fa41",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3947b253-ae0e-40ec-8555-8bc766868ad3",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1050x652",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "17fd27fc-222c-4f73-9733-6b7d151093de",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=log in",
+      "targets": [
+        ["linkText=log in", "linkText"],
+        ["css=a:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'log in')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Neregistrovani/login']", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'log in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "83c8addc-3dd2-4785-ad3c-e022754f5536",
+      "comment": "",
+      "command": "click",
+      "target": "id=mejl",
+      "targets": [
+        ["id=mejl", "id"],
+        ["name=mejl", "name"],
+        ["css=#mejl", "css:finder"],
+        ["xpath=//input[@id='mejl']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "195f854d-805c-4f0b-83c4-3848a3068edd",
+      "comment": "",
+      "command": "type",
+      "target": "id=mejl",
+      "targets": [
+        ["id=mejl", "id"],
+        ["name=mejl", "name"],
+        ["css=#mejl", "css:finder"],
+        ["xpath=//input[@id='mejl']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "admin1@gmail.com"
+    }, {
+      "id": "ce4c3f80-acc7-41d3-b0c8-67316f82ae1d",
+      "comment": "",
+      "command": "click",
+      "target": "css=input:nth-child(13)",
+      "targets": [
+        ["css=input:nth-child(13)", "css:finder"],
+        ["xpath=//input[@value='Log in']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "400a496f-cc8b-46d1-9663-d3fdf4450aec",
+      "comment": "",
+      "command": "click",
+      "target": "css=input:nth-child(13)",
+      "targets": [
+        ["css=input:nth-child(13)", "css:finder"],
+        ["xpath=//input[@value='Log in']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "Please fill out this field"
+    }, {
+      "id": "cc8bd882-5271-4d06-8eb3-edcc9286a563",
+      "comment": "",
+      "command": "assertSelectedValue",
+      "target": "id=lozinka",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "7b08b41b-feeb-402d-bdbd-c10b06e68fd5",
+    "name": "TP_UspesnoLogovanjeGledaoca",
+    "commands": [{
+      "id": "803604ce-7fe1-4484-9b15-7a195a397002",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "55872e30-cada-4492-9c3b-c2471e2d804a",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1296x688",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "786b2d7d-0032-45ed-95c6-f9fa73849489",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=log in",
+      "targets": [
+        ["linkText=log in", "linkText"],
+        ["css=a:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'log in')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Neregistrovani/login']", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'log in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "78d3c86b-e2a8-487e-966b-681bc2df25ca",
+      "comment": "",
+      "command": "click",
+      "target": "id=mejl",
+      "targets": [
+        ["id=mejl", "id"],
+        ["name=mejl", "name"],
+        ["css=#mejl", "css:finder"],
+        ["xpath=//input[@id='mejl']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f8fe5c5f-db82-452b-98e7-ff79fc2a5ad7",
+      "comment": "",
+      "command": "type",
+      "target": "id=mejl",
+      "targets": [
+        ["id=mejl", "id"],
+        ["name=mejl", "name"],
+        ["css=#mejl", "css:finder"],
+        ["xpath=//input[@id='mejl']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "gledalac1@gmail.com"
+    }, {
+      "id": "8da3ec1f-052b-4db6-b831-2c7b680c18f7",
+      "comment": "",
+      "command": "click",
+      "target": "id=lozinka",
+      "targets": [
+        ["id=lozinka", "id"],
+        ["name=lozinka", "name"],
+        ["css=#lozinka", "css:finder"],
+        ["xpath=//input[@id='lozinka']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d00e8327-3c03-452e-8e01-ae689ba376eb",
+      "comment": "",
+      "command": "type",
+      "target": "id=lozinka",
+      "targets": [
+        ["id=lozinka", "id"],
+        ["name=lozinka", "name"],
+        ["css=#lozinka", "css:finder"],
+        ["xpath=//input[@id='lozinka']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "gledalac1"
+    }, {
+      "id": "a438ae9a-90c7-4daf-b3e0-ea97d7275ab3",
+      "comment": "",
+      "command": "click",
+      "target": "css=input:nth-child(13)",
+      "targets": [
+        ["css=input:nth-child(13)", "css:finder"],
+        ["xpath=//input[@value='Log in']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a2f644bc-6b7c-4728-bcf6-abeede221429",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=b",
+      "targets": [
+        ["css=b", "css:finder"],
+        ["xpath=//b", "xpath:position"],
+        ["xpath=//b[contains(.,'Žanr:')]", "xpath:innerText"]
+      ],
+      "value": "Žanr:"
+    }, {
+      "id": "980531e4-3d5c-46c2-b4c4-92384f8b15f4",
+      "comment": "",
+      "command": "assertSelectedLabel",
+      "target": "name=trazi",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "03c135a1-069d-4d01-9566-80d88cc369f4",
+    "name": "TP_UspesnoLogovanjeAdmina",
+    "commands": [{
+      "id": "f6ef49cd-80b9-4c0c-b061-ebbc23277fa8",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "839195eb-5494-4411-b37b-3761ace672a2",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1050x652",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c50a7d3f-9893-4d5c-a95e-ca615ab2904e",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=log in",
+      "targets": [
+        ["linkText=log in", "linkText"],
+        ["css=a:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'log in')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Neregistrovani/login']", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'log in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c3e24851-d62f-4316-9084-e8153b63b68c",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "id=mejl",
+      "targets": [
+        ["id=mejl", "id"],
+        ["name=mejl", "name"],
+        ["css=#mejl", "css:finder"],
+        ["xpath=//input[@id='mejl']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "90.66665649414062,14.604164123535156"
+    }, {
+      "id": "4663065a-4118-4964-a5c8-a81911a3c94d",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "id=mejl",
+      "targets": [
+        ["id=mejl", "id"],
+        ["name=mejl", "name"],
+        ["css=#mejl", "css:finder"],
+        ["xpath=//input[@id='mejl']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "90.66665649414062,14.604164123535156"
+    }, {
+      "id": "26f7bf8a-3ff7-49b7-a81c-b450e6e32fa0",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "id=mejl",
+      "targets": [
+        ["id=mejl", "id"],
+        ["name=mejl", "name"],
+        ["css=#mejl", "css:finder"],
+        ["xpath=//input[@id='mejl']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "90.66665649414062,14.604164123535156"
+    }, {
+      "id": "c7b86f8f-c072-4a24-99bc-7231b41253a9",
+      "comment": "",
+      "command": "click",
+      "target": "id=mejl",
+      "targets": [
+        ["id=mejl", "id"],
+        ["name=mejl", "name"],
+        ["css=#mejl", "css:finder"],
+        ["xpath=//input[@id='mejl']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b1200802-b4fc-437b-9c37-82d8230ac882",
+      "comment": "",
+      "command": "type",
+      "target": "id=mejl",
+      "targets": [
+        ["id=mejl", "id"],
+        ["name=mejl", "name"],
+        ["css=#mejl", "css:finder"],
+        ["xpath=//input[@id='mejl']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "admin1@gmail.com"
+    }, {
+      "id": "e75fde75-39ee-4757-b8db-bc63e2e5cee9",
+      "comment": "",
+      "command": "click",
+      "target": "id=lozinka",
+      "targets": [
+        ["id=lozinka", "id"],
+        ["name=lozinka", "name"],
+        ["css=#lozinka", "css:finder"],
+        ["xpath=//input[@id='lozinka']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fa7685f9-f12e-458f-b750-4a7bd2d5ea2d",
+      "comment": "",
+      "command": "type",
+      "target": "id=lozinka",
+      "targets": [
+        ["id=lozinka", "id"],
+        ["name=lozinka", "name"],
+        ["css=#lozinka", "css:finder"],
+        ["xpath=//input[@id='lozinka']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "admin1"
+    }, {
+      "id": "208e2134-1f8d-4d9a-9b77-9eb5798f5d30",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "css=input:nth-child(13)",
+      "targets": [
+        ["css=input:nth-child(13)", "css:finder"],
+        ["xpath=//input[@value='Log in']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "18.822906494140625,4.604156494140625"
+    }, {
+      "id": "e4b02b68-3a6d-4a91-999b-61e77fd4221e",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "css=input:nth-child(13)",
+      "targets": [
+        ["css=input:nth-child(13)", "css:finder"],
+        ["xpath=//input[@value='Log in']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "18.822906494140625,4.604156494140625"
+    }, {
+      "id": "97686a3b-8870-4c34-807e-2a29e337838f",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "css=input:nth-child(13)",
+      "targets": [
+        ["css=input:nth-child(13)", "css:finder"],
+        ["xpath=//input[@value='Log in']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "18.822906494140625,4.604156494140625"
+    }, {
+      "id": "5eb347e0-49ee-471d-9097-36496328045c",
+      "comment": "",
+      "command": "click",
+      "target": "css=input:nth-child(13)",
+      "targets": [
+        ["css=input:nth-child(13)", "css:finder"],
+        ["xpath=//input[@value='Log in']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1140b9c5-3c74-4830-af0a-822f8e1e9a64",
+      "comment": "",
+      "command": "verifyText",
+      "target": "linkText=Zahtevi",
+      "targets": [
+        ["linkText=Zahtevi", "linkText"],
+        ["css=td:nth-child(1) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Zahtevi')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Admin/zahtevi']", "xpath:href"],
+        ["xpath=//tr[3]/td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Zahtevi')]", "xpath:innerText"]
+      ],
+      "value": "Zahtevi"
+    }, {
+      "id": "a41f8716-b24c-4d33-bd7f-03fbaa9ad36a",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=body > table tr:nth-child(3) > td:nth-child(1)",
+      "targets": [
+        ["css=body > table tr:nth-child(3) > td:nth-child(1)", "css:finder"],
+        ["xpath=//tr[3]/td", "xpath:position"],
+        ["xpath=//td[contains(.,'Zahtevi')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "77f52675-2eee-41c8-9d4c-2b8b010512c7",
+    "name": "TP_UspesnoLogovanjePredstavnikaFilma",
+    "commands": [{
+      "id": "2c17a27c-9449-4dcd-b908-2d5a364da3ab",
+      "comment": "",
+      "command": "open",
+      "target": "/Predstavnik/posaljiZahtev",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "26d1ca6b-ec57-48dd-bc3c-4844596502fe",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1050x652",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "07c02d16-c790-4968-b436-de7e4373f2a2",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=log out",
+      "targets": [
+        ["linkText=log out", "linkText"],
+        ["css=a:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'log out')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Neregistrovani/login']", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'log out')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ffb0fb66-e098-4d50-a784-1a0b9ba1ea2b",
+      "comment": "",
+      "command": "click",
+      "target": "id=mejl",
+      "targets": [
+        ["id=mejl", "id"],
+        ["name=mejl", "name"],
+        ["css=#mejl", "css:finder"],
+        ["xpath=//input[@id='mejl']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4e092ed6-3db7-4dc8-bd8c-746358056510",
+      "comment": "",
+      "command": "type",
+      "target": "id=mejl",
+      "targets": [
+        ["id=mejl", "id"],
+        ["name=mejl", "name"],
+        ["css=#mejl", "css:finder"],
+        ["xpath=//input[@id='mejl']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "predstavnik2@gmail.com"
+    }, {
+      "id": "c953f4d1-7166-4563-8b45-a41fa347e279",
+      "comment": "",
+      "command": "click",
+      "target": "id=lozinka",
+      "targets": [
+        ["id=lozinka", "id"],
+        ["name=lozinka", "name"],
+        ["css=#lozinka", "css:finder"],
+        ["xpath=//input[@id='lozinka']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "84db66d5-9e52-4857-95fc-319e3c59eb2c",
+      "comment": "",
+      "command": "type",
+      "target": "id=lozinka",
+      "targets": [
+        ["id=lozinka", "id"],
+        ["name=lozinka", "name"],
+        ["css=#lozinka", "css:finder"],
+        ["xpath=//input[@id='lozinka']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "predstavnik2"
+    }, {
+      "id": "b774d284-1c12-47d9-89ce-641092835ea1",
+      "comment": "",
+      "command": "click",
+      "target": "css=input:nth-child(13)",
+      "targets": [
+        ["css=input:nth-child(13)", "css:finder"],
+        ["xpath=//input[@value='Log in']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a30f461a-e719-4105-b650-4bfad1ea913d",
+      "comment": "",
+      "command": "assertValue",
+      "target": "css=p > button",
+      "targets": [
+        ["css=p > button", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'POSALJI ZAHTEV')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b3d13c51-4cd9-4abd-a307-d354a695d432",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=p > button",
+      "targets": [
+        ["css=p > button", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'POSALJI ZAHTEV')]", "xpath:innerText"]
+      ],
+      "value": "POSALJI ZAHTEV"
+    }]
+  }, {
+    "id": "6e01276a-0e79-4bea-88f2-90eb73870c81",
+    "name": "TP_GledalacUspesnoRezervisoMesto",
+    "commands": [{
+      "id": "d63bc64c-0ef0-4248-ac5d-46659c388e6a",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Gledalac/pocetna",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "80a0c5f9-ab03-4f22-a245-d0cb1b630c86",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1296x688",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4aebc5b3-84c5-4414-8276-ea19a3629eb4",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=12:00",
+      "targets": [
+        ["linkText=12:00", "linkText"],
+        ["css=.row:nth-child(1) .pocetnaStrana:nth-child(2) a", "css:finder"],
+        ["xpath=//a[contains(text(),'12:00')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Gledalac/film/5']", "xpath:href"],
+        ["xpath=//th[3]/div/button/a", "xpath:position"],
+        ["xpath=//a[contains(.,'12:00')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d0625fde-9f67-426c-a4ff-64542a5e3bfa",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=.opis > div",
+      "targets": [
+        ["css=.opis > div", "css:finder"],
+        ["xpath=//div[2]/div[2]/div[2]/div", "xpath:position"]
+      ],
+      "value": "Pogrešna želja mladog oposuma zamrzava ceo njen rodni grad Sanktuari Siti i preti svima koji tamo žive."
+    }, {
+      "id": "ffdd7e71-0579-447d-950d-0b7f9428b4d2",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=REZERVISI",
+      "targets": [
+        ["linkText=REZERVISI", "linkText"],
+        ["css=.btn > a", "css:finder"],
+        ["xpath=//a[contains(text(),'REZERVISI')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Gledalac/index/5']", "xpath:href"],
+        ["xpath=//button/a", "xpath:position"],
+        ["xpath=//a[contains(.,'REZERVISI')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1499691a-0de2-4e8b-bd56-99e5183b68d3",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=label:nth-child(3)",
+      "targets": [
+        ["css=label:nth-child(3)", "css:finder"],
+        ["xpath=//label", "xpath:position"],
+        ["xpath=//label[contains(.,'Bilo koje mesto')]", "xpath:innerText"]
+      ],
+      "value": "Bilo koje mesto"
+    }, {
+      "id": "9f602b0a-dca0-4da5-83b5-2614d943d2da",
+      "comment": "",
+      "command": "click",
+      "target": "id=46",
+      "targets": [
+        ["id=46", "id"],
+        ["css=#\\34 6", "css:finder"],
+        ["xpath=//td[@id='46']", "xpath:attributes"],
+        ["xpath=//div[@id='seats']/table/tbody/tr[4]/td[8]", "xpath:idRelative"],
+        ["xpath=//tr[4]/td[8]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ec785ebe-ef94-4791-8ec7-7424eb872c93",
+      "comment": "",
+      "command": "mouseDown",
+      "target": "id=selenium-ide-indicator",
+      "targets": [
+        ["id=selenium-ide-indicator", "id"],
+        ["css=#selenium-ide-indicator", "css:finder"],
+        ["xpath=//iframe[@id='selenium-ide-indicator']", "xpath:attributes"],
+        ["xpath=//iframe", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ee3996b6-db6e-43c5-884d-aa580cd181fc",
+      "comment": "",
+      "command": "mouseUp",
+      "target": "css=tr:nth-child(2) input",
+      "targets": [
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@value='Rezervisi']", "xpath:attributes"],
+        ["xpath=//tr[2]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5db036b2-a881-48c3-a3e9-c57243c229b2",
+      "comment": "",
+      "command": "click",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5e62bc2c-9496-47be-9a18-89bec9cfd001",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(2) input",
+      "targets": [
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@value='Rezervisi']", "xpath:attributes"],
+        ["xpath=//tr[2]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "95c4814f-b4e0-4e1f-893c-5c7d73a627aa",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=div:nth-child(4) > table:nth-child(1) tr:nth-child(1) > td:nth-child(2)",
+      "targets": [
+        ["css=div:nth-child(4) > table:nth-child(1) tr:nth-child(1) > td:nth-child(2)", "css:finder"],
+        ["xpath=//td[2]", "xpath:position"],
+        ["xpath=//td[contains(.,'Naziv filma:')]", "xpath:innerText"]
+      ],
+      "value": "Naziv filma:"
+    }, {
+      "id": "8320a7be-2644-42fc-8b9b-31dcac073cc8",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=div:nth-child(4) > table:nth-child(1) tr:nth-child(2) > td:nth-child(1)",
+      "targets": [
+        ["css=div:nth-child(4) > table:nth-child(1) tr:nth-child(2) > td:nth-child(1)", "css:finder"],
+        ["xpath=//tr[2]/td", "xpath:position"],
+        ["xpath=//td[contains(.,'Skriveni Grad')]", "xpath:innerText"]
+      ],
+      "value": "Skriveni Grad"
+    }, {
+      "id": "44c170ef-d5c8-4e0f-856a-6209284144a0",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=div:nth-child(4) tr:nth-child(1) > td:nth-child(3)",
+      "targets": [
+        ["css=div:nth-child(4) tr:nth-child(1) > td:nth-child(3)", "css:finder"],
+        ["xpath=//td[3]", "xpath:position"],
+        ["xpath=//td[contains(.,'Datum i vreme projekcije:')]", "xpath:innerText"]
+      ],
+      "value": "Datum i vreme projekcije:"
+    }, {
+      "id": "a3e68c5c-9347-462e-a287-3d1448a75730",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=div:nth-child(4) > table:nth-child(1) tr:nth-child(2) > td:nth-child(2)",
+      "targets": [
+        ["css=div:nth-child(4) > table:nth-child(1) tr:nth-child(2) > td:nth-child(2)", "css:finder"],
+        ["xpath=//tr[2]/td[2]", "xpath:position"],
+        ["xpath=//td[contains(.,'2022-06-12')]", "xpath:innerText"]
+      ],
+      "value": "2022-06-12"
+    }, {
+      "id": "134989ca-dd13-49dc-b460-caa753a5cf8e",
+      "comment": "",
+      "command": "click",
+      "target": "css=input:nth-child(1)",
+      "targets": [
+        ["css=input:nth-child(1)", "css:finder"],
+        ["xpath=//input[@value='Nastavi pretragu']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "72529172-9fd2-4fed-a173-87604b77d0a3",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=label:nth-child(3)",
+      "targets": [
+        ["css=label:nth-child(3)", "css:finder"],
+        ["xpath=//label", "xpath:position"],
+        ["xpath=//label[contains(.,'Bilo koje mesto')]", "xpath:innerText"]
+      ],
+      "value": "Bilo koje mesto"
+    }]
+  }, {
+    "id": "30d83ebd-4a9e-4d5a-9df6-e542cf08c3c0",
+    "name": "TP_GledalacNijeOdabraoMestoPrilikomRezervacijeMesta",
+    "commands": [{
+      "id": "8f1c417b-3175-4e79-a641-18f560892e62",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Gledalac/pocetna",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7fb42ccf-2cfa-48f8-ac00-0044a742fa91",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1052x654",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0a7311e1-2d06-4e3e-951a-6f762b52350e",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=18:00",
+      "targets": [
+        ["linkText=18:00", "linkText"],
+        ["css=.pocetnaStrana:nth-child(3) a", "css:finder"],
+        ["xpath=//a[contains(text(),'18:00')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Gledalac/film/3']", "xpath:href"],
+        ["xpath=//tr[3]/th[3]/div/button/a", "xpath:position"],
+        ["xpath=//a[contains(.,'18:00')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bc837746-fa3c-461f-a964-189bd8a38d9b",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.ml-5",
+      "targets": [
+        ["css=.ml-5", "css:finder"],
+        ["xpath=//div[2]/div", "xpath:position"]
+      ],
+      "value": "Skriveni Grad"
+    }, {
+      "id": "0779519a-5f24-4657-afcb-5621e2918e33",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.opis > div",
+      "targets": [
+        ["css=.opis > div", "css:finder"],
+        ["xpath=//div[2]/div[2]/div[2]/div", "xpath:position"]
+      ],
+      "value": "Pogrešna želja mladog oposuma zamrzava ceo njen rodni grad Sanktuari Siti i preti svima koji tamo žive."
+    }, {
+      "id": "c384e67b-52f3-46bc-a313-cb2a1ae89793",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.col-1",
+      "targets": [
+        ["css=.col-1", "css:finder"],
+        ["xpath=//div[3]", "xpath:position"]
+      ],
+      "value": "12.06.2022\\n18:00\\nSala 1\\nREZERVISI"
+    }, {
+      "id": "ccf07163-29dd-446e-9333-fd56fe07253e",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=REZERVISI",
+      "targets": [
+        ["linkText=REZERVISI", "linkText"],
+        ["css=.btn > a", "css:finder"],
+        ["xpath=//a[contains(text(),'REZERVISI')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Gledalac/index/3']", "xpath:href"],
+        ["xpath=//button/a", "xpath:position"],
+        ["xpath=//a[contains(.,'REZERVISI')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "acd86ac8-9289-44de-8ef3-157d15bc3654",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(2) input",
+      "targets": [
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@value='Rezervisi']", "xpath:attributes"],
+        ["xpath=//tr[2]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0784f04b-199b-4fb3-b10e-672c2928d6f8",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=REZERVISI",
+      "targets": [
+        ["linkText=REZERVISI", "linkText"],
+        ["css=.btn > a", "css:finder"],
+        ["xpath=//a[contains(text(),'REZERVISI')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Gledalac/index/3']", "xpath:href"],
+        ["xpath=//button/a", "xpath:position"],
+        ["xpath=//a[contains(.,'REZERVISI')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "eaa6d4ff-91bf-495f-a15b-eb3b8316640b",
+      "comment": "",
+      "command": "click",
+      "target": "id=38",
+      "targets": [
+        ["id=38", "id"],
+        ["css=#\\33 8", "css:finder"],
+        ["xpath=//td[@id='38']", "xpath:attributes"],
+        ["xpath=//div[@id='seats']/table/tbody/tr[3]/td[12]", "xpath:idRelative"],
+        ["xpath=//tr[3]/td[12]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "34a47576-de4a-47d9-b317-3b48ff1c5bcd",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(2) input",
+      "targets": [
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@value='Rezervisi']", "xpath:attributes"],
+        ["xpath=//tr[2]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1d43f4f6-87b5-424c-9870-3d2f751c849c",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=body > div:nth-child(4)",
+      "targets": [],
+      "value": "Molimo izaberite mesto u sali ili čekirajte 'Bilo koje mesto'"
+    }]
+  }, {
+    "id": "6f50eda5-f03b-4892-987e-cb08a0421ffe",
+    "name": "TP_RezervacijaNeuspesnaNemaDovoljnoSlobodnihMesta",
+    "commands": [{
+      "id": "b70ff320-9ef6-4967-a094-bf1ff9587b1d",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Gledalac/pocetna",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f3cd189a-9b30-4833-9ddf-5f77ee657ad4",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1296x688",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9643613a-501e-40d7-ad70-0efd996d9c2b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.row:nth-child(2) .btn",
+      "targets": [
+        ["css=.row:nth-child(2) .btn", "css:finder"],
+        ["xpath=//div[2]/div[2]/table/tbody/tr[2]/th[3]/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "21351168-3b2a-4183-b11b-b6bd0aa11426",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=REZERVISI",
+      "targets": [
+        ["linkText=REZERVISI", "linkText"],
+        ["css=.btn > a", "css:finder"],
+        ["xpath=//a[contains(text(),'REZERVISI')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Gledalac/index/4']", "xpath:href"],
+        ["xpath=//button/a", "xpath:position"],
+        ["xpath=//a[contains(.,'REZERVISI')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fb2b7cc8-bf63-4b35-9592-4baa50a32d8c",
+      "comment": "",
+      "command": "click",
+      "target": "id=brojKarata",
+      "targets": [
+        ["id=brojKarata", "id"],
+        ["name=brojKarata", "name"],
+        ["css=#brojKarata", "css:finder"],
+        ["xpath=//input[@id='brojKarata']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "eac74088-b6db-4861-a3f7-0809d2c261dd",
+      "comment": "",
+      "command": "type",
+      "target": "id=brojKarata",
+      "targets": [
+        ["id=brojKarata", "id"],
+        ["name=brojKarata", "name"],
+        ["css=#brojKarata", "css:finder"],
+        ["xpath=//input[@id='brojKarata']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "33"
+    }, {
+      "id": "b9df4403-cc7d-426a-9827-e837a1b795e0",
+      "comment": "",
+      "command": "click",
+      "target": "id=mesto",
+      "targets": [
+        ["id=mesto", "id"],
+        ["name=mesto", "name"],
+        ["css=#mesto", "css:finder"],
+        ["xpath=//input[@id='mesto']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d1f09300-3e67-45c6-bc6d-6c0c6e42dc9e",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(2) input",
+      "targets": [
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@value='Rezervisi']", "xpath:attributes"],
+        ["xpath=//tr[2]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a414f318-5305-4e3b-baef-4df6a79225a3",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=body > div:nth-child(9)",
+      "targets": [
+        ["css=body > div:nth-child(9)", "css:finder"],
+        ["xpath=//div[5]", "xpath:position"],
+        ["xpath=//div[contains(.,'Nema dovoljno slobodnih karata za projekciju')]", "xpath:innerText"]
+      ],
+      "value": "Nema dovoljno slobodnih karata za projekciju"
+    }]
+  }, {
+    "id": "2b5c4be1-a98b-43f5-b661-76e597d37052",
+    "name": "TP_NeuspesnaRezervacijaMestaGledalacNijeUlogovan",
+    "commands": [{
+      "id": "39ff8c48-dc59-431c-9d1c-53871e637d2c",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Neregistrovani/pocetna",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1960fc83-2ce9-4807-a249-ce9d9d865d58",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1296x688",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b1989c2e-8f22-42a6-8330-f742802fb457",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=18:00",
+      "targets": [
+        ["linkText=18:00", "linkText"],
+        ["css=.row:nth-child(1) .pocetnaStrana:nth-child(3) a", "css:finder"],
+        ["xpath=//a[contains(text(),'18:00')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Neregistrovani/film/3']", "xpath:href"],
+        ["xpath=//tr[3]/th[3]/div/button/a", "xpath:position"],
+        ["xpath=//a[contains(.,'18:00')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7da85180-e148-469b-8928-38a1bc735663",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=REZERVISI",
+      "targets": [
+        ["linkText=REZERVISI", "linkText"],
+        ["css=.btn-outline-dark > a", "css:finder"],
+        ["xpath=//a[contains(text(),'REZERVISI')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Gledalac/index/3']", "xpath:href"],
+        ["xpath=//button/a", "xpath:position"],
+        ["xpath=//a[contains(.,'REZERVISI')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0f421f0b-4586-423e-a5bc-fd892e6c8202",
+      "comment": "",
+      "command": "click",
+      "target": "id=43",
+      "targets": [
+        ["id=43", "id"],
+        ["css=#\\34 3", "css:finder"],
+        ["xpath=//td[@id='43']", "xpath:attributes"],
+        ["xpath=//div[@id='seats']/table/tbody/tr[4]/td[5]", "xpath:idRelative"],
+        ["xpath=//tr[4]/td[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "83de9194-9a77-450f-91c0-2cd97c0b02e0",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(2) input",
+      "targets": [
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@value='Rezervisi']", "xpath:attributes"],
+        ["xpath=//tr[2]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3ec43197-8dd5-42bb-9a9f-89a51dc80bee",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=div:nth-child(4) ",
+      "targets": [
+        ["css=div:nth-child(4) tr:nth-child(1) > td:nth-child(3)", "css:finder"],
+        ["xpath=//td[3]", "xpath:position"],
+        ["xpath=//td[contains(.,'Datum i vreme projekcije:')]", "xpath:innerText"]
+      ],
+      "value": "Molimo ulogujte se."
+    }]
+  }, {
+    "id": "06f0caa2-971f-446a-bc28-0c61d3968c14",
+    "name": "TP_GledalacUspesnoRezervisaoKarte",
+    "commands": [{
+      "id": "6c8dde25-86d5-4441-9e11-11ba73ccb125",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Gledalac/pocetna",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "68b698a2-84b6-44b6-8adc-b270d1d44be5",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1296x688",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "728d865a-3dca-4e14-8fca-5915bc366b27",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=20:00",
+      "targets": [
+        ["linkText=20:00", "linkText"],
+        ["css=.pocetnaStrana:nth-child(1) > .pocetna a", "css:finder"],
+        ["xpath=//a[contains(text(),'20:00')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Gledalac/film/7']", "xpath:href"],
+        ["xpath=//div[3]/div[2]/table/tbody/tr/th[3]/div/button/a", "xpath:position"],
+        ["xpath=//a[contains(.,'20:00')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fea6a6e6-2868-4640-a13d-2e387c3bbb18",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=REZERVISI",
+      "targets": [
+        ["linkText=REZERVISI", "linkText"],
+        ["css=.btn > a", "css:finder"],
+        ["xpath=//a[contains(text(),'REZERVISI')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Gledalac/index/7']", "xpath:href"],
+        ["xpath=//button/a", "xpath:position"],
+        ["xpath=//a[contains(.,'REZERVISI')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "aa75567e-152b-4bf8-9f66-e26eff540894",
+      "comment": "",
+      "command": "click",
+      "target": "id=mesto",
+      "targets": [
+        ["id=mesto", "id"],
+        ["name=mesto", "name"],
+        ["css=#mesto", "css:finder"],
+        ["xpath=//input[@id='mesto']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "34267c79-c060-4dc1-84df-9713f216dc46",
+      "comment": "",
+      "command": "click",
+      "target": "id=brojKarata",
+      "targets": [
+        ["id=brojKarata", "id"],
+        ["name=brojKarata", "name"],
+        ["css=#brojKarata", "css:finder"],
+        ["xpath=//input[@id='brojKarata']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fe59a605-368f-4d5d-9c1f-ae2d7d063fa5",
+      "comment": "",
+      "command": "type",
+      "target": "id=brojKarata",
+      "targets": [
+        ["id=brojKarata", "id"],
+        ["name=brojKarata", "name"],
+        ["css=#brojKarata", "css:finder"],
+        ["xpath=//input[@id='brojKarata']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "1"
+    }, {
+      "id": "a6d3ec5a-9b49-4c88-b458-f55ff062196c",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(2) input",
+      "targets": [
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@value='Rezervisi']", "xpath:attributes"],
+        ["xpath=//tr[2]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "35260f74-4142-4472-8626-3b7cbc332f60",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=div:nth-child(14) tr:nth-child(1) > td:nth-child(2)",
+      "targets": [
+        ["css=div:nth-child(14) tr:nth-child(1) > td:nth-child(2)", "css:finder"],
+        ["xpath=//div[5]/table/tbody/tr/td[2]", "xpath:position"],
+        ["xpath=//td[contains(.,'Naziv filma:')]", "xpath:innerText"]
+      ],
+      "value": "Naziv filma:"
+    }, {
+      "id": "6e27cc05-1a9c-4c0d-8ae3-a66c6ca1aacd",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=div:nth-child(14) tr:nth-child(2) > td:nth-child(1)",
+      "targets": [
+        ["css=div:nth-child(14) tr:nth-child(2) > td:nth-child(1)", "css:finder"],
+        ["xpath=//div[5]/table/tbody/tr[2]/td", "xpath:position"]
+      ],
+      "value": "Doktor Strejndž"
+    }, {
+      "id": "0bd022b7-d228-4596-81f1-1aa66d905541",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=div:nth-child(14) tr:nth-child(2) > td:nth-child(2)",
+      "targets": [
+        ["css=div:nth-child(14) tr:nth-child(2) > td:nth-child(2)", "css:finder"],
+        ["xpath=//div[5]/table/tbody/tr[2]/td[2]", "xpath:position"]
+      ],
+      "value": "2022-06-12"
+    }, {
+      "id": "529d30a8-e6de-4696-928c-3109c13a914e",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=div:nth-child(14) tr:nth-child(2) > td:nth-child(3)",
+      "targets": [
+        ["css=div:nth-child(14) tr:nth-child(2) > td:nth-child(3)", "css:finder"],
+        ["xpath=//div[5]/table/tbody/tr[2]/td[3]", "xpath:position"]
+      ],
+      "value": "Sala 1"
+    }, {
+      "id": "4178819c-ed05-4d50-98be-4895c11ee1df",
+      "comment": "",
+      "command": "click",
+      "target": "css=input:nth-child(1)",
+      "targets": [
+        ["css=input:nth-child(1)", "css:finder"],
+        ["xpath=//input[@value='Nastavi pretragu']", "xpath:attributes"],
+        ["xpath=//form/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "04b9a6fb-c5f4-4434-8e51-f0aa99089343",
+    "name": "TP_GledalacNijeOdabraoMestoPrilikomRezervacijeKarte",
+    "commands": [{
+      "id": "5979295b-4e75-4452-a5d9-8e3a58971717",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Gledalac/pocetna",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b3463f7b-b50c-4c8d-98fa-9a0fc3d7ce32",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1296x688",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e6a7efc9-b5c4-40cd-9f20-99903d36e3b2",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=18:00",
+      "targets": [
+        ["linkText=18:00", "linkText"],
+        ["css=.row:nth-child(1) .pocetnaStrana:nth-child(3) a", "css:finder"],
+        ["xpath=//a[contains(text(),'18:00')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Gledalac/film/3']", "xpath:href"],
+        ["xpath=//tr[3]/th[3]/div/button/a", "xpath:position"],
+        ["xpath=//a[contains(.,'18:00')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e0fdbfc0-3944-4a10-976f-042511d186a6",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=REZERVISI",
+      "targets": [
+        ["linkText=REZERVISI", "linkText"],
+        ["css=.btn > a", "css:finder"],
+        ["xpath=//a[contains(text(),'REZERVISI')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Gledalac/index/3']", "xpath:href"],
+        ["xpath=//button/a", "xpath:position"],
+        ["xpath=//a[contains(.,'REZERVISI')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5a10fd49-e68a-46cf-86a2-7bcd2c0c8091",
+      "comment": "",
+      "command": "click",
+      "target": "id=mesto",
+      "targets": [
+        ["id=mesto", "id"],
+        ["name=mesto", "name"],
+        ["css=#mesto", "css:finder"],
+        ["xpath=//input[@id='mesto']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "27aee991-dd91-4819-b11c-b173adfd4501",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(2) input",
+      "targets": [
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@value='Rezervisi']", "xpath:attributes"],
+        ["xpath=//tr[2]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0eaaddd1-daab-4d4a-9826-8e1fffd35d82",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=body > div:nth-child(4)",
+      "targets": [
+        ["css=body > div:nth-child(4)", "css:finder"],
+        ["xpath=//div[2]", "xpath:position"]
+      ],
+      "value": "Molimo izaberite mesto u sali ili čekirajte 'Bilo koje mesto'"
+    }]
+  }, {
+    "id": "d80062ed-056d-4c41-9abe-b1fd013dabd6",
+    "name": "TP_NeuspesnaRezervacijaKarteGledalacNijeUlogovan",
+    "commands": [{
+      "id": "6a0bccd5-c1ef-4442-8926-4b932908fa92",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Gledalac/pocetna",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7eef0214-664a-43a1-b39c-d8b392c48b3a",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1050x652",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4cf4d9d4-749a-442c-8450-d0783966301f",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=12:00",
+      "targets": [
+        ["linkText=12:00", "linkText"],
+        ["css=.row:nth-child(1) .pocetnaStrana:nth-child(2) a", "css:finder"],
+        ["xpath=//a[contains(text(),'12:00')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Gledalac/film/5']", "xpath:href"],
+        ["xpath=//th[3]/div/button/a", "xpath:position"],
+        ["xpath=//a[contains(.,'12:00')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "141f9a53-75d9-4d61-b8a4-4438dcbde327",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=REZERVISI",
+      "targets": [
+        ["linkText=REZERVISI", "linkText"],
+        ["css=.btn > a", "css:finder"],
+        ["xpath=//a[contains(text(),'REZERVISI')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Gledalac/index/5']", "xpath:href"],
+        ["xpath=//button/a", "xpath:position"],
+        ["xpath=//a[contains(.,'REZERVISI')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7d5dfe3d-253c-4d1c-b579-d206a00074ee",
+      "comment": "",
+      "command": "click",
+      "target": "id=brojKarata",
+      "targets": [
+        ["id=brojKarata", "id"],
+        ["name=brojKarata", "name"],
+        ["css=#brojKarata", "css:finder"],
+        ["xpath=//input[@id='brojKarata']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d24fbfc7-052e-4ae3-919b-374c0c3a5fc8",
+      "comment": "",
+      "command": "type",
+      "target": "id=brojKarata",
+      "targets": [
+        ["id=brojKarata", "id"],
+        ["name=brojKarata", "name"],
+        ["css=#brojKarata", "css:finder"],
+        ["xpath=//input[@id='brojKarata']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "3"
+    }, {
+      "id": "f8e856e1-c3c3-445f-b43b-0199ca4b2956",
+      "comment": "",
+      "command": "click",
+      "target": "id=mesto",
+      "targets": [
+        ["id=mesto", "id"],
+        ["name=mesto", "name"],
+        ["css=#mesto", "css:finder"],
+        ["xpath=//input[@id='mesto']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4533ccd4-4a01-4ecc-ac10-a44b724bdc1b",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(2) input",
+      "targets": [
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@value='Rezervisi']", "xpath:attributes"],
+        ["xpath=//tr[2]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3140b9b0-8252-43cb-8110-470a84f810c3",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.p-2 > div:nth-child(4)",
+      "targets": [
+        ["css=.p-2 > div:nth-child(4)", "css:finder"],
+        ["xpath=//div[2]", "xpath:position"]
+      ],
+      "value": "Molimo ulogujte se."
+    }]
+  }, {
+    "id": "049dc1dd-fe3b-474e-a25e-1070e8f9a74a",
+    "name": "TP_NeuspesnaRezervacijaKarteNemaDovoljnoMesta",
+    "commands": [{
+      "id": "3d045fb5-79ee-4254-8911-878f644f4194",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Gledalac/pocetna",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "dac1210c-5bbb-47ab-a263-dd1452d5434e",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1296x688",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "155290f2-7ab3-4763-a755-1c9b3e7a4723",
+      "comment": "",
+      "command": "click",
+      "target": "css=.row:nth-child(1) > .col-md-9",
+      "targets": [
+        ["css=.row:nth-child(1) > .col-md-9", "css:finder"],
+        ["xpath=//div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "565aab4e-ef08-4ccd-bfcd-236d5e9d71f3",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=REZERVISI",
+      "targets": [
+        ["linkText=REZERVISI", "linkText"],
+        ["css=.btn > a", "css:finder"],
+        ["xpath=//a[contains(text(),'REZERVISI')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Gledalac/index/4']", "xpath:href"],
+        ["xpath=//button/a", "xpath:position"],
+        ["xpath=//a[contains(.,'REZERVISI')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "426edf32-bace-44b0-9a73-cc9258f46097",
+      "comment": "",
+      "command": "click",
+      "target": "id=brojKarata",
+      "targets": [
+        ["id=brojKarata", "id"],
+        ["name=brojKarata", "name"],
+        ["css=#brojKarata", "css:finder"],
+        ["xpath=//input[@id='brojKarata']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "996841e9-21c6-48c6-a423-66fd832f2886",
+      "comment": "",
+      "command": "type",
+      "target": "id=brojKarata",
+      "targets": [
+        ["id=brojKarata", "id"],
+        ["name=brojKarata", "name"],
+        ["css=#brojKarata", "css:finder"],
+        ["xpath=//input[@id='brojKarata']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "33"
+    }, {
+      "id": "022956f2-5df5-4864-9e35-368308a32ca6",
+      "comment": "",
+      "command": "click",
+      "target": "id=mesto",
+      "targets": [
+        ["id=mesto", "id"],
+        ["name=mesto", "name"],
+        ["css=#mesto", "css:finder"],
+        ["xpath=//input[@id='mesto']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fda0d020-10b5-416c-b9ea-baf477750b2b",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(2) input",
+      "targets": [
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@value='Rezervisi']", "xpath:attributes"],
+        ["xpath=//tr[2]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dbe07b52-6445-498d-aacb-c46d0aeb4d9a",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=body > div:nth-child(9)",
+      "targets": [
+        ["css=body > div:nth-child(9)", "css:finder"],
+        ["xpath=//div[5]", "xpath:position"],
+        ["xpath=//div[contains(.,'Nema dovoljno slobodnih karata za projekciju')]", "xpath:innerText"]
+      ],
+      "value": "Nema dovoljno slobodnih karata za projekciju"
+    }]
+  }],
+  "suites": [{
+    "id": "e2980198-57ef-468a-b847-39366eab76fc",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["23157469-a274-4e9e-8cbf-6cbd2081775d"]
+  }],
+  "urls": ["http://localhost:8080/"],
+  "plugins": []
+}
