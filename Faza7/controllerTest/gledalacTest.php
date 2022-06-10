@@ -6,7 +6,7 @@ use CodeIgniter\Test\ControllerTester;
 use CodeIgniter\Test\DatabaseTestTrait;
 use PHPUnit\Framework\TestCase;
 use App\Models;
-
+#Marija Stefanovic 2019/0068
 class GledalacControllerTest extends CIUnitTestCase {
     use ControllerTester;
     
@@ -24,7 +24,7 @@ class GledalacControllerTest extends CIUnitTestCase {
             'Drzava_Godina'=> "USA 2000",
             'Pocetak_prikazivanja'=>"15.03.2000" ,
             'Zanr'=> "Akcija",
-            'Status'=> "0",
+            'Status'=> "prihvacen",
             'Poster'=> '',
             'Trejler'=> '',
             'IdUG'=> 1,
@@ -40,7 +40,7 @@ class GledalacControllerTest extends CIUnitTestCase {
             'Drzava_Godina'=> "USA 2000",
             'Pocetak_prikazivanja'=>"15.03.2000" ,
             'Zanr'=> "Akcija",
-            'Status'=> "0",
+            'Status'=> "prihvacen",
             'Poster'=> '',
             'Trejler'=> '',
             'IdUG'=> 1,
@@ -85,11 +85,13 @@ class GledalacControllerTest extends CIUnitTestCase {
        $nesto=$this->controller('\App\Controllers\Gledalac')->execute('pocetna');
        $this->assertTrue($nesto->see('Naslov1'));
        $this->assertTrue($nesto->see('Naslov2'));
+      // $this->assertTrue(true);
 
     }
     public function testLogin(){
         $nesto=$this->controller('\App\Controllers\Gledalac')->execute('login');
         $nesto->assertSee("login");
+       // $this->assertTrue(true);
      }
      public function testRegistracija(){
         $nesto=$this->controller('\App\Controllers\Gledalac')->execute('registracija');
@@ -97,7 +99,7 @@ class GledalacControllerTest extends CIUnitTestCase {
      }
      public function testPretraga(){
         $nesto=$this->controller('\App\Controllers\Gledalac')->execute('pretraga');
-        $this->assertTrue($nesto->see("Nažalost nema projekcija filma za odabrani datum!"));
+        $this->assertTrue($nesto->see(" Nažalost nema takvih filmova."));
      }
      public function testPremijere(){
         $nesto=$this->controller('\App\Controllers\Gledalac')->execute('premijere');
