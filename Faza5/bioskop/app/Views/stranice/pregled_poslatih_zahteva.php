@@ -12,8 +12,11 @@
     <br>
     <br>
     <br>
-    <a href = "slanje_zahteva_za_prikaz_filma.html"> <div style="float:right"><p><button type="button">POSALJI ZAHTEV</button></div> </a>
-
+    <form name='posljiZahtev'  action="<?= site_url("Predstavnik/prikazSlanjaZahteva") ?>" method="post">
+     <div style="float:right"><input type="submit" name="posaljiZahtev" value="POSALJI ZAHTEV">
+     </div>
+     </form>
+    
     <hr style = "display:block;
     width:100%;
     visibility: visible ">  
@@ -26,10 +29,6 @@
 
 
 <?php
-
-
-
-
 foreach($filmovi as $film){
 
  echo"
@@ -54,7 +53,7 @@ foreach($filmovi as $film){
     echo   "<h style = 'font-size: 110%; color:grey; text-decoration: underline;'>Imena rezisera</h>";
     echo "<h style = 'font-size: 110%;'> {$film->Reziseri} </h>";*/
 
-    echo   "<h style = 'font-size: 110%; color:grey; text-decoration: underline;'>Jezik</h><br>";
+    echo   "<h style = 'font-size: 110%; color:grey; text-decoration: underline;'>Status</h><br>";
     echo "<h style = 'font-size: 110%;'> {$film->Status} </h><br>";
 
     

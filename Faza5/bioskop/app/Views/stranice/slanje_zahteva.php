@@ -1,6 +1,12 @@
 <!--Ana Stanic 0703/19-->
-
     
+    <form name='pregled'  action="<?= site_url("Predstavnik/prikazPregledaZahteva") ?>" method="post">
+     <div style="float:left"><input type="submit"  value="PREGLED POSLATIH ZAHTEVA">
+     </div>
+     </form>
+</br>
+</br>
+</br>
 <form name="slanjeZahteva" style="text-align:center" action="<?= site_url("Predstavnik/posaljiZahtev") ?>" method="post">
         <div class = "center" height = "30%" >
             <p><strong>
@@ -34,7 +40,12 @@
         <br>
         <div class = "center">
             <label> Trajanje filma:</label><br>
-            <input type="text" name="Trajanje filma">
+            <input type="text" name="Trajanje" id="Trajanje">
+        </div>
+        <br>
+        <div class = "center">
+            <label> Drzava/Godina:</label><br>
+            <input type="text" name="Drzavagod" id="Drzavagod">
         </div>
         <br>
         <div class = "center">
