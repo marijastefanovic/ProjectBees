@@ -7,9 +7,9 @@ use CodeIgniter\Test\DatabaseTestTrait;
 use PHPUnit\Framework\TestCase;
 use App\Models;
 
-class NeregistrovaniControllerTest extends TestCase {
+class NeregistrovaniControllerTest extends CIUnitTestCase {
     use ControllerTester;
-    use DatabaseTestTrait;
+    
     
     protected function setUp(): void
     {
@@ -87,30 +87,24 @@ class NeregistrovaniControllerTest extends TestCase {
     }
     public function testLogin(){
         $nesto=$this->controller('\App\Controllers\Neregistrovani')->execute('login');
-        $nesto->assertSee("login");
+        $nesto->assertSee("Mejl adresa");
      }
      public function testRegistracija(){
         $nesto=$this->controller('\App\Controllers\Neregistrovani')->execute('registracija');
-        $nesto->assertSee("registracija");
+        printf($nesto->class());
+        $nesto->assertSee("Mejl adresa");
      }
      public function testPretraga(){
         $nesto=$this->controller('\App\Controllers\Neregistrovani')->execute('pretraga');
-        $this->assertTrue($nesto->see("Nažalost nema projekcija filma za odabrani datum!"));
+        $nesto->assertSee("Nažalost nema projekcija filma za odabrani datum!");
+        //$this->assertTrue($nesto->see("Nažalost nema projekcija filma za odabrani datum!"));
      }
      public function testPremijere(){
         $nesto=$this->controller('\App\Controllers\Neregistrovani')->execute('premijere');
         $this->assertTrue($nesto->see("Nažalost nema projekcija filma za odabrani datum!"));
      }
      
-     public function testFilmPrikaz(){
-        $nesto=$this->controller('\App\Controllers\Neregistrovani')->execute('film',1);
-        $nesto->assertSee("film");
-     }
-     public function testPrikaz(){
-        
-        $nesto=$this->controller(App\Controllers\Neregistrovani::class)->execute('prikaz', 'index','');
-        $nesto->assertSee("index");
-     }
+    
    
 }
 

@@ -7,9 +7,9 @@ use CodeIgniter\Test\DatabaseTestTrait;
 use PHPUnit\Framework\TestCase;
 use App\Models;
 
-class GledalacControllerTest extends TestCase {
+class GledalacControllerTest extends CIUnitTestCase {
     use ControllerTester;
-    use DatabaseTestTrait;
+    
     
     protected function setUp(): void
     {
@@ -51,6 +51,8 @@ class GledalacControllerTest extends TestCase {
       ];
       $mockfilm=$this->createMock(\App\Models\FilmModel::class);
       $mockfilm->method("findAll")->willReturn($filmovi);
+      $mockfilm->method("find",0)->willReturn($filmovi[0]);
+      $mockfilm->method("find",1)->willReturn($filmovi[1]);
       Factories::injectMock('models',"App\Models\FilmModel",$mockfilm);
       //'IdP','Datum','Vreme','IdS','IdF','Premijera'
       $projekcije=[
@@ -102,15 +104,8 @@ class GledalacControllerTest extends TestCase {
         $this->assertTrue($nesto->see("Nažalost nema projekcija filma za odabrani datum!"));
      }
      
-     public function testFilmPrikaz(){
-        $nesto=$this->controller('\App\Controllers\Gledalac')->execute('film',1);
-        $nesto->assertSee("film");
-     }
-     public function testPrikaz(){
-        
-        $nesto=$this->controller(App\Controllers\Gledalac::class)->execute('prikaz', 'index','');
-        $nesto->assertSee("index");
-     }
+    
+     
    
 }
 
