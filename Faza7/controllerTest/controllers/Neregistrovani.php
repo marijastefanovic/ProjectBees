@@ -3,15 +3,11 @@
 #Anja Negic 676/19
 #Marija Stefanovic 2019/0068
 #Ana Stanic 2019/0703
-
 use CodeIgniter\Config\Factories;
-
-
 use App\Models\PremijereModel;
 use App\Models\KorisnikModel;
 use App\Models\AdminModel;
 use App\Models\GledalacModel;
-
 use App\Models\PredstavnikModel;
 
 use App\Models\ProjekcijaModel;
@@ -52,8 +48,6 @@ class Neregistrovani extends BaseController
         //$filmModel = new FilmModel();
         $projekcijaModel=Factories::models('App\Models\ProjekcijaModel');
         $filmModel = Factories::models('App\Models\FilmModel');
-       // $projekcijaModel=new ProjekcijaModel();
-       // $filmModel = new FilmModel();
         $projekcije = $projekcijaModel;
         $filmovi= $filmModel->findAll();
         $this->prikaz('index', ['filmovi'=>$filmovi, 'projekcije'=>$projekcije]);
@@ -94,7 +88,7 @@ class Neregistrovani extends BaseController
         $salaModel = new SalaModel();
 
        
-        $filmModel = new FilmModel();
+       // $filmModel = new FilmModel();
         $film = $filmModel->find($projekcija->IdF);
         $glumac = $film->IdUG;
         $reziser = $film->IdUR;
@@ -187,24 +181,6 @@ class Neregistrovani extends BaseController
         
         $korisnik=$kor->like('Mejl', $mejl)->find();
         
-        $mejl = "anjanegic1@gmail.com";
-        //$mejl=$this->request->getVar('mejl');
-        $lozinka = "anjanegic1";
-        //$lozinka= $this->request->getVar('lozinka');
-        
-        $temp=-1;
-        $kor=Factories::models('App\Models\KorisnikModel');
-        //$kor = new KorisnikModel();
-
-        $gl=Factories::models('App\Models\GledalacModel');
-        
-        //$gl = new GledalacModel();
-        $ad=Factories::models('App\Models\AdminModel');
-        //$ad = new AdminModel();
-        $pr=Factories::models('App\Models\PredstavnikModel');
-        //$pr = new PredstavnikModel();
-        //$korisnik=$kor->like('Mejl', $mejl)->find();
-        $korisnik=$kor->find();
         
         if($korisnik==null){
             $poruka="Korisnik sa ovom mejl adresom ne postoji";
