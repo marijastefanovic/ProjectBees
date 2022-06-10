@@ -7,7 +7,7 @@ use CodeIgniter\Test\DatabaseTestTrait;
 use PHPUnit\Framework\TestCase;
 use App\Models;
 
-class NeregistrovaniControllerTest extends TestCase {
+class GledalacControllerTest extends TestCase {
     use ControllerTester;
     use DatabaseTestTrait;
     
