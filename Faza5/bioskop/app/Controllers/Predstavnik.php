@@ -22,6 +22,11 @@ class Predstavnik extends BaseController
         echo view ('sablon/header_registrovani.php');
         echo view('stranice/slanje_zahteva.php');
     }
+    public function prikazPregledaZahteva(){
+        $IdK= $this->session->get('IdK');
+        $idPF=$IdK;
+        $this->pregledZahteva($idPF);
+    }
     /*
     *Nakon stvaranja zahteva u ovoj funkciji se zahtev salje i upisuje u bazu podataka
     */
@@ -30,7 +35,8 @@ class Predstavnik extends BaseController
 
         $naziv= $this->request->getVar("Naziv");
         $opis= $this->request->getVar("Opis");
-        $trajanje=$this->request->getVar("Trajanje filma");
+        $trajanje=$this->request->getVar("Trajanje");
+        $drzavagod=$this->request->getVar("Drzavagod");
         $glumci= $this->request->getVar("Glumci");
         $reziseri=$this->request->getVar("Reziseri");
         $pocetak=$this->request->getVar("Jezik");
@@ -106,7 +112,7 @@ class Predstavnik extends BaseController
            'Naziv'=>"$naziv",
            'Opis' =>"$opis",
            'Duzina' =>"$trajanje",
-           'Drzava_Godina' =>"$trajanje",
+           'Drzava_Godina' =>"$drzavagod",
            'Pocetak_prikazivanja' =>"$pocetak",
            'Zanr' =>"$zanrovi",
            'Status' =>"neresen",
