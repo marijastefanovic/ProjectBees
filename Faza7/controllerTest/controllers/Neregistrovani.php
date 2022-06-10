@@ -3,11 +3,11 @@
 #Anja Negic 676/19
 #Marija Stefanovic 2019/0068
 #Ana Stanic 2019/0703
+use CodeIgniter\Config\Factories;
 use App\Models\PremijereModel;
 use App\Models\KorisnikModel;
 use App\Models\AdminModel;
 use App\Models\GledalacModel;
-
 use App\Models\PredstavnikModel;
 
 use App\Models\ProjekcijaModel;
@@ -44,17 +44,21 @@ class Neregistrovani extends BaseController
         
             $this->session->set('ulogovan',false);
         }
-        $projekcijaModel=new ProjekcijaModel();
-        $filmModel = new FilmModel();
+       // $projekcijaModel=new ProjekcijaModel();
+        //$filmModel = new FilmModel();
+        $projekcijaModel=Factories::models('App\Models\ProjekcijaModel');
+        $filmModel = Factories::models('App\Models\FilmModel');
         $projekcije = $projekcijaModel;
         $filmovi= $filmModel->findAll();
         $this->prikaz('index', ['filmovi'=>$filmovi, 'projekcije'=>$projekcije]);
     }
     #Anja Negic 2019/676
     public function premijere(){
-        $projekcijaModel=new ProjekcijaModel();
-        $filmModel = new FilmModel();
-        $projekcije = $projekcijaModel;
+        //$projekcijaModel=new ProjekcijaModel();
+        //$filmModel = new FilmModel();
+        $projekcijaModel=Factories::models('App\Models\ProjekcijaModel');
+        $filmModel = Factories::models('App\Models\FilmModel');
+        $projekcije = $projekcijaModel->findAll();
         $filmovi= $filmModel->findAll();
         $this->prikaz('premijere',['filmovi'=>$filmovi, 'projekcije'=>$projekcije]);
     }
@@ -62,7 +66,7 @@ class Neregistrovani extends BaseController
     public function pretraga(){
         $pretraga=null;
         $this->session->set('pretraga', $pretraga);
-        $this->prikaz('pocetna',[]);
+        $this->prikaz('index',[]);
     }
     #Anja Negic 2019/676
     public function login(){
@@ -74,7 +78,9 @@ class Neregistrovani extends BaseController
     }
     #Anja Negic 2019/676
     public function film($idP){
-        $projekcijaModel=new ProjekcijaModel();
+       // $projekcijaModel=new ProjekcijaModel();
+       $projekcijaModel=Factories::models('App\Models\ProjekcijaModel');
+        $filmModel = Factories::models('App\Models\FilmModel');
         $projekcija = $projekcijaModel->find($idP);
         $ucesnikUFilmuModel = new UcesnikUFilmuModel();
         $glumacModel = new GlumacModel();
@@ -82,7 +88,7 @@ class Neregistrovani extends BaseController
         $salaModel = new SalaModel();
 
        
-        $filmModel = new FilmModel();
+       // $filmModel = new FilmModel();
         $film = $filmModel->find($projekcija->IdF);
         $glumac = $film->IdUG;
         $reziser = $film->IdUR;
@@ -162,24 +168,19 @@ class Neregistrovani extends BaseController
     #Preusmeravanje na odgovarajuce stranice za odgovarajuce korisnike
     public function loginSubmit()
     {
-        $mejl = "anjanegic1@gmail.com";
-        //$mejl=$this->request->getVar('mejl');
-        $lozinka = "anjanegic1";
-        //$lozinka= $this->request->getVar('lozinka');
+        
+        $mejl=$this->request->getVar('mejl');
+        
+        $lozinka= $this->request->getVar('lozinka');
         
         $temp=-1;
-        $kor=Factories::models('App\Models\KorisnikModel');
-        //$kor = new KorisnikModel();
-
-        $gl=Factories::models('App\Models\GledalacModel');
+        $kor=new KorisnikModel();
+        $gl=new GledalacModel();
+        $ad= new AdminModel();
+        $pr=new PredstavnikModel();
         
-        //$gl = new GledalacModel();
-        $ad=Factories::models('App\Models\AdminModel');
-        //$ad = new AdminModel();
-        $pr=Factories::models('App\Models\PredstavnikModel');
-        //$pr = new PredstavnikModel();
-        //$korisnik=$kor->like('Mejl', $mejl)->find();
-        $korisnik=$kor->find();
+        $korisnik=$kor->like('Mejl', $mejl)->find();
+        
         
         if($korisnik==null){
             $poruka="Korisnik sa ovom mejl adresom ne postoji";
@@ -211,7 +212,7 @@ class Neregistrovani extends BaseController
                 }else if($pr->find($korisnik[0]->IdK)){
                     $this->session->set('IdK', $korisnik[0]->IdK);
                     $this->session->set('ulogovan',true);
-                    return redirect()->to(site_url('Predstavnik/posaljiZahtev'));
+                    return redirect()->to(site_url('Predstavnik/prikazSlanjaZahteva'));
                     
                 }else{
                     $poruka="Doslo je do greske. Molimo pokusajte ponovo";

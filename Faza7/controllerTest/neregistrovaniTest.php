@@ -6,6 +6,7 @@ use CodeIgniter\Test\ControllerTester;
 use CodeIgniter\Test\DatabaseTestTrait;
 use PHPUnit\Framework\TestCase;
 use App\Models;
+#Marija Stefanovic 2019/0068
 
 class NeregistrovaniControllerTest extends CIUnitTestCase {
     use ControllerTester;
@@ -24,7 +25,7 @@ class NeregistrovaniControllerTest extends CIUnitTestCase {
             'Drzava_Godina'=> "USA 2000",
             'Pocetak_prikazivanja'=>"15.03.2000" ,
             'Zanr'=> "Akcija",
-            'Status'=> "0",
+            'Status'=> "prihvacen",
             'Poster'=> '',
             'Trejler'=> '',
             'IdUG'=> 1,
@@ -40,7 +41,7 @@ class NeregistrovaniControllerTest extends CIUnitTestCase {
             'Drzava_Godina'=> "USA 2000",
             'Pocetak_prikazivanja'=>"15.03.2000" ,
             'Zanr'=> "Akcija",
-            'Status'=> "0",
+            'Status'=> "prihvacen",
             'Poster'=> '',
             'Trejler'=> '',
             'IdUG'=> 1,
@@ -81,22 +82,25 @@ class NeregistrovaniControllerTest extends CIUnitTestCase {
     }
     public function testPocetna(){
        $nesto=$this->controller('\App\Controllers\Neregistrovani')->execute('pocetna');
-       $this->assertTrue($nesto->see('Naslov1'));
-       $this->assertTrue($nesto->see('Naslov2'));
+       //$this->assertEquals((object)'nesto', $nesto);
+       $nesto->assertSee("Naslov1");
+       //$this->assertTrue($nesto->see('Naslov1'));
+       //$this->assertTrue($nesto->see('Naslov2'));
 
     }
     public function testLogin(){
         $nesto=$this->controller('\App\Controllers\Neregistrovani')->execute('login');
-        $nesto->assertSee("Mejl adresa");
+        //$this->assertEquals((object)'nesto', $nesto);
+        //$nesto->assertSee("Mejl adresa");
+        $nesto->assertSee('login');
      }
      public function testRegistracija(){
         $nesto=$this->controller('\App\Controllers\Neregistrovani')->execute('registracija');
-        printf($nesto->class());
-        $nesto->assertSee("Mejl adresa");
+        $nesto->assertSee("registracija");
      }
      public function testPretraga(){
         $nesto=$this->controller('\App\Controllers\Neregistrovani')->execute('pretraga');
-        $nesto->assertSee("Nažalost nema projekcija filma za odabrani datum!");
+        $nesto->assertSee(" Nažalost nema takvih filmova.");
         //$this->assertTrue($nesto->see("Nažalost nema projekcija filma za odabrani datum!"));
      }
      public function testPremijere(){

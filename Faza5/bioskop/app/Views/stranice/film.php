@@ -4,7 +4,7 @@ if(empty($film)){}
 else{
 echo '<tr>';
 echo '<td class="poster">';
-if(!empty($film->Poster)){
+if(!empty($film->Poster)&&($film->Poster)!=""){
 $image = imagecreatefromstring($film->Poster); 
  ob_start();
  imagejpeg($image, null, 80);
