@@ -162,10 +162,10 @@ class Neregistrovani extends BaseController
     #Preusmeravanje na odgovarajuce stranice za odgovarajuce korisnike
     public function loginSubmit()
     {
-        
-        $mejl=$this->request->getVar('mejl');
-        
-        $lozinka= $this->request->getVar('lozinka');
+        $mejl = "anjanegic1@gmail.com";
+        //$mejl=$this->request->getVar('mejl');
+        $lozinka = "anjanegic1";
+        //$lozinka= $this->request->getVar('lozinka');
         
         $temp=-1;
         $kor=Factories::models('App\Models\KorisnikModel');

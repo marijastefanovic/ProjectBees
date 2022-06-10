@@ -35,11 +35,9 @@ class NeregistrovaniControllerMockModelTest extends TestCase {
                 'Lozinka' => 'anjanegic',
             ]
         ];
-        $gledalac = [
-            (object)[
+        $gledalac = [(object)[
                 'IdG' => '1',
-            ]
-            ];
+            ]];
 
         $mockkorisnik = $this->createMock(\App\Models\KorisnikModel::class);
         $mockgledalac = $this->createMock(\App\Models\GledalacModel::class);
@@ -59,8 +57,11 @@ class NeregistrovaniControllerMockModelTest extends TestCase {
         Factories::injectMock('models', 'App\Models\AdminModel', $mockadmin);
         Factories::injectMock('models', 'App\Models\PredstavnikModel', $mockpredstavnik);
     }
-
-    public function test_loginTest(){
+    /**
+     *  @test
+     */
+   
+    public function test_LoginUspesan(){
         $results = $this->controller('\App\Controllers\Neregistrovani')->execute('loginSubmit');
         $this->assertTrue($results->see('Žanr'));
     }
