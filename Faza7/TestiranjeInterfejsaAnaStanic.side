@@ -1,0 +1,924 @@
+{
+  "id": "19423cde-4f1e-4d79-a328-60d8be8e73ef",
+  "version": "2.0",
+  "name": "TestiranjeInterfejsaAnaStanic",
+  "url": "http://localhost:8080/Admin/brisanje_projekcija",
+  "tests": [{
+    "id": "926b4757-4729-4920-b4cc-437ff8a86f41",
+    "name": "NeuspesnoPravljenjeProjekcijeZauzetaSala",
+    "commands": [{
+      "id": "62dbbf44-8c48-4cc6-a249-701e8f518654",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Admin/pravljenje_projekcija",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c70a99b0-a1a1-4ae0-90ee-c334e405d5b6",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x840",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fb6f1184-7655-4ca5-a5fc-370927839190",
+      "comment": "",
+      "command": "click",
+      "target": "id=izabran",
+      "targets": [
+        ["id=izabran", "id"],
+        ["name=izabran", "name"],
+        ["css=tr:nth-child(1) #izabran", "css:finder"],
+        ["xpath=//input[@id='izabran']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "59a9b86f-8dda-43e7-83a8-9d12a3ded375",
+      "comment": "",
+      "command": "click",
+      "target": "id=sale",
+      "targets": [
+        ["id=sale", "id"],
+        ["name=sale", "name"],
+        ["css=#sale", "css:finder"],
+        ["xpath=//select[@id='sale']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "02b8de74-b5e2-41e1-a1e2-4c13648057ff",
+      "comment": "",
+      "command": "select",
+      "target": "id=sale",
+      "targets": [],
+      "value": "label=sala 3"
+    }, {
+      "id": "a5549f66-9617-4af0-9fb4-a81b1054fbcd",
+      "comment": "",
+      "command": "click",
+      "target": "id=dani",
+      "targets": [
+        ["id=dani", "id"],
+        ["name=dani", "name"],
+        ["css=#dani", "css:finder"],
+        ["xpath=//select[@id='dani']", "xpath:attributes"],
+        ["xpath=//td[2]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "013d2ad1-683a-4493-aeec-5ed627a836d8",
+      "comment": "",
+      "command": "select",
+      "target": "id=dani",
+      "targets": [],
+      "value": "label=Nedelja"
+    }, {
+      "id": "13aa5d99-48fb-4c33-9a09-efd35cbe08d9",
+      "comment": "",
+      "command": "click",
+      "target": "id=sati",
+      "targets": [
+        ["id=sati", "id"],
+        ["name=sati", "name"],
+        ["css=#sati", "css:finder"],
+        ["xpath=//select[@id='sati']", "xpath:attributes"],
+        ["xpath=//td[3]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bf980bd5-a908-4f70-af89-2ddbfb8cfed8",
+      "comment": "",
+      "command": "select",
+      "target": "id=sati",
+      "targets": [],
+      "value": "label=18:00"
+    }, {
+      "id": "c907167c-4e65-4253-83e0-e4fecb4c021c",
+      "comment": "",
+      "command": "click",
+      "target": "name=Posalji",
+      "targets": [
+        ["name=Posalji", "name"],
+        ["css=td:nth-child(4) > input", "css:finder"],
+        ["xpath=//input[@name='Posalji']", "xpath:attributes"],
+        ["xpath=//td[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "91a5c500-e0e0-4885-b9d6-7e4ee9dc4f35",
+      "comment": "",
+      "command": "assertValue",
+      "target": "name=Posalji",
+      "targets": [
+        ["name=Posalji", "name"],
+        ["css=td:nth-child(4) > input", "css:finder"],
+        ["xpath=//input[@name='Posalji']", "xpath:attributes"],
+        ["xpath=//td[4]/input", "xpath:position"]
+      ],
+      "value": "Napravi"
+    }]
+  }, {
+    "id": "19842590-9ef3-411f-b6ef-9803a9a1a26e",
+    "name": "NeuspesnoPravljenjeProjekcijeNijeIzabranFilm",
+    "commands": [{
+      "id": "4de4548b-c51b-4016-9f95-c7e9f39f3840",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Admin/pravljenje_projekcija",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "55b61a49-84b0-420e-a6cd-46838b06960e",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x840",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "df484681-4909-40cb-bc11-a09d7a186ee0",
+      "comment": "",
+      "command": "click",
+      "target": "id=sale",
+      "targets": [
+        ["id=sale", "id"],
+        ["name=sale", "name"],
+        ["css=#sale", "css:finder"],
+        ["xpath=//select[@id='sale']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"],
+        ["xpath=//select[contains(.,'Izaberite salu')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "59136d9b-926c-4200-91be-461805217d9f",
+      "comment": "",
+      "command": "click",
+      "target": "id=dani",
+      "targets": [
+        ["id=dani", "id"],
+        ["name=dani", "name"],
+        ["css=#dani", "css:finder"],
+        ["xpath=//select[@id='dani']", "xpath:attributes"],
+        ["xpath=//td[2]/select", "xpath:position"],
+        ["xpath=//select[contains(.,'Izaberite dan')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a7de9d2e-42af-4fda-83e2-0cc2c51d84a3",
+      "comment": "",
+      "command": "click",
+      "target": "id=sati",
+      "targets": [
+        ["id=sati", "id"],
+        ["name=sati", "name"],
+        ["css=#sati", "css:finder"],
+        ["xpath=//select[@id='sati']", "xpath:attributes"],
+        ["xpath=//td[3]/select", "xpath:position"],
+        ["xpath=//select[contains(.,'Izaberite vreme')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bbf7220e-59c9-46bc-ae80-b32d3e0e55dd",
+      "comment": "",
+      "command": "click",
+      "target": "name=Posalji",
+      "targets": [
+        ["name=Posalji", "name"],
+        ["css=td:nth-child(4) > input", "css:finder"],
+        ["xpath=//input[@name='Posalji']", "xpath:attributes"],
+        ["xpath=//td[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d2052137-bbe3-476a-8112-669b21257bc2",
+      "comment": "",
+      "command": "click",
+      "target": "name=Posalji",
+      "targets": [
+        ["name=Posalji", "name"],
+        ["css=td:nth-child(4) > input", "css:finder"],
+        ["xpath=//input[@name='Posalji']", "xpath:attributes"],
+        ["xpath=//td[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3b59e853-99e2-46ee-97c8-bbd62c49110e",
+      "comment": "",
+      "command": "assertValue",
+      "target": "name=Posalji",
+      "targets": [
+        ["name=Posalji", "name"],
+        ["css=td:nth-child(4) > input", "css:finder"],
+        ["xpath=//input[@name='Posalji']", "xpath:attributes"],
+        ["xpath=//td[4]/input", "xpath:position"]
+      ],
+      "value": "Napravi"
+    }, {
+      "id": "606cdaaa-dbbb-4136-af58-b877f1893483",
+      "comment": "",
+      "command": "click",
+      "target": "name=Posalji",
+      "targets": [
+        ["name=Posalji", "name"],
+        ["css=td:nth-child(4) > input", "css:finder"],
+        ["xpath=//input[@name='Posalji']", "xpath:attributes"],
+        ["xpath=//td[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "182ae14d-c2fd-4c19-8ebb-c89ae7fca803",
+      "comment": "",
+      "command": "assertValue",
+      "target": "id=izabran",
+      "targets": [
+        ["id=izabran", "id"],
+        ["name=izabran", "name"],
+        ["css=tr:nth-child(1) #izabran", "css:finder"],
+        ["xpath=//input[@id='izabran']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "3"
+    }]
+  }, {
+    "id": "cf42e82f-3bc8-4524-8348-6712c817ea65",
+    "name": "UspesnoPravljenjeProjekcijeAdmin",
+    "commands": [{
+      "id": "d44104fe-4fe7-4a4a-9462-b640d559bd40",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Admin/pravljenje_projekcija",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e101b9d5-30b1-4db1-bc7e-7f347ace918b",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x840",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "79747890-ec0d-4144-ad7e-9dcf6b56e4f3",
+      "comment": "",
+      "command": "click",
+      "target": "id=izabran",
+      "targets": [
+        ["id=izabran", "id"],
+        ["name=izabran", "name"],
+        ["css=tr:nth-child(1) #izabran", "css:finder"],
+        ["xpath=//input[@id='izabran']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "31521540-b839-4c7b-a996-f2b632b1b6af",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "id=izabran",
+      "targets": [
+        ["id=izabran", "id"],
+        ["name=izabran", "name"],
+        ["css=tr:nth-child(1) #izabran", "css:finder"],
+        ["xpath=//input[@id='izabran']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "97b0849a-92b5-4ff8-a6be-ec431aebb62d",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "id=izabran",
+      "targets": [
+        ["id=izabran", "id"],
+        ["name=izabran", "name"],
+        ["css=tr:nth-child(1) #izabran", "css:finder"],
+        ["xpath=//input[@id='izabran']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fda18d87-3c1f-44bc-a5dd-dc2f1915f99a",
+      "comment": "",
+      "command": "click",
+      "target": "id=sale",
+      "targets": [
+        ["id=sale", "id"],
+        ["name=sale", "name"],
+        ["css=#sale", "css:finder"],
+        ["xpath=//select[@id='sale']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2b7820ee-b513-4e76-90f1-1d94157b46ad",
+      "comment": "",
+      "command": "select",
+      "target": "id=sale",
+      "targets": [],
+      "value": "label=sala 3"
+    }, {
+      "id": "f57b9c80-9910-44ee-a090-a01c3552fabd",
+      "comment": "",
+      "command": "click",
+      "target": "id=dani",
+      "targets": [
+        ["id=dani", "id"],
+        ["name=dani", "name"],
+        ["css=#dani", "css:finder"],
+        ["xpath=//select[@id='dani']", "xpath:attributes"],
+        ["xpath=//td[2]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5b443fba-6a01-4bdc-9fe3-b08b6e59c72d",
+      "comment": "",
+      "command": "select",
+      "target": "id=dani",
+      "targets": [],
+      "value": "label=Petak"
+    }, {
+      "id": "1136567e-f4f4-4b6d-92d1-6e0fe3a2d2f3",
+      "comment": "",
+      "command": "click",
+      "target": "id=sati",
+      "targets": [
+        ["id=sati", "id"],
+        ["name=sati", "name"],
+        ["css=#sati", "css:finder"],
+        ["xpath=//select[@id='sati']", "xpath:attributes"],
+        ["xpath=//td[3]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "901b28cc-6349-432a-866f-0e16c8d7bfd2",
+      "comment": "",
+      "command": "select",
+      "target": "id=sati",
+      "targets": [],
+      "value": "label=18:00"
+    }, {
+      "id": "0e706166-b597-435b-a65c-a1426167453d",
+      "comment": "",
+      "command": "click",
+      "target": "name=Posalji",
+      "targets": [
+        ["name=Posalji", "name"],
+        ["css=td:nth-child(4) > input", "css:finder"],
+        ["xpath=//input[@name='Posalji']", "xpath:attributes"],
+        ["xpath=//td[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "63f8c330-ef70-4585-a1ff-f1d8a87fd918",
+    "name": "NeuspesnoPravljenjeProjekcijeNijeIzabranaSala",
+    "commands": [{
+      "id": "ea3f20be-d5f2-45e1-8be0-8e27e3179aa4",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Admin/pravljenje_projekcija",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c220bd17-acb1-497c-b84f-ad3c56414458",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x840",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "36d2a593-39ad-48f4-86f5-1596b463043f",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(2) #izabran",
+      "targets": [
+        ["css=tr:nth-child(2) #izabran", "css:finder"],
+        ["xpath=(//input[@id='izabran'])[2]", "xpath:attributes"],
+        ["xpath=//tr[2]/td[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0ad97d75-e069-45c4-a0b6-2fd8a5028c84",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=tr:nth-child(2) #izabran",
+      "targets": [
+        ["css=tr:nth-child(2) #izabran", "css:finder"],
+        ["xpath=(//input[@id='izabran'])[2]", "xpath:attributes"],
+        ["xpath=//tr[2]/td[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9a0df42a-9cc2-4cc4-8cb6-e7d11742e546",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=tr:nth-child(2) #izabran",
+      "targets": [
+        ["css=tr:nth-child(2) #izabran", "css:finder"],
+        ["xpath=(//input[@id='izabran'])[2]", "xpath:attributes"],
+        ["xpath=//tr[2]/td[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7ff8b633-8e57-485e-b77c-caaa014d97ea",
+      "comment": "",
+      "command": "click",
+      "target": "name=Posalji",
+      "targets": [
+        ["name=Posalji", "name"],
+        ["css=td:nth-child(4) > input", "css:finder"],
+        ["xpath=//input[@name='Posalji']", "xpath:attributes"],
+        ["xpath=//td[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fb530fb7-6fbe-4cf8-8b88-84aef790afe9",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=sale",
+      "targets": [
+        ["id=sale", "id"],
+        ["name=sale", "name"],
+        ["css=#sale", "css:finder"],
+        ["xpath=//select[@id='sale']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": "                        Izaberite salu\\n                    sala 3\\nsala 2\\nsala 1"
+    }]
+  }, {
+    "id": "92601cc7-ea60-450b-830b-f68415733380",
+    "name": "NeuspesnoPravljenjeProjekcijeNijeIzabranDan",
+    "commands": [{
+      "id": "43efbd45-f28e-4412-983f-6dd39d4c3235",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Admin/pravljenje_projekcija",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c3267f41-706b-4d12-935c-29530a16996c",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x840",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1ec04b4f-69ae-480a-bceb-771efabd398c",
+      "comment": "",
+      "command": "click",
+      "target": "id=izabran",
+      "targets": [
+        ["id=izabran", "id"],
+        ["name=izabran", "name"],
+        ["css=tr:nth-child(1) #izabran", "css:finder"],
+        ["xpath=//input[@id='izabran']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c4f34168-0f1c-4bca-8d5a-687de67e77e1",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "id=izabran",
+      "targets": [
+        ["id=izabran", "id"],
+        ["name=izabran", "name"],
+        ["css=tr:nth-child(1) #izabran", "css:finder"],
+        ["xpath=//input[@id='izabran']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4701024c-b81c-4327-b1f4-280828da4439",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "id=izabran",
+      "targets": [
+        ["id=izabran", "id"],
+        ["name=izabran", "name"],
+        ["css=tr:nth-child(1) #izabran", "css:finder"],
+        ["xpath=//input[@id='izabran']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7c9b09d3-d6a6-4639-8719-669ea2b5df0c",
+      "comment": "",
+      "command": "click",
+      "target": "id=sale",
+      "targets": [
+        ["id=sale", "id"],
+        ["name=sale", "name"],
+        ["css=#sale", "css:finder"],
+        ["xpath=//select[@id='sale']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a48c84b3-33e2-48b5-9860-88bf80becdbb",
+      "comment": "",
+      "command": "select",
+      "target": "id=sale",
+      "targets": [],
+      "value": "label=sala 1"
+    }, {
+      "id": "880da266-edc1-4310-b57d-36530c550ccc",
+      "comment": "",
+      "command": "click",
+      "target": "name=Posalji",
+      "targets": [
+        ["name=Posalji", "name"],
+        ["css=td:nth-child(4) > input", "css:finder"],
+        ["xpath=//input[@name='Posalji']", "xpath:attributes"],
+        ["xpath=//td[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0de870d2-17ca-4c10-adaa-e4eec5389137",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=dani",
+      "targets": [
+        ["id=dani", "id"],
+        ["name=dani", "name"],
+        ["css=#dani", "css:finder"],
+        ["xpath=//select[@id='dani']", "xpath:attributes"],
+        ["xpath=//td[2]/select", "xpath:position"]
+      ],
+      "value": "                        Izaberite dan\\n                    Petak\\nSubota\\nNedelja"
+    }]
+  }, {
+    "id": "6d4f25a6-1abb-4c9d-913a-6ea0fb5a88b8",
+    "name": "NeuspesnoPravljenjeProjekcijeNijeIzabranoVreme",
+    "commands": [{
+      "id": "00fea125-dc16-4aa3-90c0-a892d32e9e08",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Admin/pravljenje_projekcija",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d39b93d5-6d20-497f-a084-8b9589e28e16",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x840",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b26feab9-9554-4718-86f1-720d55ded212",
+      "comment": "",
+      "command": "click",
+      "target": "id=izabran",
+      "targets": [
+        ["id=izabran", "id"],
+        ["name=izabran", "name"],
+        ["css=tr:nth-child(1) #izabran", "css:finder"],
+        ["xpath=//input[@id='izabran']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3088fdd8-af39-4a08-afdb-98688b865475",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "id=izabran",
+      "targets": [
+        ["id=izabran", "id"],
+        ["name=izabran", "name"],
+        ["css=tr:nth-child(1) #izabran", "css:finder"],
+        ["xpath=//input[@id='izabran']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d9567ccb-ec40-4530-9175-3fc4e0c99ea6",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "id=izabran",
+      "targets": [
+        ["id=izabran", "id"],
+        ["name=izabran", "name"],
+        ["css=tr:nth-child(1) #izabran", "css:finder"],
+        ["xpath=//input[@id='izabran']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0aaacce9-fa92-4805-b674-a92ef09b9d3c",
+      "comment": "",
+      "command": "click",
+      "target": "id=sale",
+      "targets": [
+        ["id=sale", "id"],
+        ["name=sale", "name"],
+        ["css=#sale", "css:finder"],
+        ["xpath=//select[@id='sale']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "923907bd-75bb-4984-a842-6bde3dc387dc",
+      "comment": "",
+      "command": "select",
+      "target": "id=sale",
+      "targets": [],
+      "value": "label=sala 1"
+    }, {
+      "id": "86d11ee7-c0b7-48b4-814c-91776765e5f5",
+      "comment": "",
+      "command": "click",
+      "target": "id=dani",
+      "targets": [
+        ["id=dani", "id"],
+        ["name=dani", "name"],
+        ["css=#dani", "css:finder"],
+        ["xpath=//select[@id='dani']", "xpath:attributes"],
+        ["xpath=//td[2]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "74095db5-42f9-419d-a1b6-08ab702d585f",
+      "comment": "",
+      "command": "select",
+      "target": "id=dani",
+      "targets": [],
+      "value": "label=Petak"
+    }, {
+      "id": "766b9f4d-ca8c-4b6a-b1ba-6d62e7e6c314",
+      "comment": "",
+      "command": "click",
+      "target": "name=Posalji",
+      "targets": [
+        ["name=Posalji", "name"],
+        ["css=td:nth-child(4) > input", "css:finder"],
+        ["xpath=//input[@name='Posalji']", "xpath:attributes"],
+        ["xpath=//td[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "420006d2-f3ca-4f70-b957-17d3025feb53",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=sati",
+      "targets": [
+        ["id=sati", "id"],
+        ["name=sati", "name"],
+        ["css=#sati", "css:finder"],
+        ["xpath=//select[@id='sati']", "xpath:attributes"],
+        ["xpath=//td[3]/select", "xpath:position"]
+      ],
+      "value": "                        Izaberite vreme\\n                    10:00\\n10:30\\n11:00\\n11:30\\n12:00\\n12:30\\n13:00\\n13:30\\n14:00\\n14:30\\n15:00\\n15:30\\n16:00\\n16:30\\n17:00\\n17:30\\n18:00\\n18:30\\n19:00\\n19:30\\n20:00"
+    }]
+  }, {
+    "id": "20c9c40c-02b2-4d4f-b102-87a849fab8e1",
+    "name": "NeuspesnoBrisanjeProjekcijeCancelDugme",
+    "commands": [{
+      "id": "1973ab1d-11ad-4325-bbbf-6cc98d6982a0",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Admin/brisanje_projekcija",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "923cc3f2-cd64-4967-82e7-97de0425d529",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x840",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "459db3ca-aeb6-43de-b49a-9b23cc5b4166",
+      "comment": "",
+      "command": "chooseCancelOnNextConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "37a56df5-ae32-42e1-9c84-ed862bcd9a71",
+      "comment": "",
+      "command": "click",
+      "target": "css=.film:nth-child(2) button",
+      "targets": [
+        ["css=.film:nth-child(2) button", "css:finder"],
+        ["xpath=//button[@onclick='myFunction(15)']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Obrisi projekciju')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "77e279db-9951-43df-a49b-099f26d66290",
+      "comment": "",
+      "command": "assertConfirmation",
+      "target": "Da li ste sigurni da želite da obrišete projekciju?",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e5a018d5-5741-450c-a1aa-84ada802b345",
+      "comment": "",
+      "command": "webdriverChooseCancelOnVisibleConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b7db58ca-f625-478e-af6a-7cbcfc40ab9b",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "css=.film:nth-child(2)",
+      "targets": [
+        ["css=.film:nth-child(2)", "css:finder"],
+        ["xpath=//table[2]", "xpath:position"]
+      ],
+      "value": "1459,10.599998474121094"
+    }, {
+      "id": "0593a167-306d-4097-9ad9-8660e840233b",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "css=.film:nth-child(2)",
+      "targets": [
+        ["css=.film:nth-child(2)", "css:finder"],
+        ["xpath=//table[2]", "xpath:position"]
+      ],
+      "value": "1459,10.599998474121094"
+    }, {
+      "id": "43f2b7ae-249c-4cfd-b699-52475e880169",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "css=.film:nth-child(2)",
+      "targets": [
+        ["css=.film:nth-child(2)", "css:finder"],
+        ["xpath=//table[2]", "xpath:position"]
+      ],
+      "value": "1459,10.599998474121094"
+    }, {
+      "id": "73e95f6a-da93-435d-9103-f0ded85947dc",
+      "comment": "",
+      "command": "click",
+      "target": "css=.film:nth-child(2)",
+      "targets": [
+        ["css=.film:nth-child(2)", "css:finder"],
+        ["xpath=//table[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e467bffb-5367-42b6-a1db-b7b00c8c7f09",
+      "comment": "",
+      "command": "assertValue",
+      "target": "css=.film:nth-child(2) button",
+      "targets": [
+        ["css=.film:nth-child(2) button", "css:finder"],
+        ["xpath=//button[@onclick='myFunction(15)']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Obrisi projekciju')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "42e829d1-a1d2-452c-a6c3-754ffb2315c7",
+    "name": "UspesnoPrihvatanjeZahtevaZaPrikazFilma",
+    "commands": [{
+      "id": "4a8a4d93-2a39-4422-9332-68468ea1ea15",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Admin/index",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a6622be5-34c2-4d8f-abcc-8739a6651ee5",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x840",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f3cd72e4-9e50-4be6-9942-a9b74dd42e8d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.film:nth-child(2) button:nth-child(1)",
+      "targets": [
+        ["css=.film:nth-child(2) button:nth-child(1)", "css:finder"],
+        ["xpath=//button[@onclick='prihvati(10)']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Prihvati')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "0c30de5e-b26a-43cb-83b5-701beee41396",
+    "name": "OdbijanjeZahtevaZaPrikazFilma",
+    "commands": [{
+      "id": "e9852f24-fb33-4fa5-b6dc-f7513ab76054",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Admin/index",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cecdf074-d6ec-4300-a1a7-714f4fe1220e",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x840",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0528e909-4302-47de-a35c-629ad6bee5d4",
+      "comment": "",
+      "command": "click",
+      "target": "css=.film:nth-child(2) button:nth-child(2)",
+      "targets": [
+        ["css=.film:nth-child(2) button:nth-child(2)", "css:finder"],
+        ["xpath=//button[@onclick='odbij(12)']", "xpath:attributes"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Odbij')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "b6a8032b-bea0-464b-9fbf-25b58e642ca3",
+    "name": "NePostojiNeresenZahtevZaFilm",
+    "commands": [{
+      "id": "0e6fd86d-dcf0-45e6-9603-3128e2bd44e7",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Admin/index",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "86059154-b017-4880-b5af-2cdb826d5541",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x840",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2e238a65-bdde-4a7a-885f-65c29d2956c4",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.vsc-initialized",
+      "targets": [
+        ["css=.vsc-initialized", "css:finder"],
+        ["xpath=//body", "xpath:position"]
+      ],
+      "value": "log out\\nZahtevi Pravljenje projekcija Brisanje projekcija\\nNe postoji nijedan nerešen zahtev trenutno."
+    }]
+  }, {
+    "id": "856037e4-73c9-427e-9b9c-618d6d60cb5a",
+    "name": "UspesnoBrisanjeProjekcije",
+    "commands": [{
+      "id": "32f7f128-b49c-4587-86ab-c8461f47b47a",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Admin/brisanje_projekcija",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "140dc377-9933-4049-a839-7fb057309bc3",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x840",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e0a39fca-a678-4b3a-a3ed-d99d30f8f444",
+      "comment": "",
+      "command": "chooseOkOnNextConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a2544e95-95b6-4ffa-ac1a-09e0bc0c3650",
+      "comment": "",
+      "command": "click",
+      "target": "css=.film:nth-child(2) button",
+      "targets": [
+        ["css=.film:nth-child(2) button", "css:finder"],
+        ["xpath=//button[@onclick='myFunction(22)']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Obrisi projekciju')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "929ddaa7-09bc-40bb-bdb5-77d70b85f4e0",
+      "comment": "",
+      "command": "assertConfirmation",
+      "target": "Da li ste sigurni da želite da obrišete projekciju?",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b1bede35-008b-45fe-be09-026f0035a6ac",
+      "comment": "",
+      "command": "webdriverChooseOkOnVisibleConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "ee4219cb-8750-4e1b-a990-8b5368bf5941",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["http://localhost:8080/", "http://localhost:8080/Admin/pravljenje_projekcija", "http://localhost:8080/Admin/brisanje_projekcija", "http://localhost:8080/Admin/index"],
+  "plugins": []
+}
