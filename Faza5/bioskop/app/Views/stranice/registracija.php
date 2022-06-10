@@ -87,7 +87,7 @@
             <input type="text" id="kompanija" name="kompanija">
 
         </div>
-        <div><p><a href = "login.html">  <input type="submit" name="Registracija2" value="Registracija2"/></a></div>
+        <div><p><a href = "login.html">  <input type="submit" name="Registracija2" value="Registruj predstavnika"/></a></div>
            
         </form>
     
